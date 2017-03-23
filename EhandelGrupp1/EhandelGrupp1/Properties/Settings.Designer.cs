@@ -26,11 +26,10 @@ namespace EhandelGrupp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=213.114.120.91;Initial Catalog=eHandel;Persist Security Info=True;Use" +
-            "r ID=ehande;Password=ehandel890807")]
-        public string cnstr {
+        [global::System.Configuration.DefaultSettingValueAttribute("dummyCONSTRING")]
+        public string conSTR {
             get {
-                return ((string)(this["cnstr"]));
+                return ((string)(this["conSTR"]));
             }
         }
     }

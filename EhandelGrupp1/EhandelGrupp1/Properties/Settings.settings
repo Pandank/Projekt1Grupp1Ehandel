@@ -2,12 +2,12 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EhandelGrupp1.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="cnstr" Type="(Connection string)" Scope="Application">
+    <Setting Name="conSTR" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=213.114.120.91;Initial Catalog=eHandel;Persist Security Info=True;User ID=ehande;Password=ehandel890807&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;dummyCONSTRING&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=213.114.120.91;Initial Catalog=eHandel;Persist Security Info=True;User ID=ehande;Password=ehandel890807</Value>
+      <Value Profile="(Default)">dummyCONSTRING</Value>
     </Setting>
   </Settings>
 </SettingsFile>
