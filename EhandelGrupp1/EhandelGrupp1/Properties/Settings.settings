@@ -1,9 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EhandelGrupp1.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="cString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=213.114.120.91;Initial Catalog=eHandel;Persist Security Info=True;User ID=ehande;Password=ehandel890807</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>
