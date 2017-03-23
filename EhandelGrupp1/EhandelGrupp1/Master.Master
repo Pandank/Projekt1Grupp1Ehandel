@@ -15,6 +15,14 @@
             </asp:ContentPlaceHolder>
             
         </div>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+        <footer>
+
+        </footer>
     </form>
 </body>
 </html>
