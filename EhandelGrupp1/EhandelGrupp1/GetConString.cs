@@ -17,5 +17,16 @@ namespace EhandelGrupp1
                 return conString;
             }
         }
+
+
+        public static string GetCPW()
+        {
+            var path = @"C:\temp\HiddenSettingsJustpw.config";
+            using (StreamReader reader = new StreamReader(path))
+            {
+                var conString = reader.ReadLine();
+                return conString;
+            }
+        }
     }
 }
