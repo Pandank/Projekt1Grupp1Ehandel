@@ -85,6 +85,7 @@
     <Content Include="css\MagnusStyle.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\Papper.jpg" />
     <Content Include="js\script.js" />
     <Content Include="packages.config" />
     <Content Include="Master.Master" />
@@ -97,6 +98,8 @@
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="product-description.aspx" />
+    <Content Include="register-account.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -164,6 +167,20 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product-description.aspx.cs">
+      <DependentUpon>product-description.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product-description.aspx.designer.cs">
+      <DependentUpon>product-description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register-account.aspx.cs">
+      <DependentUpon>register-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register-account.aspx.designer.cs">
+      <DependentUpon>register-account.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
