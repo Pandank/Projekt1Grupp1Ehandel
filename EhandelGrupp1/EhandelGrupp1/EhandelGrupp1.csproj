@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="category-overview.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -87,6 +88,7 @@
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="register-account.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +114,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="category-overview.aspx.cs">
+      <DependentUpon>category-overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="category-overview.aspx.designer.cs">
+      <DependentUpon>category-overview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GetConString.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,6 +136,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="register-account.aspx.cs">
+      <DependentUpon>register-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register-account.aspx.designer.cs">
+      <DependentUpon>register-account.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="index.aspx.cs">
@@ -153,7 +167,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22373</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
