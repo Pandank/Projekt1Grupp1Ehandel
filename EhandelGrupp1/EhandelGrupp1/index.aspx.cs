@@ -12,10 +12,11 @@ namespace EhandelGrupp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string email = "admin";
             string password = "admin";
-
             var test = ValidateLogin(email,password);
+            int userID = DataManagement.CreateCustomer("hakan@kvarnskogen.st", "Håkan", "Johansson", "0", "Kalle");
         }
 
 

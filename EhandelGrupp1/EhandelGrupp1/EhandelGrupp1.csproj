@@ -129,6 +129,7 @@
     <Compile Include="category-overview.aspx.designer.cs">
       <DependentUpon>category-overview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataManagement.cs" />
     <Compile Include="EF\Address.cs" />
     <Compile Include="EF\Category.cs" />
     <Compile Include="EF\CategoryToProduct.cs" />
