@@ -14,21 +14,48 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <header>
+            <div>&#9776;</div>
+            <a href="index.aspx">Logga</a>
+            <!--<a class="btn" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#makeDream">Open Modal</a>-->
+            <button data-toggle="modal" data-target="#loginModal">Logga in</button>
+        </header>
+        
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
         </div>
-        <nav>
-                <ul class="nav navbar-nav">
-                    <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="navIcon">Logga in</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span></a></li>
-                </ul>
+        <nav class="navbar-fixed-bottom">
+            <ul class="nav navbar-nav">
+                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="navIcon">Logga in</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span></a></li>
+            </ul>
         </nav>
-        <footer>
+        <footer class="footer">
         </footer>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </form>
 </body>
 </html>

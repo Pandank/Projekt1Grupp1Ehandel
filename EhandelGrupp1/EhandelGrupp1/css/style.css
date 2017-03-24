@@ -1,13 +1,27 @@
-﻿.navIcon{
-    
+﻿/* Footer navbar */
+.navIcon{
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: .5em;
+    font-weight: 700;
 }
 
 .glyphicon {
-    font-size: 2em;
+    font-size: 4em;
     display: block;
     text-align: center;
 }
 
 .navbar-nav {
     display: block;
+    float: none;
+}
+
+.navbar-fixed-bottom ul {
+    width: 100%;
+}
+
+.navbar-fixed-bottom li {
+    width: 25%;
 }
