@@ -21,7 +21,7 @@ namespace EhandelGrupp1
 
 
 
-
+        //takes user input as param returns user as json if email and password is correct if not returns "empty" json
         private  string ValidateLogin(string email, string password)
         {
             using (var db = new EHandel())
