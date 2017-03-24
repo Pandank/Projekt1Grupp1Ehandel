@@ -1,2 +1,35 @@
-﻿body {
+﻿.container{
+    background-color: white;
 }
+
+/*https://color.adobe.com/sv/KAB-color-theme-9372738/*/
+
+.h2{
+    text-align:center;
+    font-size:2em;
+}
+
+.h3{
+    padding-left: .5em;  
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.h4{    
+    padding-left: .5em;
+    text-align: left;     
+    color:black;
+    font-weight:bold;
+    font-size: 1.3em;
+}
+
+.h5{
+    padding-left: .5em;
+    text-align: left;
+    color:dimgrey;
+    text-decoration:line-through;   
+    font-weight:bold;
+    font-size: 1.3em;
+}
+
+
