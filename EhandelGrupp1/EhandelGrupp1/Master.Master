@@ -11,50 +11,104 @@
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
-            <div>&#9776;</div>
-            <a href="index.aspx">Logga</a>
-            <a class="btn" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal">Open Modal</a>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.aspx">KAB</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="topNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="category"><a href="category-overview.aspx">Sortiment</a></li>
+                            <li class="category"><a href="#">Kategori 1</a></li>
+                            <li><a href="#">Kundtjänst</a></li>
+                            <li><a href="#">Om oss</a></li>
+                            <li class="admin">Administration</li>
+                            <li class="admin"><a href="#">Adminfunktioner</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <a id="login" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal">Logga in</a>
         </header>
-        
+
+
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-
         </div>
+
+
         <nav class="navbar-fixed-bottom">
             <ul class="nav navbar-nav">
-                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="navIcon">Logga in</span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span></a></li>
+                <li><a href="index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
+                <li><a href="category-overview.aspx"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
+                <li><a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="navIcon">Logga in</span></a></li>
+                <li><a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span id="itemCount">1</span></a></li>
             </ul>
         </nav>
         <footer class="footer">
         </footer>
-        <!-- Modal -->
+        <!-- Login modal -->
         <div class="modal fade" id="loginModal" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Logga in</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                        <div class="form-group modal-email">
+                            <label for="email">E-post</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group modal-password">
+                            <label for="pwd">Lösenord</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">
+                                Kom ihåg mig</label>
+                        </div>
+                        <button type="submit" class="btn btn-default" id="loginButton">Logga in</button>
+                        <p><a href="#">Registrera konto</a></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
                     </div>
                 </div>
-
+            </div>
+        </div>
+        <!-- Shopping cart modal -->
+        <div class="modal fade" id="cartModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Varukorg</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Kassa</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
