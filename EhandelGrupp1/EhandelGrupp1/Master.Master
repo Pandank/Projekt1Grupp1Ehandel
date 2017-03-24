@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title>Kontorsprylar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/jquery-3.1.1.min.js"></script>
