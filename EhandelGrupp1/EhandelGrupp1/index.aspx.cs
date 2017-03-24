@@ -41,9 +41,62 @@ namespace EhandelGrupp1
 
                 return ObjTooJson.ObjToJson(query);
             }
-
-
-
         }
+
+        //returns the json of PRODUCT with ID
+        private static string GetProductById(int id)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                            where p.productId == id
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                p.description,
+                                p.price,
+                                p.stock,
+                                p.date
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+        //returns ALL products ( json )
+        private static string GetAllProducts()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                p.description,
+                                p.price,
+                                p.stock,
+                                p.date
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+        //returns ALL catagory names as json
+        private static string GetAllCategoryNames()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from b in db.Category
+                            select b.name;
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+
+
     }
 }
