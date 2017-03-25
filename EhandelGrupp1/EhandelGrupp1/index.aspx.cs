@@ -25,6 +25,8 @@ namespace EhandelGrupp1
 
             //var testing = DataManagement.GetAllCustomers();
 
+     
+           int productID = DataManagement.CreateProduct("Kopieringspapper", "Papper för kopiator i storlek A4, 100st", 79.50m, 32, DateTime.Now);
         }
 
 

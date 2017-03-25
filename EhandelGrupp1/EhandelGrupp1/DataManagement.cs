@@ -9,6 +9,27 @@ namespace EhandelGrupp1
     public class DataManagement
     {
 
+        //Creates a new Product, returns Product ID //CS
+        public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date)
+        {
+            Product p = new Product
+            {
+                name = name,
+                description = description,
+                price = price,
+                stock = stock,
+                date = date,
+
+            };
+            using (var db = new EHandel())
+            {
+                db.Product.Add(p);
+                db.SaveChanges();
+            }
+
+            return p.productId;
+        }
+
 
         /// <summary>
         /// Returns ALL products from specific CATEGORY
@@ -230,5 +251,4 @@ namespace EhandelGrupp1
             }
         }
     }
-
 }
