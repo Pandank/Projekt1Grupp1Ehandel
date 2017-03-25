@@ -15,21 +15,13 @@ namespace EhandelGrupp1
 
             string email = "admin";
             string password = "admin";
-            var test = ValidateLogin(email,password);
-            //int userID = DataManagement.CreateCustomer("hakan@kvarnskogen.st", "Håkan", "Johansson", "0", "Kalle");
+            var test = ValidateLogin(email, password);
 
             //Gets all products from specific category
             var tests = DataManagement.GetAllProductsFromCategory("Övrigt");
 
-            //var test1 = DataManagement.GetCustomerByEmail("test@testsson.com");
-
-            //var testing = DataManagement.GetAllCustomers();
-
-     
-           int productID = DataManagement.CreateProduct("Kopieringspapper", "Papper för kopiator i storlek A4, 100st", 79.50m, 32, DateTime.Now);
         }
-
-
+        
 
 
         /// <summary>
@@ -58,14 +50,5 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
-
-        
-
-        
-
-   
-
-
-
     }
 }

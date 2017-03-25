@@ -30,6 +30,22 @@ namespace EhandelGrupp1
             return p.productId;
         }
 
+        //Create a new Category, returns Category ID //CS
+        public static int CreateCategory(string name)
+        {
+            Category c = new Category
+            {
+                name = name,
+            };
+
+            using (var db = new EHandel())
+            {
+                db.Category.Add(c);
+                db.SaveChanges();
+            }
+            return c.categoryId;
+        }
+
 
         /// <summary>
         /// Returns ALL products from specific CATEGORY
