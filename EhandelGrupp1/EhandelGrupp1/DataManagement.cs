@@ -10,6 +10,31 @@ namespace EhandelGrupp1
     {
 
         /// <summary>
+        /// Returns ALL products as JSON
+        /// </summary>
+        /// <returns></returns>
+        private static string GetAllProducts()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                p.description,
+                                p.price,
+                                p.stock,
+                                p.date
+                            };
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+
+
+
+        /// <summary>
         /// Returns the product in Json Format with specific Name
         /// </summary>
         /// <param name="productName">Name of the product</param>
@@ -33,6 +58,50 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
+        /// <summary>
+        /// Returns specific product in Json Format with specific ID
+        /// </summary>
+        /// <param name="productID">Name of the product</param>
+        /// <returns></returns>
+        public static string GetProductByID(int productID)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                            where p.productId == productID
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                p.description,
+                                p.price,
+                                p.stock,
+                                p.date
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+
+        /// <summary>
+        /// Returns ALL Catagory NAMES
+        /// </summary>
+        /// <returns></returns>
+        private static string GetAllCategoryNames()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from b in db.Category
+                            select b.name;
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
+
+
+
 
 
         /// <summary>

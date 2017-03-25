@@ -22,7 +22,12 @@ namespace EhandelGrupp1
 
 
 
-        //takes user input as param returns user as json if email and password is correct if not returns "empty" json
+        /// <summary>
+        /// Returns the USER if login is correct (email/password)
+        /// </summary>
+        /// <param name="email">Email of customer</param>
+        /// <param name="password">Password of customer</param>
+        /// <returns></returns>
         private  string ValidateLogin(string email, string password)
         {
             using (var db = new EHandel())
@@ -44,58 +49,11 @@ namespace EhandelGrupp1
             }
         }
 
-        //returns the json of PRODUCT with ID
-        private static string GetProductById(int id)
-        {
-            using (var db = new EHandel())
-            {
-                var query = from p in db.Product
-                            where p.productId == id
-                            select new
-                            {
-                                p.productId,
-                                p.name,
-                                p.description,
-                                p.price,
-                                p.stock,
-                                p.date
-                            };
+        
 
-                return ObjTooJson.ObjToJson(query);
-            }
-        }
+        
 
-        //returns ALL products ( json )
-        private static string GetAllProducts()
-        {
-            using (var db = new EHandel())
-            {
-                var query = from p in db.Product
-                            select new
-                            {
-                                p.productId,
-                                p.name,
-                                p.description,
-                                p.price,
-                                p.stock,
-                                p.date
-                            };
-
-                return ObjTooJson.ObjToJson(query);
-            }
-        }
-
-        //returns ALL catagory names as json
-        private static string GetAllCategoryNames()
-        {
-            using (var db = new EHandel())
-            {
-                var query = from b in db.Category
-                            select b.name;
-
-                return ObjTooJson.ObjToJson(query);
-            }
-        }
+   
 
 
 
