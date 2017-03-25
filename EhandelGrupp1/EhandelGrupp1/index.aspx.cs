@@ -23,6 +23,7 @@ namespace EhandelGrupp1
 
             //var test1 = DataManagement.GetCustomerByEmail("test@testsson.com");
 
+            //var testing = DataManagement.GetAllCustomers();
 
         }
 

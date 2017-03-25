@@ -210,7 +210,25 @@ namespace EhandelGrupp1
 
                 return ObjTooJson.ObjToJson(query);
             }      
-        }        
+        }    
+        
+        public static string GetAllCustomers()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from c in db.Customer
+                            select new
+                            {
+                                c.userId,
+                                c.email,
+                                c.firstname,
+                                c.lastname,
+                                c.isAdmin,
+                                c.password,
+                            };
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
     }
 
 }
