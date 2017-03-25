@@ -19,7 +19,7 @@ namespace EhandelGrupp1
             //int userID = DataManagement.CreateCustomer("hakan@kvarnskogen.st", "Håkan", "Johansson", "0", "Kalle");
 
             //Gets all products from specific category
-            //var tests = DataManagement.GetAllProductsFromCategory("Övrigt");
+            var tests = DataManagement.GetAllProductsFromCategory("Övrigt");
         }
 
 

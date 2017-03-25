@@ -23,7 +23,15 @@ namespace EhandelGrupp1
                     join ctp in db.CategoryToProduct on p.productId equals ctp.productId
                     join c in db.Category on ctp.categoryId equals c.categoryId
                     where c.name == category
-                    select p;
+                    select new
+                    {
+                        p.productId,
+                        p.name,
+                        p.description,
+                        p.price,
+                        p.stock,
+                        p.date
+                    };
                 
                             
                 return ObjTooJson.ObjToJson(query.ToList());
