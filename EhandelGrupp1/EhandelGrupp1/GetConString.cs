@@ -19,7 +19,7 @@ namespace EhandelGrupp1
         }
 
 
-        public static string GetCPW()
+        public static string GetCpw()
         {
             var path = @"C:\temp\HiddenSettingsJustpw.config";
             using (StreamReader reader = new StreamReader(path))

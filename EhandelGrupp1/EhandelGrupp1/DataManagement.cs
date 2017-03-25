@@ -13,7 +13,7 @@ namespace EhandelGrupp1
         /// Returns ALL products as JSON
         /// </summary>
         /// <returns></returns>
-        private static string GetAllProducts()
+        public static string GetAllProducts()
         {
             using (var db = new EHandel())
             {
@@ -88,7 +88,7 @@ namespace EhandelGrupp1
         /// Returns ALL Catagory NAMES
         /// </summary>
         /// <returns></returns>
-        private static string GetAllCategoryNames()
+        public static string GetAllCategoryNames()
         {
             using (var db = new EHandel())
             {
@@ -115,14 +115,16 @@ namespace EhandelGrupp1
         /// <returns></returns>
         public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password)
         {
-            
-            Customer c = new Customer();
 
-            c.email = email;
-            c.firstname = firstname;
-            c.lastname = lastname;
-            c.isAdmin = isAdmin;
-            c.password = password;
+            Customer c = new Customer
+            {
+                email = email,
+                firstname = firstname,
+                lastname = lastname,
+                isAdmin = isAdmin,
+                password = password
+            };
+
 
             using (var db = new EHandel())
             {
