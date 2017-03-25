@@ -8,12 +8,18 @@ namespace EhandelGrupp1
 {
     public class DataManagement
     {
-        public static string GetProductByName(string name)
+
+        /// <summary>
+        /// Returns the product in Json Format with specific Name
+        /// </summary>
+        /// <param name="productName">Name of the product</param>
+        /// <returns></returns>
+        public static string GetProductByName(string productName)
         {
             using (var db = new EHandel())
             {
                 var query = from p in db.Product
-                            where p.name == name
+                            where p.name == productName
                             select new
                             {
                                 p.productId,
@@ -28,9 +34,19 @@ namespace EhandelGrupp1
             }
         }
 
+
+        /// <summary>
+        /// Creates a new customer returns the user ID
+        /// </summary>
+        /// <param name="email">Email Of Customer</param>
+        /// <param name="firstname">Firstname Of Customer</param>
+        /// <param name="lastname">Lastname Of Customer</param>
+        /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
+        /// <param name="password">Password of Customer</param>
+        /// <returns></returns>
         public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password)
         {
-
+            
             Customer c = new Customer();
 
             c.email = email;
@@ -47,6 +63,16 @@ namespace EhandelGrupp1
 
             return c.userId;
         }
+
+        /// <summary>
+        /// Updates an existing Customer
+        /// </summary>
+        /// <param name="userID">userID of customer</param>
+        /// <param name="email">Email Of Customer</param>
+        /// <param name="firstname">Firstname Of Customer</param>
+        /// <param name="lastname">Lastname Of Customer</param>
+        /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
+        /// <param name="password">Password of Customer</param>
         public static void UpdateCustomer(int userID, string email, string firstname, string lastname, string isAdmin, string password)
         {
             using (var db = new EHandel()) //använda databasen
