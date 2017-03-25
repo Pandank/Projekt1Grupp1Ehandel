@@ -191,6 +191,26 @@ namespace EhandelGrupp1
             }
         }
 
+        //Returns specific customer in Json by email //CS
+        public static string GetCustomerByEmail(string email)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from c in db.Customer
+                            where c.email == email
+                            select new
+                            {
+                                c.userId,
+                                c.email,
+                                c.firstname,
+                                c.lastname,
+                                c.isAdmin,
+                                c.password,   
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }      
+        }        
     }
 
 }

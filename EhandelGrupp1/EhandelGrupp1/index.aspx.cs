@@ -20,6 +20,10 @@ namespace EhandelGrupp1
 
             //Gets all products from specific category
             var tests = DataManagement.GetAllProductsFromCategory("Övrigt");
+
+            //var test1 = DataManagement.GetCustomerByEmail("test@testsson.com");
+
+
         }
 
 
