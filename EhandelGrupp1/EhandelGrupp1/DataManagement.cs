@@ -13,7 +13,7 @@ namespace EhandelGrupp1
         /// <summary>
         /// Returns ALL products from specific CATEGORY
         /// </summary>
-        /// <param name="category"></param>
+        /// <param name="category">Category to get products from</param>
         /// <returns></returns>
         public static string GetAllProductsFromCategory(string category)
         {
