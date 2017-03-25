@@ -9,6 +9,27 @@ namespace EhandelGrupp1
     public class DataManagement
     {
 
+
+        /// <summary>
+        /// Returns ALL products from specific CATEGORY
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        public static string GetAllProductsFromCategory(string category)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                    join c in db.Category on ctp.categoryId equals c.categoryId
+                    where c.name == category
+                    select p;
+                
+                            
+                return ObjTooJson.ObjToJson(query.ToList());
+            }
+        }
+
         /// <summary>
         /// Returns ALL products as JSON
         /// </summary>
@@ -94,7 +115,7 @@ namespace EhandelGrupp1
             {
                 var query = from b in db.Category
                             select b.name;
-                §
+                
                 return ObjTooJson.ObjToJson(query);
             }
         }
