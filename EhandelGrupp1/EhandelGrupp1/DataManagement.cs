@@ -94,7 +94,7 @@ namespace EhandelGrupp1
             {
                 var query = from b in db.Category
                             select b.name;
-
+                §
                 return ObjTooJson.ObjToJson(query);
             }
         }
@@ -113,7 +113,7 @@ namespace EhandelGrupp1
         /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
         /// <param name="password">Password of Customer</param>
         /// <returns></returns>
-        public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password)
+        public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password) //CS
         {
 
             Customer c = new Customer
@@ -144,7 +144,7 @@ namespace EhandelGrupp1
         /// <param name="lastname">Lastname Of Customer</param>
         /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
         /// <param name="password">Password of Customer</param>
-        public static void UpdateCustomer(int userID, string email, string firstname, string lastname, string isAdmin, string password)
+        public static void UpdateCustomer(int userID, string email, string firstname, string lastname, string isAdmin, string password) //Vi får eventuellt dela upp beroende på hur vi vill uppdatera kunden. CS
         {
             using (var db = new EHandel()) //använda databasen
             {

@@ -16,7 +16,7 @@ namespace EhandelGrupp1
             string email = "admin";
             string password = "admin";
             var test = ValidateLogin(email,password);
-            int userID = DataManagement.CreateCustomer("hakan@kvarnskogen.st", "Håkan", "Johansson", "0", "Kalle");
+            //int userID = DataManagement.CreateCustomer("hakan@kvarnskogen.st", "Håkan", "Johansson", "0", "Kalle");
         }
 
 
