@@ -33,6 +33,8 @@ namespace EhandelGrupp1.EF
 
         public DateTime date { get; set; }
 
+        public byte? isHidden { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CategoryToProduct> CategoryToProduct { get; set; }
 
