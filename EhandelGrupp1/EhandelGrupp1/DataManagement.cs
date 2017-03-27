@@ -2,12 +2,60 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Web;
 
 namespace EhandelGrupp1
 {
     public static class DataManagement
     {
+
+        /// <summary>
+        /// Returns order by order id
+        /// </summary>
+        /// <param name="orderID">ID of the order</param>
+        /// <returns></returns>
+        public static string GetOrderByID(int orderID)
+        {
+            using (var db = new EHandel())
+            {
+                
+                var query = from p in db.Product
+                            join obp in db.OrdersByProduct on p.productId equals obp.productId
+                            where obp.orderId == orderID
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                obp.count,
+                                obp.price,
+
+                            };
+                return ObjTooJson.ObjToJson(query.ToList());
+            }
+        }
+
+        /// <summary>
+        /// returns all order by CUSTOMER ID
+        /// </summary>
+        /// <param name="userID">ID of CUSTOMER to get orders</param>
+        /// <returns></returns>
+        public static string GetAllOdersByCustomerID(int userID)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from o in db.Orders
+                            where o.userId == userID
+                            select new
+                            {
+                                o.orderId,
+                                o.date,
+                                o.status
+                            };
+                return ObjTooJson.ObjToJson(query.ToList());
+            }
+        }
+
         /// <summary>
         /// Returns the USER if login is correct (email/password)
         /// </summary>
@@ -30,6 +78,8 @@ namespace EhandelGrupp1
                                 u.lastname,
                                 u.Address,
                             };
+
+
 
                 return ObjTooJson.ObjToJson(query);
             }
@@ -76,27 +126,26 @@ namespace EhandelGrupp1
         /// <summary>
         /// Returns ALL products from specific CATEGORY
         /// </summary>
-        /// <param name="category">Category to get products from</param>
+        /// <param name="categoryID">CategoryID to get products from</param>
         /// <returns></returns>
-        public static string GetAllProductsFromCategory(string category)
+        public static string GetAllProductsFromCategory(int categoryID)
         {
             using (var db = new EHandel())
             {
                 var query = from p in db.Product
-                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
-                    join c in db.Category on ctp.categoryId equals c.categoryId
-                    where c.name == category
-                    select new
-                    {
-                        p.productId,
-                        p.name,
-                        p.description,
-                        p.price,
-                        p.stock,
-                        p.date
-                    };
-                
-                            
+                            join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                            join c in db.Category on ctp.categoryId equals c.categoryId
+                            where c.categoryId == categoryID
+                            select new
+                            {
+                                p.productId,
+                                p.name,
+                                p.description,
+                                p.price,
+                                p.stock,
+                                p.date
+                            };
+
                 return ObjTooJson.ObjToJson(query.ToList());
             }
         }
@@ -186,7 +235,7 @@ namespace EhandelGrupp1
             {
                 var query = from b in db.Category
                             select b.name;
-                
+
                 return ObjTooJson.ObjToJson(query);
             }
         }
@@ -242,7 +291,7 @@ namespace EhandelGrupp1
             {
                 Customer cust = db.Customer.FirstOrDefault(c => c.userId == userID); //Hitta första som matchar userID
 
-                if(cust != null)
+                if (cust != null)
                 {
                     cust.email = email;
                     cust.firstname = firstname;
@@ -268,13 +317,13 @@ namespace EhandelGrupp1
                                 c.firstname,
                                 c.lastname,
                                 c.isAdmin,
-                                c.password,   
+                                c.password,
                             };
 
                 return ObjTooJson.ObjToJson(query);
-            }      
-        }    
-        
+            }
+        }
+
         public static string GetAllCustomers()
         {
             using (var db = new EHandel())
