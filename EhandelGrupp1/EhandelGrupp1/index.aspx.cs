@@ -18,10 +18,11 @@ namespace EhandelGrupp1
                 // visa produkt
                 var product = DataManagement.GetProductByIDo(int.Parse(Request["id"]));
 
+                if (product == null) return;
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
                 productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
-                productInfo += "<p><span class='price'>" + product.price + "</span> kr</p>";
+                productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                 productInfo += "<input type='number' value='1' id='itemCounter' />";
                 productInfo += "<button type='button' class='btn btn-primary addToCartButton'>Köp</button>";
                 productInfo += "<div class='productDescription'><p>" + product.description + "</p></div>";

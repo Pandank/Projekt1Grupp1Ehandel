@@ -58,7 +58,7 @@
                 <li><a href="index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
                 <li><a href="category-overview.aspx"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
                 <li><a id="userLink" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="loginText" class="navIcon">Logga in</span></a></li>
-                <li><a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span id="itemCount">1</span></a></li>
+                <li><a id="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span id="itemCount"></span></a></li>
             </ul>
         </nav>
         <footer class="footer">

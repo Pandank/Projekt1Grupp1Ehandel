@@ -100,9 +100,13 @@
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="register-account.aspx" />
+    <Content Include="services\svc-allorders.aspx" />
     <Content Include="services\svc-login.aspx" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="TESTSTUFF.aspx" />
+    <Content Include="services\svc-order.aspx" />
+    <Content Include="services\svc-profile.aspx" />
+    <Content Include="services\svc-updatecustomer.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="orderconfirmation.aspx" />
     <None Include="Properties\Settings.settings">
@@ -173,6 +177,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="services\svc-allorders.aspx.cs">
+      <DependentUpon>svc-allorders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-allorders.aspx.designer.cs">
+      <DependentUpon>svc-allorders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="services\svc-login.aspx.cs">
       <DependentUpon>svc-login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -180,12 +191,33 @@
     <Compile Include="services\svc-login.aspx.designer.cs">
       <DependentUpon>svc-login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="services\svc-order.aspx.cs">
+      <DependentUpon>svc-order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-order.aspx.designer.cs">
+      <DependentUpon>svc-order.aspx</DependentUpon>
+    </Compile>
     <Compile Include="services\svc-product.aspx.cs">
       <DependentUpon>svc-product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="services\svc-product.aspx.designer.cs">
       <DependentUpon>svc-product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-profile.aspx.cs">
+      <DependentUpon>svc-profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-profile.aspx.designer.cs">
+      <DependentUpon>svc-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-updatecustomer.aspx.cs">
+      <DependentUpon>svc-updatecustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-updatecustomer.aspx.designer.cs">
+      <DependentUpon>svc-updatecustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="index.aspx.cs">
@@ -202,12 +234,12 @@
     <Compile Include="register-account.aspx.designer.cs">
       <DependentUpon>register-account.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TESTSTUFF.aspx.cs">
-      <DependentUpon>TESTSTUFF.aspx</DependentUpon>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TESTSTUFF.aspx.designer.cs">
-      <DependentUpon>TESTSTUFF.aspx</DependentUpon>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="userprofile.aspx.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
