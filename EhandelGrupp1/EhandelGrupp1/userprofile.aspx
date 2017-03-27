@@ -10,44 +10,44 @@
         <div class="well well-sm">
             <div class="form-group">
                 <label for="firstname">Förnamn:</label>
-                <input type="text" class="form-control" value="firstname db" id="editfirstname">
+                <input type="text" class="form-control" id="editfirstname">
             </div>
             <div class="form-group">
                 <label for="lastname">Efternamn:</label>
-                <input type="text" class="form-control" value="lastname db" id="editlastname">
+                <input type="text" class="form-control" id="editlastname">
             </div>
             <div class="form-group">
                 <label for="email">E-post:</label>
-                <input type="email" class="form-control" value="email db" id="editemail">
+                <input type="email" class="form-control" id="editemail">
             </div>
             <div class="form-group">
                 <label for="street">Gata:</label>
-                <input type="text" class="form-control" value="street db" id="editstreet">
+                <input type="text" class="form-control" id="editstreet">
             </div>
             <div class="form-group">
                 <label for="zip">Postnummer:</label>
-                <input type="text" class="form-control" value="zip db" id="editzip">
+                <input type="text" class="form-control" id="editzip">
             </div>
             <div class="form-group">
                 <label for="city">Stad:</label>
-                <input type="text" class="form-control" value="city db" id="editcity">
+                <input type="text" class="form-control" id="editcity">
             </div>
             <div class="form-group">
                 <label for="country">Land:</label>
-                <input type="text" class="form-control" value="country db" id="editcountry">
+                <input type="text" class="form-control" id="editcountry">
             </div>
-            <button type="submit" class="btn btn-info btn-xs">Uppdatera användare</button>
+            <button type="button" class="btn btn-info btn-xs" id="updateUser">Uppdatera användare</button>
         </div>
 
        
         <div class="well well-sm">
             <div class="form-group">
                 <label for="password">Nuvarande lösenord:</label>
-                <input type="password" value="*********" class="form-control" id="currentpassword">
+                <input type="password" class="form-control" id="currentpassword">
             </div>
             <div class="form-group">
                 <label for="password">Nytt lösenord:</label>
-                <input type="password" value="*********" class="form-control" id="newpassword">
+                <input type="password" class="form-control" id="newpassword">
             </div>
             <button type="submit" class="btn btn-info btn-xs">Uppdatera lösenord</button>
         </div>
