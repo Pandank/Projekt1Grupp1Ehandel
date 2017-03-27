@@ -273,8 +273,30 @@ namespace EhandelGrupp1
 
                 return ObjTooJson.ObjToJson(query);
             }      
-        }    
-        
+        }
+
+        //Returns specific customer in Json by userId
+
+        public static string GetCustomerByID(int userId)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from c in db.Customer
+                            where c.userId == userId
+                            select new
+                            {
+                                c.userId,
+                                c.email,
+                                c.firstname,
+                                c.lastname,
+                                c.isAdmin,
+                                c.password,
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
         public static string GetAllCustomers()
         {
             using (var db = new EHandel())
@@ -311,5 +333,24 @@ namespace EhandelGrupp1
                 db.SaveChanges();
             }
         }
+
+
+        public static string GetAllOrders()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from o in db.Orders
+                            select new
+                            {
+                                o.orderId,
+                                o.date,
+                                o.status,
+                                o.userId,
+
+                            };
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
+
     }
 }
