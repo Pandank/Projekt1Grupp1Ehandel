@@ -28,9 +28,10 @@
     $('#userLink').click(function () {
         // om användaren är inloggad ska den skickas till kontosidan
         if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
-            $('#userLink').prop('href', '');
+            $('#userLink').prop('href', 'userprofile.aspx');
+            window.location.href = 'userprofile.aspx';
         }
-            // om användaren inte är inloggaf ska inloggningsfönstret öppnas
+            // om användaren inte är inloggad ska inloggningsfönstret öppnas
         else {
             $('#userLink').prop('href', '#loginModal');
         }
@@ -257,6 +258,15 @@
         }
     });
 
+    /***********************************
+    PROFILSIDA
+    ***********************************/
+    if ($('#profilePage').length > 0) {
+        console.log("Profil")
+    }
+    else {
+        console.log("inte profil")
+    }
 
 
     /***********************************

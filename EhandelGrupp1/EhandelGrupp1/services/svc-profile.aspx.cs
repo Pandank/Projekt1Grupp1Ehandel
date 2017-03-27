@@ -12,9 +12,9 @@ namespace EhandelGrupp1.services
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Request["userId"]))
+            if (!string.IsNullOrEmpty(Request["id"]))
             {
-                var user = DataManagement.GetCustomerByID(int.Parse(Request["userId"]));
+                var user = DataManagement.GetCustomerByID(int.Parse(Request["id"]));
                 LiteralProfile.Text = user;
             }
         }
