@@ -5,7 +5,7 @@
         if (localStorage.getItem('isAdmin') == 1 || sessionStorage.getItem('isAdmin') == 1) {
             loginAdmin();
         }
-        // om användaren inte är administratör
+            // om användaren inte är administratör
         else {
             loginUser();
         }
@@ -27,7 +27,7 @@
         if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
             $('#userLink').prop('href', '');
         }
-        // om användaren inte är inloggaf ska inloggningsfönstret öppnas
+            // om användaren inte är inloggaf ska inloggningsfönstret öppnas
         else {
             $('#userLink').prop('href', '#loginModal');
         }
@@ -68,7 +68,7 @@
                     email: email,
                     password: password
                 }
-            }).done(function(result) {
+            }).done(function (result) {
                 console.log(result)
                 if (result.length != 0) {
                     // om användaren har bockat för "Kom ihåg mig" sätt localStorage
@@ -76,7 +76,7 @@
                         localStorage.setItem('userId', result[0].userId);
                         localStorage.setItem('isAdmin', result[0].isAdmin);
                     }
-                    // om användaren inte vill bli ihågkommen sätt sessionStorage
+                        // om användaren inte vill bli ihågkommen sätt sessionStorage
                     else {
                         sessionStorage.setItem('userId', result[0].userId);
                         sessionStorage.setItem('isAdmin', result[0].isAdmin);
@@ -91,7 +91,7 @@
                     if (result[0].isAdmin == 1) {
                         loginAdmin();
                     }
-                    // om användaren inte är admin
+                        // om användaren inte är admin
                     else {
                         loginUser();
                     }
@@ -160,22 +160,47 @@
     $('.addToCartButton').click(function () {
         // Läs in produkt-id
         var id = $(this).parent().prop('id');
-        // Läs in produktnamn
-        var productName = $('#' + id + ' h2').text();
         // Antal produkter
         var counter = $('#itemCounter').val();
         // Läs in pris
         var price = $('#' + id + ' .price').text();
-        // Räkna ut summa
-        var sum = counter * price;
-        // Funktion: lägg till produktsumma till resterande varukorg
-        // Öka varukorg-counter med 1
-        addToCart(id, productName, counter, price, sum);
-        // Lägg till html i varukorg
+        jsPrice = price.replace(',', '.');
+
+        // om produkten redan finns i varukorgen, öka på antalet och summa
+        if ($('#cartProduct_' + id).length) {
+            var oldCounter = $('#cartProduct_' + id + ' .productCounter').val();
+            newCounter = counter * 1 + oldCounter * 1;
+
+        }
+        // lägg till i varukorgen
+        else {
+            // Läs in produktnamn
+            var productName = $('#' + id + ' h2').text();
+
+            // Räkna ut summa
+            var sum = counter * jsPrice;
+            sum = sum.toString();
+            sum = sum.replace('.', ',');
+            // Öka varukorg-counter med 1
+
+            // Funktion: lägg till produktsumma till resterande varukorg
+            addToCart(id, productName, counter, price, sum);
+        }
+        
+        
+        
     });
 
     function addToCart(id, productName, counter, price, sum) {
-        
+        var cartItem = '<div id="cartProduct_' + id + '">';
+        cartItem += '<input class="productCounter" type="number" value="' + counter + '" />';
+        cartItem += '<span>' + productName + '</span>';
+        cartItem += '<span>' + price + '</span>';
+        cartItem += '<span>' + sum + '</span>';
+        cartItem += '<p>Totalsumma: </p>';
+        cartItem += '</div>';
+
+        $('.modal-body').append(cartItem);
     }
 });
 
