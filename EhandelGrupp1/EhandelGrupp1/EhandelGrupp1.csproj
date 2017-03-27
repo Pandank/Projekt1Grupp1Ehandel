@@ -101,6 +101,7 @@
     <Content Include="register-account.aspx" />
     <Content Include="services\svc-login.aspx" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="TESTSTUFF.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="register-account.aspx.designer.cs">
       <DependentUpon>register-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TESTSTUFF.aspx.cs">
+      <DependentUpon>TESTSTUFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TESTSTUFF.aspx.designer.cs">
+      <DependentUpon>TESTSTUFF.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
