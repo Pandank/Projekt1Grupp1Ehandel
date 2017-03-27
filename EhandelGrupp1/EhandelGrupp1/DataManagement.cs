@@ -158,28 +158,20 @@ namespace EhandelGrupp1
             {
 
 
-                var query = (from p in db.Product
-                            join ctp in db.CategoryToProduct on p.productId equals ctp.productId
-                            join c in db.Category on ctp.categoryId equals c.categoryId
-                            where c.categoryId == categoryID
-                            select new Product()
-                            {
-                                productId = p.productId,
-                                name = p.name,
-                                description = p.description,
-                                price = p.stock,
-                                date = p.date
-                            }).ToList()
-                    .Select(p => new Product()
+                var query = from p in db.Product
+                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                    join c in db.Category on ctp.categoryId equals c.categoryId
+                    where c.categoryId == categoryID
+                    select new Product()
                     {
                         productId = p.productId,
                         name = p.name,
                         description = p.description,
                         price = p.price,
                         stock = p.stock,
-                        date = p.date
-
-                    });
+                        date = p.date,
+                        isHidden = p.isHidden
+                    };
 
                 return query.ToList();
             }
