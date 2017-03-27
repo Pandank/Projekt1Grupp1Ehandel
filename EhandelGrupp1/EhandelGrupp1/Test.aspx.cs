@@ -11,7 +11,7 @@ namespace EhandelGrupp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           var cust = DataManagement.CreateCustomer("kajsa@warg.se", "Kajsa", "Warg", "0", "12321");
         }
     }
 }

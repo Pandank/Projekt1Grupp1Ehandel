@@ -101,6 +101,7 @@
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="register-account.aspx" />
     <Content Include="services\svc-allorders.aspx" />
+    <Content Include="services\svc-createcustomer.aspx" />
     <Content Include="services\svc-login.aspx" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="services\svc-order.aspx" />
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="services\svc-allorders.aspx.designer.cs">
       <DependentUpon>svc-allorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-createcustomer.aspx.cs">
+      <DependentUpon>svc-createcustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-createcustomer.aspx.designer.cs">
+      <DependentUpon>svc-createcustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="services\svc-login.aspx.cs">
       <DependentUpon>svc-login.aspx</DependentUpon>
