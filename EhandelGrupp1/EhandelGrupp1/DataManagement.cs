@@ -84,7 +84,17 @@ namespace EhandelGrupp1
         }
 
         //Creates a new Product, returns Product ID //CS
-        public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date)
+        /// <summary>
+        /// Creates a new PRODUCT returns product ID
+        /// </summary>
+        /// <param name="name">Name of product</param>
+        /// <param name="description">Product description</param>
+        /// <param name="price">price of product</param>
+        /// <param name="stock">Stock</param>
+        /// <param name="date">datetime of time when product was added</param>
+        /// <param name="isHidden"> null or 0 for not hidden set to 1 to hide product</param>
+        /// <returns>Returns the product ID</returns>
+        public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date, byte isHidden)
         {
             Product p = new Product
             {
@@ -93,6 +103,7 @@ namespace EhandelGrupp1
                 price = price,
                 stock = stock,
                 date = date,
+                isHidden = isHidden
 
             };
             using (var db = new EHandel())
@@ -186,6 +197,42 @@ namespace EhandelGrupp1
             }
         }
 
+        /// <summary>
+        /// Get 5 Latest products added
+        /// </summary>
+        /// <returns></returns>
+        public static List<Product> GetLatestAdded()
+        {
+            using (var db = new EHandel())
+            {
+                var query = (from p in db.Product
+                             orderby p.date descending
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
+                    {
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).Take(5).ToList();
+
+                return query;
+
+            }
+        }
+
 
 
 
@@ -254,17 +301,27 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-                var query = from p in db.Product
-                            where p.name == productName
-                            select new
-                            {
-                                p.productId,
-                                p.name,
-                                p.description,
-                                p.price,
-                                p.stock,
-                                p.date
-                            };
+                var query = (from p in db.Product
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
+                    {
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).ToList();
 
                 return ObjTooJson.ObjToJson(query);
             }
@@ -448,7 +505,17 @@ namespace EhandelGrupp1
         }
 
         //Updates specific product by ID
-        public static void UpdateProduct(int productId, string name, string description, decimal price, int stock, DateTime date)
+        /// <summary>
+        /// Updates the product selected by productID
+        /// </summary>
+        /// <param name="productId">ID of product to edit</param>
+        /// <param name="name">Name of product</param>
+        /// <param name="description">Product description</param>
+        /// <param name="price">price of product</param>
+        /// <param name="stock">Stock</param>
+        /// <param name="date">datetime of time when product was added</param>
+        /// <param name="isHidden"> null or 0 for not hidden set to 1 to hide product</param>
+        public static void UpdateProduct(int productId, string name, string description, decimal price, int stock, DateTime date,byte isHidden)
         {
             using (var db = new EHandel())
             {
@@ -461,6 +528,7 @@ namespace EhandelGrupp1
                     prod.price = price;
                     prod.stock = stock;
                     prod.date = date;
+                    prod.isHidden = isHidden;
                 }
                 db.SaveChanges();
             }

@@ -104,6 +104,7 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="services\svc-profile.aspx" />
     <Content Include="TESTSTUFF.aspx" />
+    <Content Include="userprofile.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="TESTSTUFF.aspx.designer.cs">
       <DependentUpon>TESTSTUFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprofile.aspx.designer.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

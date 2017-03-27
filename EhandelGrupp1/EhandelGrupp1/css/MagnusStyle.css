@@ -4,7 +4,7 @@
 
 /*https://color.adobe.com/sv/KAB-color-theme-9372738/*/
 
-input[type=number]{
+input[type="number"]{
     width: 20%;
     font-weight: bold;
 }
