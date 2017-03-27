@@ -170,8 +170,13 @@
         var sum = counter * price;
         // Funktion: lägg till produktsumma till resterande varukorg
         // Öka varukorg-counter med 1
+        addToCart(id, productName, counter, price, sum);
         // Lägg till html i varukorg
     });
+
+    function addToCart(id, productName, counter, price, sum) {
+        
+    }
 });
 
 /* Hämta url-parameter */
