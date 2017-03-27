@@ -202,6 +202,7 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
+                //Product prod = db.Product.FirstOrDefault(p => p.productId == productID);
                 var query = from p in db.Product
                             where p.productId == productID
                             select new
@@ -215,8 +216,29 @@ namespace EhandelGrupp1
                             };
 
                 return ObjTooJson.ObjToJson(query);
+                
             }
         }
+
+        /// <summary>
+        /// returns the PRODUCT OBJECT
+        /// </summary>
+        /// <param name="productID">ID of the product</param>
+        /// <returns></returns>
+        public static Product GetProductByIDo(int productID)
+        {
+            using (var db = new EHandel())
+            {
+                Product prod = db.Product.FirstOrDefault(p => p.productId == productID);
+
+                return prod;
+            }
+        }
+
+
+
+
+
 
         /// <summary>
         /// Returns ALL Catagory NAMES
