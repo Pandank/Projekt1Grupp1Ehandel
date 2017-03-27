@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+    var cCounter = sessionStorage.getItem('cartCounter');
+    $('#itemCount').text(cCounter);
+
     // om användaren är inloggad visa funktioner för inloggade
     if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
         // kolla om användaren är administratör
@@ -130,6 +133,15 @@
     });
 
     /***********************************
+    VARUKORG
+    ***********************************/
+    /* Klick på varukorg */
+    $('#cartButton').click(function () {
+        
+    });
+
+
+    /***********************************
     PRODUKTSIDA
     ***********************************/
     /* Klick på produkt-länk */
@@ -177,21 +189,34 @@
             newCounter = counter * 1 + oldCounter * 1;
             $('#cartProduct_' + id + ' .productCounter').val(newCounter);
             // Summa
-            var oldSum = $('#cartProduct_' + id + ' .productSum').text();
-            console.log(oldSum)
-            oldSum = oldSum.replace(',', '.');
+            //var oldSum = $('#cartProduct_' + id + ' .productSum').text();
+            //console.log('#cartProduct_' + id + ' .productSum')
+            //oldSum = oldSum.replace(',', '.');
+            //console.log(oldSum * 1)
 
-            console.log(oldSum)
-            var newSum = sum * 1 + oldSum * 1;
-            $('#cartProduct_' + id + ' .productSum').text(newSum);
+            //var newSum = sum * 1 + oldSum * 1;
+            //console.log(newSum)
+            //$('#cartProduct_' + id + ' .productSum').text(newSum);
         }
         // lägg till i varukorgen
         else {
             // Läs in produktnamn
             var productName = $('#' + id + ' h2').text();
 
-            
             // Öka varukorg-counter med 1
+            $('#itemCount').css('display', 'block');
+            var cartCounter = $('#itemCount').text();
+            cartCounter = cartCounter * 1;
+            cartCounter++;
+            $('#itemCount').text(cartCounter);
+
+            sessionStorage.setItem('cartCounter', cartCounter);
+            sessionStorage.setItem('product', counter);
+
+            sessionStorage.setItem('productCounter', counter);
+            sessionStorage.setItem('productName', productName);
+            sessionStorage.setItem('productPrice', price);
+            sessionStorage.setItem('productSum', sum);
 
             // Funktion: lägg till produktsumma till resterande varukorg
             addToCart(id, productName, counter, price, sumString);
