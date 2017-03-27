@@ -18,6 +18,7 @@ namespace EhandelGrupp1
                 // visa produkt
                 var product = DataManagement.GetProductByIDo(int.Parse(Request["id"]));
 
+                if (product == null) return;
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
                 productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
