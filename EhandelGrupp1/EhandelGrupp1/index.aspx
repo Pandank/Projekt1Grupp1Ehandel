@@ -8,7 +8,7 @@
         <asp:Literal ID="LiteralStart" runat="server"></asp:Literal>
         <asp:Literal ID="LiteralCategory" runat="server"></asp:Literal>
         <asp:Literal ID="LiteralProduct" runat="server"></asp:Literal>
-        <div class="row">
+<%--        <div class="row">
             <div class="col-sm-12"></div>
             <h2 class="h2">Nyheter</h2>
         </div>
@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col-sm-12">.col-sm-12</div>
-        </div>
+        </div>--%>
     </div>
 
 </asp:Content>

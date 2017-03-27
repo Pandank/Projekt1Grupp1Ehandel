@@ -98,7 +98,6 @@
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap-theme.css.map" />
-    <Content Include="product.aspx" />
     <Content Include="register-account.aspx" />
     <Content Include="services\svc-login.aspx" />
     <Content Include="ClassDiagram1.cd" />
@@ -184,13 +183,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="product.aspx.cs">
-      <DependentUpon>product.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="product.aspx.designer.cs">
-      <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="register-account.aspx.cs">
       <DependentUpon>register-account.aspx</DependentUpon>
