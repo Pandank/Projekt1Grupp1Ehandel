@@ -1,5 +1,3 @@
-using System.Web.Compilation;
-
 namespace EhandelGrupp1.EF
 {
     using System;
@@ -12,7 +10,6 @@ namespace EhandelGrupp1.EF
         public EHandel()
             : base(GetConString.GetCString())
         {
-
         }
 
         public virtual DbSet<Address> Address { get; set; }

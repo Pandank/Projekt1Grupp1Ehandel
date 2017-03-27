@@ -117,7 +117,7 @@
 
     /* Inkl/exkl moms */
     $('#vatButton').click(function () {
-        console.log("SEssion: " + sessionStorage.getItem("userId"))
+        console.log("Session: " + sessionStorage.getItem("userId"))
         console.log("Local: " + localStorage.getItem("userId"))
         if ($('#vatText').text() == 'Inkl. moms') {
             $('#vatText').text('Exkl. moms');
@@ -128,6 +128,33 @@
             // visa priser utan moms
         }
     });
+
+    /***********************************
+    PRODUKTSIDA
+    ***********************************/
+    /* Klick på produkt-länk */
+    $('.product').click(function (e) {
+        // Hämta id
+        var id = $(this).parent().prop('id');
+        // Hämta och skriv ut produkt
+        getProduct(id);
+    });
+
+    /* Hämta och skriv ut produkt */
+    function getProduct(id) {
+        $.getJSON('services/svc-product.aspx?id=' + id)
+        .done(function (result) {
+            var productInfo = '<div id="' + id + '">';
+            productInfo += '<h2 class="h2">' + result[0].name + '</h2>';
+            productInfo += '<img src="img/Papper.jpg" alt="" class="img-responsive" />';
+            productInfo += '<p><span class="price">' + result[0].price + '</span> kr</p>';
+            productInfo += '<input type="number" value="1" id="itemCounter" />';
+            productInfo += '<button type="button" class="btn btn-primary addToCartButton">Köp</button>';
+            productInfo += '<p>' + result[0].description + '</p>';
+            productInfo += '</div>';
+            $('#productSite').append(productInfo);
+        });
+    }
 
     /* Lägg produkt i varukorg */
     $('.addToCartButton').click(function () {
@@ -141,9 +168,24 @@
         var price = $('#' + id + ' .price').text();
         // Räkna ut summa
         var sum = counter * price;
-        console.log(sum)
         // Funktion: lägg till produktsumma till resterande varukorg
         // Öka varukorg-counter med 1
+        addToCart(id, productName, counter, price, sum);
         // Lägg till html i varukorg
     });
+
+    function addToCart(id, productName, counter, price, sum) {
+        
+    }
 });
+
+/* Hämta url-parameter */
+function getUrlParam(name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results == null) {
+        return null;
+    }
+    else {
+        return results[1] || 0;
+    }
+}
