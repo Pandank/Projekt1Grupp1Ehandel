@@ -148,6 +148,39 @@ namespace EhandelGrupp1
         }
 
         /// <summary>
+        /// Returns a LIST of PRODUCTS
+        /// </summary>
+        /// <param name="categoryID">CategoryID to get products from</param>
+        /// <returns></returns>
+        public static List<Product> GetAllProductsFromCategoryO(int categoryID)
+        {
+            using (var db = new EHandel())
+            {
+
+
+                var query = from p in db.Product
+                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                    join c in db.Category on ctp.categoryId equals c.categoryId
+                    where c.categoryId == categoryID
+                    select new Product()
+                    {
+                        productId = p.productId,
+                        name = p.name,
+                        description = p.description,
+                        price = p.stock,
+                        date = p.date
+                    };
+
+                return query.ToList();
+            }
+        }
+
+
+
+
+
+
+        /// <summary>
         /// Returns ALL products as JSON
         /// </summary>
         /// <returns></returns>
