@@ -120,7 +120,6 @@ namespace EhandelGrupp1
             return c.categoryId;
         }
 
-
         /// <summary>
         /// Returns ALL products from specific CATEGORY
         /// </summary>
@@ -169,9 +168,6 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
-
-
-
 
         /// <summary>
         /// Returns the product in Json Format with specific Name
@@ -222,7 +218,6 @@ namespace EhandelGrupp1
             }
         }
 
-
         /// <summary>
         /// Returns ALL Catagory NAMES
         /// </summary>
@@ -233,16 +228,11 @@ namespace EhandelGrupp1
             {
                 var query = from b in db.Category
                             select b.name;
-                
+
                 return ObjTooJson.ObjToJson(query);
             }
         }
-
-
-
-
-
-
+        
         /// <summary>
         /// Creates a new customer returns the user ID
         /// </summary>
@@ -254,7 +244,6 @@ namespace EhandelGrupp1
         /// <returns></returns>
         public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password) //CS
         {
-
             Customer c = new Customer
             {
                 email = email,
@@ -264,13 +253,11 @@ namespace EhandelGrupp1
                 password = password
             };
 
-
             using (var db = new EHandel())
             {
                 db.Customer.Add(c);
                 db.SaveChanges();
             }
-
             return c.userId;
         }
 
@@ -319,8 +306,25 @@ namespace EhandelGrupp1
                             };
 
                 return ObjTooJson.ObjToJson(query);
+            }
+        }
 
-
+        //Returns specific customer in Json by userId
+        public static string GetCustomerByID(int userId)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from c in db.Customer
+                            where c.userId == userId
+                            select new
+                            {
+                                c.userId,
+                                c.email,
+                                c.firstname,
+                                c.lastname,
+                                c.isAdmin,
+                                c.password,
+                            };
 
             }      
         }    
@@ -348,7 +352,7 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-                Product prod = db.Product.FirstOrDefault(p => p.productId == productId); 
+                Product prod = db.Product.FirstOrDefault(p => p.productId == productId);
 
                 if (prod != null)
                 {
@@ -356,12 +360,11 @@ namespace EhandelGrupp1
                     prod.description = description;
                     prod.price = price;
                     prod.stock = stock;
-                    prod.date = date;  
+                    prod.date = date;
                 }
                 db.SaveChanges();
             }
         }
-
 
         public static string GetAllOrders()
         {
@@ -379,6 +382,5 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
-
     }
 }
