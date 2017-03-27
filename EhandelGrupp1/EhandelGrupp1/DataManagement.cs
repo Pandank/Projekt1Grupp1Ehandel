@@ -6,8 +6,34 @@ using System.Web;
 
 namespace EhandelGrupp1
 {
-    public class DataManagement
+    public static class DataManagement
     {
+        /// <summary>
+        /// Returns the USER if login is correct (email/password)
+        /// </summary>
+        /// <param name="email">Email of customer</param>
+        /// <param name="password">Password of customer</param>
+        /// <returns></returns>
+        public static string ValidateLogin(string email, string password)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from u in db.Customer
+                            where u.email == email &&
+                                  u.password == password
+                            select new
+                            {
+                                u.isAdmin,
+                                u.userId,
+                                u.email,
+                                u.firstname,
+                                u.lastname,
+                                u.Address,
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+            }
+        }
 
         //Creates a new Product, returns Product ID //CS
         public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date)

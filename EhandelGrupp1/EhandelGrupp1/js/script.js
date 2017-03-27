@@ -135,12 +135,13 @@
         var id = $(this).parent().prop('id');
         // Läs in produktnamn
         var productName = $('#' + id + ' h2').text();
-        console.log(productName)
         // Antal produkter
         var counter = $('#itemCounter').val();
         // Läs in pris
-        //var price = $('')
+        var price = $('#' + id + ' .price').text();
         // Räkna ut summa
+        var sum = counter * price;
+        console.log(sum)
         // Funktion: lägg till produktsumma till resterande varukorg
         // Öka varukorg-counter med 1
         // Lägg till html i varukorg
