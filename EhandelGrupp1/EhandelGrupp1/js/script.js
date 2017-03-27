@@ -273,7 +273,7 @@
             window.location.href = 'index.aspx';
         }
         // hämta användarens uppgifter
-        $.getJSON('services/svc-profile.aspx?id=' + id)
+        $.getJSON('services/svc-profile.aspx?userId=' + id)
         .done(function (result) {
             console.log(result)
             $('#editfirstname').val(result[0].firstname);
@@ -281,7 +281,7 @@
             $('#editemail').val(result[0].email);
         });
         // hämta användarens adress
-        //$.getJSON('services/svc-addrress.aspx?id=' + id)
+        //$.getJSON('services/svc-addrress.aspx?userId=' + id)
         //.done(function (result) {
         //    console.log(result)
         //    $('#editstreet').val(result[0].street);
@@ -291,9 +291,16 @@
         //});
     }
 
+    /* Uppdatera profiluppgifter */
     $('#updateUser').click(function () {
         console.log("Uppdatera användare")
         // TODO Validera fält
+    });
+
+    /* Uppdatera lösenord */
+    $('#updatePassword').click(function () {
+        console.log("Uppdatera lösenord")
+        // TODO validera lösenordsfälten
     });
 
 
@@ -377,19 +384,14 @@
             $('#itemCount').text(cartCounter);
 
             sessionStorage.setItem('cartCounter', cartCounter);
-            //sessionStorage.setItem('product', counter);
-
-            //sessionStorage.setItem('productCounter', counter);
-            //sessionStorage.setItem('productName', productName);
-            //sessionStorage.setItem('productPrice', price);
-            //sessionStorage.setItem('productSum', sum);
+            var product = new Product(counter, productName, price, sum);
+            sessionStorage.setItem('product', JSON.stringify(product));
+            
+            console.log(sessionStorage.getItem('product'))
 
             // Funktion: lägg till produktsumma till resterande varukorg
             addToCart(id, productName, counter, price, sumString);
         }
-        
-        
-        
     });
 
     function addToCart(id, productName, counter, price, sum) {
@@ -402,6 +404,13 @@
         cartItem += '</div>';
 
         $('.modal-body').append(cartItem);
+    }
+
+    function Product(counter, name, price, sum) {
+        this.counter = counter;
+        this.name = name;
+        this.price = price;
+        this.sum = sum;
     }
 });
 

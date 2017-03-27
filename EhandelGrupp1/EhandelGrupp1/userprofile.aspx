@@ -49,7 +49,7 @@
                 <label for="password">Nytt lösenord:</label>
                 <input type="password" class="form-control" id="newpassword">
             </div>
-            <button type="submit" class="btn btn-info btn-xs">Uppdatera lösenord</button>
+            <button type="button" class="btn btn-info btn-xs" id="updatePassword">Uppdatera lösenord</button>
         </div>
 
         <%--från sql-table dbo orders--%>
