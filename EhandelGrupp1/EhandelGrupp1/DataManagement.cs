@@ -609,13 +609,16 @@ namespace EhandelGrupp1
                 city = city,
                 country = country,
                 userId = userId,
+                
             };
 
             using (var db = new EHandel())
             {
                 db.Address.Add(a);
+                db.SaveChanges();
             }
             return a.addressId;
         }
     }
+
 }
