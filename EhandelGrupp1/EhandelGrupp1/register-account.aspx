@@ -6,44 +6,44 @@
 
     <div class="container">
         <h2>Registrera kundkonto</h2>
-        <div class="form-group">
+        <div class="form-group" id="register-firstname">
             <label for="firstname">Förnamn:</label>
             <input type="text" class="form-control" id="registerfirstname">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="register-lastname">
             <label for="lastname">Efternamn:</label>
             <input type="text" class="form-control" id="registerlastname">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="register-email">
             <label for="email">E-post:</label>
             <input type="email" class="form-control" id="registeremail">
         </div>
-         <div class="form-group">
+         <div class="form-group" id="register-password">
             <label for="password">Lösenord:</label>
             <input type="password" class="form-control" id="registerpassword">
         </div>
-         <div class="form-group">
+         <div class="form-group" id="register-passwordCheck">
             <label for="password">Upprepa lösenord:</label>
             <input type="password" class="form-control" id="verifyregisterpassword">
         </div>     
-        <h3>Leveransadress</h3>   
-        <div class="form-group">
+        <h3>Adress</h3>   
+        <div class="form-group" id="register-street">
             <label for="street">Gata:</label>
             <input type="text" class="form-control" id="registerstreet">
         </div>
-         <div class="form-group">
+         <div class="form-group" id="register-zip">
             <label for="zip">Postnummer:</label>
             <input type="text" class="form-control" id="registerzip">
         </div>
-         <div class="form-group">
+         <div class="form-group" id="register-city">
             <label for="city">Stad:</label>
             <input type="text" class="form-control" id="registercity">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="register-country">
             <label for="country">Land:</label>
             <input type="text" class="form-control" id="registercountry">
         </div>        
-        <button type="submit" class="btn btn-default">Registrera</button>
+        <button type="button" class="btn btn-default" id="registerButton">Registrera</button>
     </div>
 
 </asp:Content>
