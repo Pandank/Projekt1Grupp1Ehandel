@@ -28,9 +28,10 @@
     $('#userLink').click(function () {
         // om användaren är inloggad ska den skickas till kontosidan
         if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
-            $('#userLink').prop('href', '');
+            $('#userLink').prop('href', 'userprofile.aspx');
+            window.location.href = 'userprofile.aspx';
         }
-            // om användaren inte är inloggaf ska inloggningsfönstret öppnas
+            // om användaren inte är inloggad ska inloggningsfönstret öppnas
         else {
             $('#userLink').prop('href', '#loginModal');
         }
@@ -255,6 +256,44 @@
                 }*/
             });
         }
+    });
+
+    /***********************************
+    PROFILSIDA
+    ***********************************/
+    if ($('#profilePage').length > 0) {
+        if (sessionStorage.getItem('userId') != null) {
+            var id = sessionStorage.getItem('userId');
+        }
+        else if (localStorage.getItem('userId') != null) {
+            var id = sessionStorage.getItem('userId');
+        }
+        // om användaren inte är inloggad skickas den till startsidan
+        else {
+            window.location.href = 'index.aspx';
+        }
+        // hämta användarens uppgifter
+        $.getJSON('services/svc-profile.aspx?id=' + id)
+        .done(function (result) {
+            console.log(result)
+            $('#editfirstname').val(result[0].firstname);
+            $('#editlastname').val(result[0].lastname);
+            $('#editemail').val(result[0].email);
+        });
+        // hämta användarens adress
+        //$.getJSON('services/svc-addrress.aspx?id=' + id)
+        //.done(function (result) {
+        //    console.log(result)
+        //    $('#editstreet').val(result[0].street);
+        //    $('#editzip').val(result[0].zip);
+        //    $('#editcity').val(result[0].city);
+        //    $('#editcountry').val(result[0].country);
+        //});
+    }
+
+    $('#updateUser').click(function () {
+        console.log("Uppdatera användare")
+        // TODO Validera fält
     });
 
 
