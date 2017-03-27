@@ -11,7 +11,7 @@ namespace EhandelGrupp1
 {
 
 
-    public partial class WebForm5
+    public partial class Test
     {
     }
 }

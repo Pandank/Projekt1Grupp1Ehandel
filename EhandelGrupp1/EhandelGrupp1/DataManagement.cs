@@ -425,7 +425,7 @@ namespace EhandelGrupp1
         /// <param name="lastname">Lastname Of Customer</param>
         /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
         /// <param name="password">Password of Customer</param>
-        public static void UpdateCustomer(int userID, string email, string firstname, string lastname, string isAdmin, string password) //Vi får eventuellt dela upp beroende på hur vi vill uppdatera kunden. CS
+        public static void UpdateCustomer(int userID, string email, string firstname, string lastname, string isAdmin) //Vi får eventuellt dela upp beroende på hur vi vill uppdatera kunden. CS
         {
             using (var db = new EHandel()) //använda databasen
             {
@@ -437,7 +437,6 @@ namespace EhandelGrupp1
                     cust.firstname = firstname;
                     cust.lastname = lastname;
                     cust.isAdmin = isAdmin;
-                    cust.password = password;
                 }
                 db.SaveChanges();
             }
@@ -565,5 +564,19 @@ namespace EhandelGrupp1
             }
         }
 
+        public static void UpdateCustomerPassword(int userId, string password)
+        {
+            using (var db = new EHandel())
+            {
+
+                Customer cust = db.Customer.FirstOrDefault(c => c.userId == userId); //Hitta första som matchar userID
+
+                if (cust != null)
+                {
+                    cust.password = password;
+                }
+                db.SaveChanges();
+            }
+        }
     }
 }
