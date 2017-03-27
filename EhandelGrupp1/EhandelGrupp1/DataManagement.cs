@@ -578,5 +578,27 @@ namespace EhandelGrupp1
                 db.SaveChanges();
             }
         }
+
+        public static string GetAdressByUserId (int userId)
+        {
+            using (var db = new EHandel())
+            {
+                var query = from a in db.Address
+                            where a.userId == userId
+                            select new
+                            {
+                                a.addressId,
+                                a.street,
+                                a.zip,
+                                a.city,
+                                a.country,
+                                a.userId,
+
+                            };
+
+                return ObjTooJson.ObjToJson(query);
+
+            }
+        }
     }
 }
