@@ -292,5 +292,24 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
+
+        //Updates specific product by ID
+        public static void UpdateProduct(int productId, string name, string description, decimal price, int stock, DateTime date)
+        {
+            using (var db = new EHandel())
+            {
+                Product prod = db.Product.FirstOrDefault(p => p.productId == productId); 
+
+                if (prod != null)
+                {
+                    prod.name = name;
+                    prod.description = description;
+                    prod.price = price;
+                    prod.stock = stock;
+                    prod.date = date;  
+                }
+                db.SaveChanges();
+            }
+        }
     }
 }
