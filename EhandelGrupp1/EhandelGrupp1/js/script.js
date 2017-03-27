@@ -165,26 +165,36 @@
         // Läs in pris
         var price = $('#' + id + ' .price').text();
         jsPrice = price.replace(',', '.');
+        // Räkna ut summa
+        var sum = counter * jsPrice;
+        sumString = sum.toString();
+        sumString = sumString.replace('.', ',');
 
         // om produkten redan finns i varukorgen, öka på antalet och summa
         if ($('#cartProduct_' + id).length) {
+            // Antal
             var oldCounter = $('#cartProduct_' + id + ' .productCounter').val();
             newCounter = counter * 1 + oldCounter * 1;
+            $('#cartProduct_' + id + ' .productCounter').val(newCounter);
+            // Summa
+            var oldSum = $('#cartProduct_' + id + ' .productSum').text();
+            console.log(oldSum)
+            oldSum = oldSum.replace(',', '.');
 
+            console.log(oldSum)
+            var newSum = sum * 1 + oldSum * 1;
+            $('#cartProduct_' + id + ' .productSum').text(newSum);
         }
         // lägg till i varukorgen
         else {
             // Läs in produktnamn
             var productName = $('#' + id + ' h2').text();
 
-            // Räkna ut summa
-            var sum = counter * jsPrice;
-            sum = sum.toString();
-            sum = sum.replace('.', ',');
+            
             // Öka varukorg-counter med 1
 
             // Funktion: lägg till produktsumma till resterande varukorg
-            addToCart(id, productName, counter, price, sum);
+            addToCart(id, productName, counter, price, sumString);
         }
         
         
@@ -195,8 +205,8 @@
         var cartItem = '<div id="cartProduct_' + id + '">';
         cartItem += '<input class="productCounter" type="number" value="' + counter + '" />';
         cartItem += '<span>' + productName + '</span>';
-        cartItem += '<span>' + price + '</span>';
-        cartItem += '<span>' + sum + '</span>';
+        cartItem += '<span class="productPrice">' + price + '</span>';
+        cartItem += '<span class="productSum">' + sum + '</span>';
         cartItem += '<p>Totalsumma: </p>';
         cartItem += '</div>';
 
