@@ -10,7 +10,7 @@
 namespace EhandelGrupp1 {
     
     
-    public partial class WebForm2 {
+    public partial class Index {
         
         /// <summary>
         /// LiteralStart control.

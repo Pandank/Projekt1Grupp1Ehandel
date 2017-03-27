@@ -156,24 +156,33 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-
-
-                var query = from p in db.Product
-                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
-                    join c in db.Category on ctp.categoryId equals c.categoryId
-                    where c.categoryId == categoryID
-                    select new Product()
+                var query = (from p in db.Product
+                             join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                             join c in db.Category on ctp.categoryId equals c.categoryId
+                             where c.categoryId == categoryID
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
                     {
-                        productId = p.productId,
-                        name = p.name,
-                        description = p.description,
-                        price = p.price,
-                        stock = p.stock,
-                        date = p.date,
-                        isHidden = p.isHidden
-                    };
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).ToList();
 
-                return query.ToList();
+
+                return query;
             }
         }
 
@@ -207,23 +216,35 @@ namespace EhandelGrupp1
         ///// returns ALL products as LIST object Product
         ///// </summary>
         ///// <returns></returns>
-        //public static List<Product> GetAllProductsO()
-        //{
-        //    using (var db = new EHandel())
-        //    {
-        //        var query = from p in db.Product
-        //            select new
-        //            {
-        //                productId = p.productId,
-        //                name = p.name,
-        //                description = p.description,
-        //                price = p.price,
-        //                stock = p.stock,
-        //                date = p.date
-        //            };
-        //        return query.ToList();
-        //    }
-        //}
+        public static List<Product> GetAllProductsO()
+        {
+            using (var db = new EHandel())
+            {
+                var query = (from p in db.Product
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
+                    {
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).ToList();
+                return query;
+            }
+        }
+
         /// <summary>
         /// Returns the product in Json Format with specific Name
         /// </summary>

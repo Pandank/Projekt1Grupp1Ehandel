@@ -9,14 +9,14 @@ using Newtonsoft.Json;
 
 namespace EhandelGrupp1
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(Request["id"]))
             {
                 // visa produkt
-                var product = DataManagement.GetProductByIDo(int.Parse(Request["id"].ToString()));
+                var product = DataManagement.GetProductByIDo(int.Parse(Request["id"]));
 
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
@@ -33,18 +33,19 @@ namespace EhandelGrupp1
             {
                 // visa alla produkter i given kategori
                 var products = DataManagement.GetAllProductsFromCategoryO(int.Parse(Request["category"].ToString()));
-                //string name;
                 foreach (var product in products)
                 {
                     LiteralCategory.Text += product.name;
                 }
-                
             }
             else
             {
                 // visa startsidan
-                var products = DataManagement.GetAllProducts();             
-                LiteralStart.Text = products;
+                var products = DataManagement.GetAllProductsO();
+                foreach (var product in products)
+                {
+                    LiteralStart.Text += product.name;
+                }
             }
         }
     }
