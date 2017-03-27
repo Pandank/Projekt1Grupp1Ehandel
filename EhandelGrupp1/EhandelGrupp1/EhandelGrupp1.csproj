@@ -109,6 +109,7 @@
     <Content Include="services\svc-updatecustomer.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="userprofile.aspx" />
+    <Content Include="orderconfirmation.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="userprofile.aspx.designer.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderconfirmation.aspx.cs">
+      <DependentUpon>orderconfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderconfirmation.aspx.designer.cs">
+      <DependentUpon>orderconfirmation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -28,7 +28,7 @@
         </div>     
         <h3>Adress</h3>   
         <div class="form-group" id="register-street">
-            <label for="street">Gata:</label>
+            <label for="street">Gatuadress:</label>
             <input type="text" class="form-control" id="registerstreet">
         </div>
          <div class="form-group" id="register-zip">

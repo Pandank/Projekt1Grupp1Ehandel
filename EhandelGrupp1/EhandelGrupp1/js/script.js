@@ -114,6 +114,10 @@
     /* Visa funktioner för inloggade administratörer */
     function loginAdmin() {
         loginUser();
+        // adminmeny-val
+        var adminMenu = '<li class="admin">Administration</li>';
+        adminMenu += '<li class="admin"><a href="#">Adminfunktioner</a></li>';
+        $('#topNavbar .nav').append(adminMenu);
         console.log('visa funktioner för administratörer')
     }
 
@@ -150,6 +154,7 @@
         var city = $('#registercity').val();
         var country = $('#registercountry').val();
 
+        /* Validera att alla fält i ifyllda */
         if (firstname == '') {
             $('<p class="error">Förnamn saknas</p>').insertAfter('#registerfirstname');
             $('.register-firstname').addClass('has-error');
@@ -176,6 +181,7 @@
             isValid = false;
         }
         else {
+            // kolla att lösenorden överensstämmer med varandra
             if (password != passwordCheck) {
                 $('<p class="error">Lösenorden överensstämmer inte med varandra</p>').insertAfter('#verifyregisterpassword');
                 $('.register-passwordCheck').addClass('has-error');
@@ -202,8 +208,52 @@
             $('.register-country').addClass('has-error');
             isValid = false;
         }
+        // Om formuläret validerar
         if (isValid) {
-            console.log("Validerar")
+            $.getJSON({
+                url: 'services/svc-registeruser.aspx',
+                data: {
+                    firstname: firstname,
+                    lastname: lastname,
+                    email: email,
+                    password: password,
+                    street: street,
+                    zip: zip,
+                    city: city,
+                    country: country
+                }
+            }).done(function (result) {
+                console.log(result)
+                /*if (result.length != 0) {
+                    // om användaren har bockat för "Kom ihåg mig" sätt localStorage
+                    if (rememberMe) {
+                        localStorage.setItem('userId', result[0].userId);
+                        localStorage.setItem('isAdmin', result[0].isAdmin);
+                    }
+                        // om användaren inte vill bli ihågkommen sätt sessionStorage
+                    else {
+                        sessionStorage.setItem('userId', result[0].userId);
+                        sessionStorage.setItem('isAdmin', result[0].isAdmin);
+                    }
+                    // töm fälten
+                    $('#email').val('');
+                    $('#password').val('');
+                    // TODO avbocka
+                    // stäng modal-fönstret
+                    $('#loginModal').modal('hide');
+                    // om användaren är admin
+                    if (result[0].isAdmin == 1) {
+                        loginAdmin();
+                    }
+                        // om användaren inte är admin
+                    else {
+                        loginUser();
+                    }
+                }
+                else {
+                    $('<p class="error">Felaktig inloggning</p>').insertAfter('#loginButton');
+                }*/
+            });
         }
     });
 
