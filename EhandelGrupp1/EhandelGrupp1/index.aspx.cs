@@ -16,21 +16,19 @@ namespace EhandelGrupp1
             {
                 // visa produkt
                 var product = DataManagement.GetProductByID(int.Parse(Request["id"].ToString()));
-                LiteralProduct.Text = "Produkt";
+                LiteralProduct.Text = product;
             }
             else if (!string.IsNullOrEmpty(Request["category"]))
             {
                 // visa alla produkter i given kategori
-                var products = DataManagement.GetAllProductsFromCategory(int.Parse(Request["catId"].ToString()));
-                LiteralCategory.Text = "Kategori";
+                var products = DataManagement.GetAllProductsFromCategory(int.Parse(Request["category"].ToString()));
+                LiteralCategory.Text = products;
             }
             else
             {
-                var products = DataManagement.GetAllProducts();
                 // visa startsidan
-                string productInfo = "";
-                
-                LiteralStart.Text = productInfo;
+                var products = DataManagement.GetAllProducts();                
+                LiteralStart.Text = products;
             }
         }
     }
