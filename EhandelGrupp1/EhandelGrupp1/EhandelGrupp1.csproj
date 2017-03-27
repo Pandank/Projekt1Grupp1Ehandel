@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="services\svc-product.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="services\svc-login.aspx.designer.cs">
       <DependentUpon>svc-login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-product.aspx.cs">
+      <DependentUpon>svc-product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-product.aspx.designer.cs">
+      <DependentUpon>svc-product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="index.aspx.cs">
