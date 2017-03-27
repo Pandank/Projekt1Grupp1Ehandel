@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EhandelGrupp1.EF;
+using Newtonsoft.Json;
 
 namespace EhandelGrupp1
 {
@@ -15,8 +16,14 @@ namespace EhandelGrupp1
             if (!string.IsNullOrEmpty(Request["id"]))
             {
                 // visa produkt
-                var product = DataManagement.GetProductByID(int.Parse(Request["id"].ToString()));
-                LiteralProduct.Text = product;
+                var json = DataManagement.GetProductByID(int.Parse(Request["id"].ToString()));
+                var product = JsonConvert.DeserializeObject(json);
+
+                string productInfo = "<div class='row'>";
+                productInfo += "<h2 class='h2'>" + product + "</h2>";
+                productInfo += "</div>"; // end row
+                // skriv ut produkt
+                LiteralProduct.Text = productInfo;
             }
             else if (!string.IsNullOrEmpty(Request["category"]))
             {
@@ -27,7 +34,7 @@ namespace EhandelGrupp1
             else
             {
                 // visa startsidan
-                var products = DataManagement.GetAllProducts();                
+                var products = DataManagement.GetAllProducts();             
                 LiteralStart.Text = products;
             }
         }
