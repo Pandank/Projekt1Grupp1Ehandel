@@ -186,6 +186,42 @@ namespace EhandelGrupp1
             }
         }
 
+        /// <summary>
+        /// Get 5 Latest products added
+        /// </summary>
+        /// <returns></returns>
+        public static List<Product> GetLatestAdded()
+        {
+            using (var db = new EHandel())
+            {
+                var query = (from p in db.Product
+                             orderby p.date descending
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
+                    {
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).Take(5).ToList();
+
+                return query;
+
+            }
+        }
+
 
 
 
@@ -254,17 +290,27 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-                var query = from p in db.Product
-                            where p.name == productName
-                            select new
-                            {
-                                p.productId,
-                                p.name,
-                                p.description,
-                                p.price,
-                                p.stock,
-                                p.date
-                            };
+                var query = (from p in db.Product
+                             select new
+                             {
+                                 p.productId,
+                                 p.name,
+                                 p.description,
+                                 p.price,
+                                 p.stock,
+                                 p.date,
+                                 p.isHidden
+                             }).AsEnumerable()
+                    .Select(x => new Product()
+                    {
+                        productId = x.productId,
+                        name = x.name,
+                        description = x.description,
+                        price = x.price,
+                        stock = x.stock,
+                        date = x.date,
+                        isHidden = x.isHidden
+                    }).ToList();
 
                 return ObjTooJson.ObjToJson(query);
             }
