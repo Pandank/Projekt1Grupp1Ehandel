@@ -494,7 +494,17 @@ namespace EhandelGrupp1
         }
 
         //Updates specific product by ID
-        public static void UpdateProduct(int productId, string name, string description, decimal price, int stock, DateTime date)
+        /// <summary>
+        /// Updates the product selected by productID
+        /// </summary>
+        /// <param name="productId">ID of product to edit</param>
+        /// <param name="name">Name of product</param>
+        /// <param name="description">Product description</param>
+        /// <param name="price">price of product</param>
+        /// <param name="stock">Stock</param>
+        /// <param name="date">datetime of time when product was added</param>
+        /// <param name="isHidden"> null or 0 for not hidden set to 1 to hide product</param>
+        public static void UpdateProduct(int productId, string name, string description, decimal price, int stock, DateTime date,byte isHidden)
         {
             using (var db = new EHandel())
             {
@@ -507,6 +517,7 @@ namespace EhandelGrupp1
                     prod.price = price;
                     prod.stock = stock;
                     prod.date = date;
+                    prod.isHidden = isHidden;
                 }
                 db.SaveChanges();
             }
