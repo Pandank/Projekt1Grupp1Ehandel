@@ -23,12 +23,22 @@ namespace EhandelGrupp1.services
                 string isAdmin = !string.IsNullOrEmpty(Request["isAdmin"]) ? Request["isAdmin"] : "";
                 string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"] : "";
 
+                //string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"] : "";
+                //string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"] : "";
+                //string city= !string.IsNullOrEmpty(Request["city"]) ? Request["city"] : "";
+                //string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"] : "";
+                
 
                 if (userID > 0 && email.Length > 0 && firstName.Length > 0 && lastName.Length > 0 && isAdmin.Length > 0)
                 {
                     DataManagement.CreateCustomer(email, firstName, lastName, isAdmin, passWord);
 
                     LiteralCreateCustomer.Text = JsonConvert.SerializeObject("Ok");
+
+                    //DataManagement.CreateAddress(street, zip, city, country, userID);
+
+                    //LiteralCreateAddress.Text = JsonConvert.SerializeObject("Ok");
+
 
                 }
                 else
