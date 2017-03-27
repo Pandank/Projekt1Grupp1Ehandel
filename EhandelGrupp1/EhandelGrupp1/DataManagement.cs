@@ -597,8 +597,25 @@ namespace EhandelGrupp1
                             };
 
                 return ObjTooJson.ObjToJson(query);
-
             }
+        }
+
+        public static int CreateAddress(string street, string zip, string city, string country, int userId)
+        {
+            Address a = new Address
+            {
+                street = street,
+                zip = zip,
+                city = city,
+                country = country,
+                userId = userId,
+            };
+
+            using (var db = new EHandel())
+            {
+                db.Address.Add(a);
+            }
+            return a.addressId;
         }
     }
 }

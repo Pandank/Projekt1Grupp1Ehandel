@@ -10,8 +10,8 @@ namespace EhandelGrupp1
     public partial class Test : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-           var cust = DataManagement.CreateCustomer("kajsa@warg.se", "Kajsa", "Warg", "0", "12321");
+        { 
+            DataManagement.CreateAddress("Storgatan 1", "11287", "Enskede", "Sverige", 8);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace EhandelGrupp1.services
                     DataManagement.CreateCustomer(email, firstName, lastName, isAdmin, passWord);
 
                     LiteralCreateCustomer.Text = JsonConvert.SerializeObject("Ok");
+
                 }
                 else
                 {
