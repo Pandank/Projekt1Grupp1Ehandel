@@ -326,7 +326,9 @@ namespace EhandelGrupp1
                                 c.password,
                             };
 
-            }      
+                return ObjTooJson.ObjToJson(query);
+
+            }             
         }    
         
         public static string GetAllCustomers()
