@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="thumbnail">
-                    <a href="product-description.aspx">
+                    <a href="product.aspx">
                         <img src="img/Papper.jpg" width="250" alt="" />
                         <h3 class="h3">Multicopy, koperingspapper</h3>
                         <h4 class="h4">40 kr</h4>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="thumbnail">
-                    <a href="product-description.aspx">
+                    <a href="product.aspx">
                         <img src="img/Papper.jpg" width="250" alt="" />
                         <h3 class="h3">Multicopy, koperingspapper</h3>
                         <h4 class="h4">40 kr</h4>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="thumbnail">
-                    <a href="product-description.aspx">
+                    <a href="product.aspx">
                         <img src="img/Papper.jpg" width="250" alt="" />
                         <h3 class="h3">Multicopy, koperingspapper</h3>
                         <h5 class="h5">40 kr</h5>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="thumbnail">
-                    <a href="product-description.aspx">
+                    <a href="product.aspx">
                         <img src="img/Papper.jpg" width="250" alt="" />
                         <h3 class="h3">Multicopy, koperingspapper</h3>
                         <h4 class="h4">40 kr</h4>

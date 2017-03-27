@@ -1,20 +1,49 @@
 ﻿html, body {
     height: 100%;
-    background-color: #F0F0F0;
+    background-color: #ffffff;
+}
+
+.container {
+    margin-bottom: 6em;
 }
 
 /* Header */
-header {
+header a {
+    color: #ffffff;
 }
 
-#login {
+    header a:hover, header a:active, a:focus {
+        color: #ffffff;
+    }
+
+#login, .headerSpace {
     display: none;
 }
+
+.navbar-inverse {
+    background-color: #232625;
+}
+
+    .navbar-inverse .navbar-toggle {
+        border: none;
+    }
+
+        .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+            background-color: #232625;
+        }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #ffffff;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #ffffff;
+    }
 
 @media (min-width: 768px) {
     header {
         position: relative;
-        background-color: #222;
+        background-color: #232625;
     }
 
         header .navbar {
@@ -48,8 +77,14 @@ header {
         width: 100%;
     }
 
+    .headerSpace {
+        color: #232625;
+        display: inline-block;
+        width: 65%;
+    }
+
     #login {
-        display: block;
+        display: inline-block;
         padding: 1em;
         text-align: right;
     }
@@ -78,6 +113,14 @@ header {
 }
 
 /* Footer navbar */
+.navbar-fixed-bottom {
+    padding-top: .5em;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px -2px 3px 0px rgba(0,45,61,0.36);
+    -moz-box-shadow: 0px -2px 3px 0px rgba(0,45,61,0.36);
+    box-shadow: 0px -2px 3px 0px rgba(0,45,61,0.36);
+}
+
 .navIcon {
     display: block;
     text-align: center;
@@ -86,7 +129,7 @@ header {
     font-weight: 700;
 }
 
-.glyphicon {
+.navbar-fixed-bottom .glyphicon {
     font-size: 1.5em;
     display: block;
     text-align: center;
@@ -126,6 +169,31 @@ header {
     color: white;
     text-align: center;
 }
+
+.floatContainer {
+    overflow: hidden;
+}
+
+/* Moms-knapp */
+#vatButton {
+    float: right;
+}
+
+
+
+
+/*******************************
+KNAPPAR
+*******************************/
+
+.btn-primary {
+    background-color: #B02600;
+    border: none;
+}
+
+/*******************************
+TEXT
+*******************************/
 
 a {
     color: #002D3D;
