@@ -5,20 +5,45 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container">
+        <h2>Registrera kundkonto</h2>
         <div class="form-group">
             <label for="firstname">Förnamn:</label>
             <input type="text" class="form-control" id="registerfirstname">
         </div>
         <div class="form-group">
-            <label for="pwd">Efternamn:</label>
-            <input type="password" class="form-control" id="pwd">
+            <label for="lastname">Efternamn:</label>
+            <input type="text" class="form-control" id="registerlastname">
         </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox">
-                Remember me</label>
+        <div class="form-group">
+            <label for="email">E-post:</label>
+            <input type="email" class="form-control" id="registeremail">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+         <div class="form-group">
+            <label for="password">Lösenord:</label>
+            <input type="password" class="form-control" id="registerpassword">
+        </div>
+         <div class="form-group">
+            <label for="password">Upprepa lösenord:</label>
+            <input type="password" class="form-control" id="verifyregisterpassword">
+        </div>     
+        <h3>Leveransadress</h3>   
+        <div class="form-group">
+            <label for="street">Gata:</label>
+            <input type="text" class="form-control" id="registerstreet">
+        </div>
+         <div class="form-group">
+            <label for="zip">Postnummer:</label>
+            <input type="text" class="form-control" id="registerzip">
+        </div>
+         <div class="form-group">
+            <label for="city">Stad:</label>
+            <input type="text" class="form-control" id="registercity">
+        </div>
+        <div class="form-group">
+            <label for="country">Land:</label>
+            <input type="text" class="form-control" id="registercountry">
+        </div>        
+        <button type="submit" class="btn btn-default">Registrera</button>
     </div>
 
 </asp:Content>
