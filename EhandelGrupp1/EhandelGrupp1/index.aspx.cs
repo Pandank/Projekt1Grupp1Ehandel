@@ -19,6 +19,7 @@ namespace EhandelGrupp1
                 var product = DataManagement.GetProductByIDo(int.Parse(Request["id"]));
 
                 if (product == null) return;
+
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
                 productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
@@ -34,19 +35,37 @@ namespace EhandelGrupp1
             {
                 // visa alla produkter i given kategori
                 var products = DataManagement.GetAllProductsFromCategoryO(int.Parse(Request["category"].ToString()));
+
+                if (products == null) return;
+
+                string productInfo = "<h2 class='h2'>KATEGORINAMN ska hämtas</h2>";
                 foreach (var product in products)
                 {
-                    LiteralCategory.Text += product.name;
+                    productInfo += "<div class='row' id='" + product.productId + "'>";
+                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
+                    productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
+                    productInfo += "</div>"; // end row
                 }
+                LiteralCategory.Text = productInfo;
             }
             else
             {
                 // visa startsidan
-                var products = DataManagement.GetAllProductsO();
+                var products = DataManagement.GetLatestAdded();
+
+                if (products == null) return;
+
+                string productInfo = "<h2 class='h2'>Nyheter</h2>";
                 foreach (var product in products)
                 {
-                    LiteralStart.Text += product.name;
+                    productInfo += "<div class='row' id='" + product.productId + "'>";
+                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
+                    productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
+                    productInfo += "</div>"; // end row
                 }
+                LiteralStart.Text += productInfo;
             }
         }
     }

@@ -114,6 +114,10 @@
     /* Visa funktioner för inloggade administratörer */
     function loginAdmin() {
         loginUser();
+        // adminmeny-val
+        var adminMenu = '<li class="admin">Administration</li>';
+        adminMenu += '<li class="admin"><a href="#">Adminfunktioner</a></li>';
+        $('#topNavbar .nav').append(adminMenu);
         console.log('visa funktioner för administratörer')
     }
 
