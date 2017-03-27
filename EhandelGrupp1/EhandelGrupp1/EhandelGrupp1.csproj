@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="category-overview.aspx" />
+    <Content Include="checkout.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -134,6 +135,13 @@
     </Compile>
     <Compile Include="category-overview.aspx.designer.cs">
       <DependentUpon>category-overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataManagement.cs" />
     <Compile Include="EF\Address.cs" />
