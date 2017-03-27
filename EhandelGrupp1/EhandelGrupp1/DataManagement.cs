@@ -19,7 +19,7 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-                
+
                 var query = from p in db.Product
                             join obp in db.OrdersByProduct on p.productId equals obp.productId
                             where obp.orderId == orderID
@@ -159,17 +159,17 @@ namespace EhandelGrupp1
 
 
                 var query = from p in db.Product
-                    join ctp in db.CategoryToProduct on p.productId equals ctp.productId
-                    join c in db.Category on ctp.categoryId equals c.categoryId
-                    where c.categoryId == categoryID
-                    select new Product()
-                    {
-                        productId = p.productId,
-                        name = p.name,
-                        description = p.description,
-                        price = p.stock,
-                        date = p.date
-                    };
+                            join ctp in db.CategoryToProduct on p.productId equals ctp.productId
+                            join c in db.Category on ctp.categoryId equals c.categoryId
+                            where c.categoryId == categoryID
+                            select new Product()
+                            {
+                                productId = p.productId,
+                                name = p.name,
+                                description = p.description,
+                                price = p.stock,
+                                date = p.date
+                            };
 
                 return query.ToList();
             }
@@ -201,7 +201,26 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
-
+        /// <summary>
+        /// returns ALL products as LIST object Product
+        /// </summary>
+        /// <returns></returns>
+        public static List<Product> GetAllProductsO()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from p in db.Product
+                            select new Product()
+                            {
+                                productId = p.productId,
+                                name = p.name,
+                                description = p.description,
+                                price = p.stock,
+                                date = p.date
+                            };
+                return query.ToList();
+            }
+        }
         /// <summary>
         /// Returns the product in Json Format with specific Name
         /// </summary>
@@ -249,7 +268,7 @@ namespace EhandelGrupp1
                             };
 
                 return ObjTooJson.ObjToJson(query);
-                
+
             }
         }
 
@@ -287,7 +306,7 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
-        
+
         /// <summary>
         /// Creates a new customer returns the user ID
         /// </summary>
@@ -383,9 +402,9 @@ namespace EhandelGrupp1
 
                 return ObjTooJson.ObjToJson(query);
 
-            }             
-        }    
-        
+            }
+        }
+
         public static string GetAllCustomers()
         {
             using (var db = new EHandel())
