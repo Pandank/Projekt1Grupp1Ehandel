@@ -384,5 +384,20 @@ namespace EhandelGrupp1
                 return ObjTooJson.ObjToJson(query);
             }
         }
+
+        public static void UpdateCategory(int categoryId, string name)
+        {
+            using (var db = new EHandel())
+            {
+                Category cat = db.Category.FirstOrDefault(c => c.categoryId == categoryId);
+
+                if (cat != null)
+                {
+                    cat.name = name;
+                }
+                db.SaveChanges();
+            }
+        }
+
     }
 }
