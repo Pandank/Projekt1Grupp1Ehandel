@@ -84,7 +84,17 @@ namespace EhandelGrupp1
         }
 
         //Creates a new Product, returns Product ID //CS
-        public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date)
+        /// <summary>
+        /// Creates a new PRODUCT returns product ID
+        /// </summary>
+        /// <param name="name">Name of product</param>
+        /// <param name="description">Product description</param>
+        /// <param name="price">price of product</param>
+        /// <param name="stock">Stock</param>
+        /// <param name="date">datetime of time when product was added</param>
+        /// <param name="isHidden"> null or 0 for not hidden set to 1 to hide product</param>
+        /// <returns>Returns the product ID</returns>
+        public static int CreateProduct(string name, string description, decimal price, int stock, DateTime date, byte isHidden)
         {
             Product p = new Product
             {
@@ -93,6 +103,7 @@ namespace EhandelGrupp1
                 price = price,
                 stock = stock,
                 date = date,
+                isHidden = isHidden
 
             };
             using (var db = new EHandel())
