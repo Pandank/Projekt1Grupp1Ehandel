@@ -377,6 +377,16 @@
 
             sessionStorage.setItem('cartCounter', cartCounter);
             var product = new Product(counter, productName, price, sum);
+            if (sessionStorage.getItem('products')) {
+                console.log("Finns varukorg")
+                productsInCart = sessionStorage.getItem('products');
+                // products.push(JSON.parse(productsInCart));
+
+            }
+            else {
+                console.log("Varukorg tom")
+                var products = [];
+            }
             products.push(product);
 
             sessionStorage.setItem('products', JSON.stringify(products));
