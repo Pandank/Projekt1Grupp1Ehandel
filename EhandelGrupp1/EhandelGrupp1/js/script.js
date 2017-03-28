@@ -316,12 +316,14 @@
     VARUKORG
     ***********************************/
     /* Klick på varukorg */
-    $('#cartButton').click(function () {
+    $('.cartButton').click(function () {
         displayCartItems();
     });
 
     /* Visa innehållet i varukorgen */
     function displayCartItems() {
+        // radera tidigare varukorgsinnehåll
+        $('.modal-body').html('');
         // kolla om det finns några produkter tillagda
         if (sessionStorage.getItem('products')) {
             var products = [];

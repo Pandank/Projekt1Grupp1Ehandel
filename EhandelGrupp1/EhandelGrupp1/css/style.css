@@ -80,7 +80,7 @@ header a {
     .headerSpace {
         color: #232625;
         display: inline-block;
-        width: 65%;
+        width: 50%;
     }
 
     #login {
