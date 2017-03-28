@@ -31,6 +31,7 @@
                     <div class="collapse navbar-collapse" id="topNavbar">
                         <ul class="nav navbar-nav">
                             <li class="category"><a href="category-overview.aspx">Sortiment</a></li>
+                            <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
                             <li><a href="#">Kundtjänst</a></li>
                             <li><a href="#">Om oss</a></li>
                         </ul>

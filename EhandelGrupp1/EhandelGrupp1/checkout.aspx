@@ -6,8 +6,6 @@
 
     <div class="container">
         <h2>Orderöversikt</h2>
-        <p>Öka/minska antal för att ändra i varukorgen:</p>
-
         <table class="table">
             <thead>
                 <tr>
@@ -21,8 +19,8 @@
                 <tr>
                     <td>Multicopy, koperingspapper</td>
                     <td>40 kr</td>
-                    <td>                      
-                        <input type="number" value="1" id="itemCounter"  /></td>
+                    <td>
+                        <input type="number" value="1" id="itemCounter" /></td>
                     <td>jQuery pris ggr antal</td>
                 </tr>
                 <tr>
@@ -35,7 +33,7 @@
             </tbody>
         </table>
 
-        <p>Leverans- och fakturaadress</p>
+        <h3>Leverans- och fakturaadress</h3>
         <div class="form-group">
             <label for="street">Gata:</label>
             <input type="text" class="form-control" id="customerstreet">
@@ -53,37 +51,29 @@
             <input type="text" class="form-control" id="customercountry">
         </div>
 
-        <button type="button" class="btn btn-default">Ändra adress</button>
+        <button type="button" class="btn btn-default" id="addAnotherAddress">Annan leveransadress</button>
 
-
-        <p>Annan adress:</p>
-        <div class="form-group">
-            <label for="street">Gata:</label>
-            <input type="text" class="form-control" id="tempstreet">
-        </div>
-        <div class="form-group">
-            <label for="zip">Postnummer:</label>
-            <input type="text" class="form-control" id="tempzip">
-        </div>
-        <div class="form-group">
-            <label for="city">Stad:</label>
-            <input type="text" class="form-control" id="tempcity">
-        </div>
-        <div class="form-group">
-            <label for="country">Land:</label>
-            <input type="text" class="form-control" id="tempcountry">
-        </div>
-
-
-        <div>
-            <br>
+        <div id="otherAddress">
+            <h4>Annan leveransadress</h4>
+            <div class="form-group">
+                <label for="street">Gata:</label>
+                <input type="text" class="form-control" id="tempstreet">
+            </div>
+            <div class="form-group">
+                <label for="zip">Postnummer:</label>
+                <input type="text" class="form-control" id="tempzip">
+            </div>
+            <div class="form-group">
+                <label for="city">Stad:</label>
+                <input type="text" class="form-control" id="tempcity">
+            </div>
+            <div class="form-group">
+                <label for="country">Land:</label>
+                <input type="text" class="form-control" id="tempcountry">
+            </div>
         </div>
 
         <button type="submit" class="btn btn-default">Köp</button>
-
-        <div>
-            <br>
-        </div>
 
     </div>
 

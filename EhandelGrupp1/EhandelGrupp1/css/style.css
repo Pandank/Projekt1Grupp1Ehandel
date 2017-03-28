@@ -154,6 +154,17 @@ header a {
     .navbar-fixed-bottom {
         display: none;
     }
+
+    .container {
+        float: left;
+        width: 68%;
+        padding: 3%;
+    }
+}
+
+#otherAddress {
+    display: none;
+    margin-top: 1em;
 }
 
 /* Varukorg */
