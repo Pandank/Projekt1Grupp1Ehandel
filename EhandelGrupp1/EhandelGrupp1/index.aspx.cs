@@ -46,7 +46,7 @@ namespace EhandelGrupp1
                 {
                     productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                 }
-                productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
+                productInfo += "<p class='priceBox'><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                 productInfo += "<input type='number' value='1' id='itemCounter' />";
                 productInfo += "<button type='button' class='btn btn-primary addToCartButton'>Köp</button>";
                 productInfo += "<div class='productDescription'><p>" + product.description + "</p></div>";
@@ -82,7 +82,7 @@ namespace EhandelGrupp1
                     }
                     productInfo += "</div>";
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
-                    productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
+                    productInfo += "<p class='priceBox'><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
                     productInfo += "</div>"; // end thumbnail
                     productInfo += "</div>"; // end col-sm-3
@@ -117,7 +117,7 @@ namespace EhandelGrupp1
                     }
                     productInfo += "</div>";
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
-                    productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
+                    productInfo += "<p class='priceBox'><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
                     productInfo += "</div>"; // end thumbnail
                     productInfo += "</div>"; // end col-sm-3
