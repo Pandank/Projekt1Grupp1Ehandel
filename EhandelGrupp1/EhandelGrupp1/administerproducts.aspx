@@ -7,11 +7,14 @@
         function CreateProduct() {
 
             $.get("services/svc-createproduct.aspx?createproduct=1", {
-                "name": $("#registerproductname").val(), "description": $("#registerproductdescription").val(), "price": $("#registerproductprice").val(),
-                "stock": $("#registerproductstock").val(), "isHidden": 0
+                "name": $("#registerproductname").val(), "description": $("#registerproductdescription").val(),
+                "price": $("#registerproductprice").val(),
+                "stock": $("#registerproductstock").val(),
+                "isHidden": 0,
+                //"categoryList": todo
             })
             .done(function (data) {
-                alert(data);
+                alert("Produkten tillagd");
             })
             .fail(function (data) {
                 alert(data);
@@ -42,13 +45,22 @@
             <label for="stock">Varulager(antal):</label>
             <input type="number" min="0" class="form-control" id="registerproductstock">
         </div>
+
+        <div class="form-group">
+            <label>Produktkategori:</label><br />
+            <asp:DropDownList ID="categoryList" runat="server"></asp:DropDownList>
+            <select name="categoryList">
+                <asp:Literal ID="LiteralProductCategorys" runat="server"></asp:Literal>
+            </select>
+        </div>
+
         <button type="button" class="btn btn-default" onclick="CreateProduct()" id="register-product-button">Lägg upp produkt</button>
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+        
         <%--OBS! Behövs en kod som tar denna input - genererar ett nytt produktid och sparar i sql--%>
 
 
-
         <%--från sql-table dbo orders--%>
-
 
 
         <div class="well well-sm">
@@ -68,12 +80,10 @@
                         <td>status</td>
                         <td>länk modal med items i order</td>
                     </tr>
-                    <tr>
                 </tbody>
             </table>
         </div>
 
 
     </div>
-
 </asp:Content>

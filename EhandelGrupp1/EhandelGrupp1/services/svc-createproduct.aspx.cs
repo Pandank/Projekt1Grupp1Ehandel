@@ -32,6 +32,11 @@ namespace EhandelGrupp1.services
                     int productId = DataManagement.CreateProduct(name, description, price, stock, date, isHidden);
 
                     LiteralCreateProduct.Text = JsonConvert.SerializeObject(productId);
+
+                    //categoryList.
+
+                    //int CatID = 
+                    //DataManagement.CreateCategoryToProduct(, productId)
                 }
             }
         }
