@@ -10,8 +10,8 @@ namespace EhandelGrupp1
     public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
-            BuildProductCategoryList();
+        {
+            //BuildProductCategoryList();
             RefreshDropDown();
 
             //var test = DataManagement.GetCategoryIdFromNameO()
@@ -24,31 +24,33 @@ namespace EhandelGrupp1
             var catNames = DataManagement.GetAllCategoryNamesO();
             foreach (var catName in catNames)
             {
-                categoryList.Items.Add(catName);
-            }
+                int catID = DataManagement.GetCategoryIdFromNameO(catName);
+                ListItem item = new ListItem(catName, catID.ToString());
+                categoryList.Items.Add(item);
+            }            
         }
 
-        private void BuildProductCategoryList() 
-        {
-            string productCategorys = null;
-            var catNames = DataManagement.GetAllCategoryNamesO();
-            foreach (var catName in catNames)
-            {
-                var catID = DataManagement.GetCategoryIdFromNameO(catName);
-                productCategorys += @"<option value='"+catID+"'>"+catName+"</option>";
-                //var path = @"index.aspx?category=" + catID;
-                //productCategorys += @"<li><a href='" + path + "'>" + catName + "</a></li>";
-            }
-            LiteralProductCategorys.Text = productCategorys;
+        //private void BuildProductCategoryList()
+        //{
+        //    string productCategorys = null;
+        //    var catNames = DataManagement.GetAllCategoryNamesO();
+        //    foreach (var catName in catNames)
+        //    {
+        //        var catID = DataManagement.GetCategoryIdFromNameO(catName);
+        //        productCategorys += @"<option value='" + catID + "'>" + catName + "</option>";
+        //        //var path = @"index.aspx?category=" + catID;
+        //        //productCategorys += @"<li><a href='" + path + "'>" + catName + "</a></li>";
+        //    }
+        //    LiteralProductCategorys.Text = productCategorys;
 
-        }
+        //}
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
 
 
-        }
+
+
+        //}
     }
 }

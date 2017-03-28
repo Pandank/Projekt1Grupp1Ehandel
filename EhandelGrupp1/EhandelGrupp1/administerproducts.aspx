@@ -11,6 +11,10 @@
                 "price": $("#registerproductprice").val(),
                 "stock": $("#registerproductstock").val(),
                 "isHidden": 0,
+                "categoryID": $("#categorylist").val(),
+
+                "categoryID": categoryList.val(),
+
                 //"categoryList": todo
             })
             .done(function (data) {
@@ -55,7 +59,6 @@
         </div>
 
         <button type="button" class="btn btn-default" onclick="CreateProduct()" id="register-product-button">Lägg upp produkt</button>
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         
         <%--OBS! Behövs en kod som tar denna input - genererar ett nytt produktid och sparar i sql--%>
 
