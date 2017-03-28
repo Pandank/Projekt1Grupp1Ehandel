@@ -1,18 +1,9 @@
 ﻿$(document).ready(function () {
-    // produkter i varukorgen
-    if (sessionStorage.getItem('products')) {
-        console.log("Finns varukorg")
-        productsInCart = sessionStorage.getItem('products');
-       // products.push(JSON.parse(productsInCart));
-
+    // om varor finns i varukorgen, skriv ut antal unika produkter
+    if (sessionStorage.getItem('cartCounter')) {
+        $('#itemCount').css('display', 'block');
+        $('#itemCount').text(sessionStorage.getItem('cartCounter'));
     }
-    else {
-        console.log("Varukorg tom")
-        var products = [];
-    }
-
-    var cCounter = sessionStorage.getItem('cartCounter');
-    $('#itemCount').text(cCounter);
 
     // om användaren är inloggad visa funktioner för inloggade
     if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
@@ -325,9 +316,38 @@
     VARUKORG
     ***********************************/
     /* Klick på varukorg */
-    $('#cartButton').click(function () {
-
+    $('.cartButton').click(function () {
+        displayCartItems();
     });
+
+    /* Visa innehållet i varukorgen */
+    function displayCartItems() {
+        // radera tidigare varukorgsinnehåll
+        $('.modal-body').html('');
+        // kolla om det finns några produkter tillagda
+        if (sessionStorage.getItem('products')) {
+            var products = [];
+            productsInCart = sessionStorage.getItem('products');
+            products = JSON.parse(sessionStorage.getItem('products'));
+
+            console.log(products)
+
+            var cartItem = "";
+
+            for (var i = 0; i < products.length; i++) {
+                cartItem += '<div id="cartProduct_' + products[i].id + '">';
+                cartItem += '<input class="productCounter" type="number" value="' + products[i].counter + '" />';
+                cartItem += '<span>' + products[i].name + '</span>';
+                cartItem += '<span class="productPrice">' + products[i].price + '</span>';
+                cartItem += '<span class="productSum">' + products[i].sum + '</span>';
+                cartItem += '</div>';
+            }
+        }
+        cartItem += '<p>Totalsumma: </p>';
+
+        // lägg till i varukorgen
+        $('.modal-body').append(cartItem);
+    }
 
 
     /***********************************
@@ -365,52 +385,35 @@
         //}
         //    // lägg till i varukorgen
         //else {
-            // Läs in produktnamn
-            var productName = $('#' + id + ' h2').text();
+        // Läs in produktnamn
+        var productName = $('#' + id + ' h2').text();
 
-            // Öka varukorg-counter med 1
-            $('#itemCount').css('display', 'block');
-            var cartCounter = $('#itemCount').text();
-            cartCounter = cartCounter * 1;
-            cartCounter++;
-            $('#itemCount').text(cartCounter);
+        // Öka varukorg-counter med 1
+        $('#itemCount').css('display', 'block');
+        var cartCounter = $('#itemCount').text();
+        cartCounter = cartCounter * 1;
+        cartCounter++;
+        $('#itemCount').text(cartCounter);
 
-            sessionStorage.setItem('cartCounter', cartCounter);
-            var product = new Product(counter, productName, price, sum);
-            if (sessionStorage.getItem('products')) {
-                console.log("Finns varukorg")
-                productsInCart = sessionStorage.getItem('products');
-                // products.push(JSON.parse(productsInCart));
+        var product = new Product(id, counter, productName, price, sum);
+        // skapa array
+        var products = [];
 
-            }
-            else {
-                console.log("Varukorg tom")
-                var products = [];
-            }
-            products.push(product);
-
-            sessionStorage.setItem('products', JSON.stringify(products));
-
-            console.log(sessionStorage.getItem('products'))
-
-            // Funktion: lägg till produktsumma till resterande varukorg
-            addToCart(id, productName, counter, price, sumString);
-        //}
+        // om det redan finns produkter i varukorgen, hämta dessa och lägg in i arrayen products
+        if (sessionStorage.getItem('products')) {
+            products = JSON.parse(sessionStorage.getItem('products'));
+        }
+        // lägg till produkten till arrayen
+        products.push(product);
+        // spara arrayen med produkter
+        sessionStorage.setItem('products', JSON.stringify(products));
+        // spara antalet unika produkter i varukorgen
+        sessionStorage.setItem('cartCounter', cartCounter);
     });
 
-    function addToCart(id, productName, counter, price, sum) {
-        var cartItem = '<div id="cartProduct_' + id + '">';
-        cartItem += '<input class="productCounter" type="number" value="' + counter + '" />';
-        cartItem += '<span>' + productName + '</span>';
-        cartItem += '<span class="productPrice">' + price + '</span>';
-        cartItem += '<span class="productSum">' + sum + '</span>';
-        cartItem += '<p>Totalsumma: </p>';
-        cartItem += '</div>';
-
-        $('.modal-body').append(cartItem);
-    }
-
-    function Product(counter, name, price, sum) {
+    // skapa objektet Product
+    function Product(id, counter, name, price, sum) {
+        this.id = id;
         this.counter = counter;
         this.name = name;
         this.price = price;

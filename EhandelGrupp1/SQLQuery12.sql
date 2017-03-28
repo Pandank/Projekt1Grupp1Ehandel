@@ -1,18 +1,5 @@
-﻿SELECT * FROM dbo.Product
+﻿SELECT * FROM dbo.Image ORDER BY productId
 
 
-INSERT INTO dbo.Product
-        ( name ,
-          description ,
-          price ,
-          stock ,
-          date ,
-          isHidden
-        )
-VALUES  ( 'Blyertspenna Office HB gul' , -- name - varchar(50)
-          'Blyertspenna lackad i gul färg. Hårdhet: HB. 12fp' , -- description - varchar(max)
-          27 , -- price - money
-          534 , -- stock - int
-          GETDATE() , -- date - datetime
-          0  -- isHidden - tinyint
-        )
+
+SELECT * FROM dbo.Product WHERE productId=9
