@@ -3,6 +3,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script>
+        function CreateProduct() {
+            alert("Test");
+
+            var name = $("#registerproductname").val();
+            var desc = $("#registerproductdescription").val();
+            var price = $("#registerproductprice").val();
+            var stock = $("#registerproductstock").val();
+
+            $.get("services/svc-createproduct.aspx?createproduct=1", {
+                "name": name, "description":desc, "price": price,
+                "stock": stock, "isHidden": 0
+            })
+            .done(function (data) {
+                alert(data);
+            })
+            .fail(function (data) {
+                alert(data);
+            });
+        }
+    </script>
+
 
     <div class="container">
         <h2>Lägg upp en produkt</h2>
@@ -26,15 +48,15 @@
             <label for="stock">Varulager(antal):</label>
             <input type="number" min="0" class="form-control" id="registerproductstock">
         </div>
-         <button type="button" class="btn btn-default" id="register-product-button">Lägg upp produkt</button>
+        <button type="button" class="btn btn-default" onclick="CreateProduct()" id="register-product-button">Lägg upp produkt</button>
         <%--OBS! Behövs en kod som tar denna input - genererar ett nytt produktid och sparar i sql--%>
 
 
 
         <%--från sql-table dbo orders--%>
-        
-        
-    
+
+
+
         <div class="well well-sm">
             <table class="table">
                 <thead>
