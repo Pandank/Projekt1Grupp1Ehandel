@@ -19,7 +19,7 @@
         <%--OBS! Ska pris registreras ink eller ex moms?--%>
         <div class="form-group" id="register-productprice">
             <label for="productprice">Styckpris:</label>
-            <input type="email" class="form-control" id="registerproductprice">
+            <input type="number" min="0" class="form-control" id="registerproductprice">
         </div>
 
         <div class="form-group" id="register-productstock">
