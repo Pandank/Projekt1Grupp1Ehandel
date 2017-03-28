@@ -55,6 +55,7 @@ namespace EhandelGrupp1
                     productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
                     productInfo += "<div class='thumbnail'>";
                     productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
+                    productInfo += "<div class='BildDiv'>";
                     if (image.Count > 0)
                     {
                         string path = image[0].url;
@@ -64,6 +65,7 @@ namespace EhandelGrupp1
                     {
                         productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                     }
+                    productInfo += "</div>";
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
@@ -88,6 +90,7 @@ namespace EhandelGrupp1
                     productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
                     productInfo += "<div class='thumbnail'>";
                     productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
+                    productInfo += "<div class='BildDiv'>";
                     if (image.Count > 0)
                     {
                         string path = image[0].url;
@@ -97,6 +100,7 @@ namespace EhandelGrupp1
                     {
                         productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                     }
+                    productInfo += "</div>";
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";

@@ -11,7 +11,24 @@ namespace EhandelGrupp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BuildCategoryMenu();
         }
+
+
+
+
+        private void BuildCategoryMenu()
+        {
+            string categorys = null;
+            var catNames = DataManagement.GetAllCategoryNamesO();
+            foreach (var catName in catNames)
+            {
+                var catID = DataManagement.GetCategoryIdFromNameO(catName);
+                var path = @"index.aspx?category=" + catID;
+                categorys += @"<li class='"+"categoryMobileMenu"+"'><a href='" + path + "'>" + catName + "</a></li>";
+            }
+            LiteralMobileCategoryList.Text = categorys;
+        }
+
     }
 }

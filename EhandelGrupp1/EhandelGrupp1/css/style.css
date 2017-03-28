@@ -16,6 +16,32 @@ header a {
         color: #ffffff;
     }
 
+    .row {
+        margin: 0;
+    }
+.navbar-brand {
+    padding: .3em;
+}
+
+#logo img {
+    height: 40px;
+    float: left;
+}
+
+#logo h1 {
+    float: left;
+    margin: .2em 0 0 .2em;
+    font-size: 1.6em;
+}
+
+.BildDiv {
+    height: 220px;
+}
+
+.img-responsive {
+    max-height: 100%;
+}
+
 #login, .headerSpace {
     display: none;
 }
@@ -41,6 +67,18 @@ header a {
     }
 
 @media (min-width: 768px) {
+    #logo {
+        margin: 15px;
+    }
+
+    #logo img {
+        height: 100px;
+    }
+
+    #logo h1 {
+        margin: 1em 0 0 .5em;
+    }
+
     header {
         position: relative;
         background-color: #232625;
@@ -65,6 +103,10 @@ header a {
         header .navbar-inverse {
             border: none;
         }
+
+    #topNavbar {
+        margin-top: 5em;
+    }
 
     .navbar-header {
         display: block;
@@ -165,6 +207,10 @@ header a {
 #otherAddress {
     display: none;
     margin-top: 1em;
+}
+
+#productSite img {
+    max-height: 500px;
 }
 
 /* Varukorg */

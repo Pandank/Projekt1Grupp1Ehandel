@@ -23,7 +23,7 @@ namespace EhandelGrupp1
             {
                 var catID = DataManagement.GetCategoryIdFromNameO(catName);
                 var path = @"index.aspx?category=" + catID;
-                categorys += @"<li><a href='" + path + "'>" + catName + "</a></li>";
+                categorys += @"<li class='category'><a href='" + path + "'>" + catName + "</a></li>";
             }
             LiteralCategorys.Text = categorys;
         }

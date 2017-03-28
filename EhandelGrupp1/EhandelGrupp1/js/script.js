@@ -274,20 +274,20 @@
         // hämta användarens uppgifter
         $.getJSON('services/svc-profile.aspx?userId=' + id)
         .done(function (result) {
-            console.log(result)
             $('#editfirstname').val(result[0].firstname);
             $('#editlastname').val(result[0].lastname);
             $('#editemail').val(result[0].email);
         });
         // hämta användarens adress
-        //$.getJSON('services/svc-addrress.aspx?userId=' + id)
-        //.done(function (result) {
-        //    console.log(result)
-        //    $('#editstreet').val(result[0].street);
-        //    $('#editzip').val(result[0].zip);
-        //    $('#editcity').val(result[0].city);
-        //    $('#editcountry').val(result[0].country);
-        //});
+        $.getJSON('services/svc-getuseraddress.aspx?userId=' + id)
+        .done(function (result) {
+            if (result.length > 0) {
+                $('#editstreet').val(result[0].street);
+                $('#editzip').val(result[0].zip);
+                $('#editcity').val(result[0].city);
+                $('#editcountry').val(result[0].country);
+            }
+        });
     }
 
     /* Uppdatera profiluppgifter */
@@ -340,6 +340,11 @@
             $('.modal-body').append(cartItem);
         }
     }
+
+    /* Skicka användaren till kassan vid klick på knapp */
+    $('#goToCheckoutButton').click(function () {
+        window.location.href = 'checkout.aspx';
+    });
 
 
     /***********************************
@@ -415,6 +420,54 @@
     /***********************************
     KASSA
     ***********************************/
+    if ($('#checkoutPage').length > 0) {
+
+        // kolla om det finns några produkter tillagda
+        if (sessionStorage.getItem('products')) {
+            var products = [];
+            productsInCart = sessionStorage.getItem('products');
+            products = JSON.parse(sessionStorage.getItem('products'));
+
+            console.log(products)
+
+            var cartItem = "";
+
+            for (var i = 0; i < products.length; i++) {
+                cartItem += '<tr id="cartProduct_' + products[i].id + '">';
+                cartItem += '<td>' + products[i].price + '</td>';
+                cartItem += '<td>' + products[i].name + '</td>';
+                cartItem += '<td><input type="number" value="' + products[i].counter + '" /></td>';
+                cartItem += '<td>' + products[i].sum + '</td>';
+                cartItem += '</tr>';
+            }
+            // lägg till i kassan
+            $('#checkoutTable tbody').append(cartItem);
+            $('<p>Totalsumma: </p>').insertAfter('#checkoutTable');
+        }
+
+        // kolla om användaren är inloggad
+        if (sessionStorage.getItem('userId')) {
+            var id = sessionStorage.getItem('userId');
+            // hämta användarens uppgifter
+            $.getJSON('services/svc-profile.aspx?userId=' + id)
+            .done(function (result) {
+                $('#customerfirstname').val(result[0].firstname);
+                $('#customerlastname').val(result[0].lastname);
+                $('#customeremail').val(result[0].email);
+            });
+            // hämta användarens adress
+            $.getJSON('services/svc-getuseraddress.aspx?userId=' + id)
+            .done(function (result) {
+                if (result.length > 0) {
+                    $('#customerstreet').val(result[0].street);
+                    $('#customerzip').val(result[0].zip);
+                    $('#customercity').val(result[0].city);
+                    $('#customercountry').val(result[0].country);
+                }
+            });
+        }
+    }
+
     $('#addAnotherAddress').click(function () {
         $('#otherAddress').slideToggle();
     });
