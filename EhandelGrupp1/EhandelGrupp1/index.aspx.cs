@@ -22,7 +22,6 @@ namespace EhandelGrupp1
                 var image = DataManagement.GetImagesForProduct(product.productId);
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
-                productInfo += "<div class='BildDiv'>";
                 if (image.Count > 0)
                 {
                     string path = image[0].url;
@@ -32,7 +31,6 @@ namespace EhandelGrupp1
                 {
                     productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                 }
-                productInfo += "</div>";
                 productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                 productInfo += "<input type='number' value='1' id='itemCounter' />";
                 productInfo += "<button type='button' class='btn btn-primary addToCartButton'>Köp</button>";
