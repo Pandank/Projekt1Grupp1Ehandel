@@ -1,7 +1,15 @@
 ﻿$(document).ready(function () {
     // om varor finns i varukorgen, skriv ut antal unika produkter
     if (sessionStorage.getItem('cartCounter')) {
-        $('.itemCount').css('display', 'block');
+        
+        var mq = window.matchMedia("(min-width: 768px)");
+        if (mq.matches) {
+            // window width is at least 768px
+            $('header .itemCount').css('display', 'block');
+        }
+        else {
+            $('.navbar-fixed-bottom .itemCount').css('display', 'block');
+        }
         $('.itemCount').text(sessionStorage.getItem('cartCounter'));
     }
 

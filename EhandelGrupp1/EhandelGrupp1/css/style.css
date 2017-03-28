@@ -16,9 +16,10 @@ header a {
         color: #ffffff;
     }
 
-    .row {
-        margin: 0;
-    }
+.row {
+    margin: 0;
+}
+
 .navbar-brand {
     padding: .3em;
 }
@@ -71,13 +72,13 @@ header a {
         margin: 15px;
     }
 
-    #logo img {
-        height: 100px;
-    }
+        #logo img {
+            height: 100px;
+        }
 
-    #logo h1 {
-        margin: 1em 0 0 .5em;
-    }
+        #logo h1 {
+            margin: 1em 0 0 .5em;
+        }
 
     header {
         position: relative;
@@ -102,6 +103,11 @@ header a {
 
         header .navbar-inverse {
             border: none;
+        }
+
+        header .cartButton {
+            display: inline-block;
+            margin-top: 2em;
         }
 
     #topNavbar {
@@ -236,11 +242,6 @@ header .itemCount {
     position: relative;
 }
 
-header .cartButton {
-    display: inline-block;
-    margin-top: 2em;
-}
-
 .glyphicon {
     font-size: 1.5em;
 }
@@ -292,3 +293,22 @@ a {
 .error {
     color: #a94442;
 }
+
+.thumbnail p {
+    font-weight: 700;
+    color: #B02600;
+    text-align: right;
+    margin-right: .5em;
+    font-size: 1.1em;
+}
+
+
+    .thumbnail a:hover {
+        text-decoration: none;
+        opacity: 0.1;
+    }
+
+    .thumbnail img:hover {
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */
+    }

@@ -37,7 +37,7 @@
                             <li class="category">Sortiment</li>
                             <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
                             <li><a href="#">Kundtjänst</a></li>
-                            <li><a href="#">Om oss</a></li>
+                            <li><a href="AboutUs.aspx">Om oss</a></li>
                         </ul>
                     </div>
                 </div>

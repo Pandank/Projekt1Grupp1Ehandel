@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <body>
-        <h1>Om oss</h1>
+    <div class="container">
+        <h2>Om oss</h2>
         <p>
             Kontorsprylar startade år 1995 med försäljning av kontorsmaterial via vår butik i Gemträsk i Bodens kommun. Vår ambition är att 
             förenkla ditt kontorsliv med kontorsmaterial och service som både effektiviserar arbetsplatsen och håller nere kostnaderna. 
@@ -16,7 +16,6 @@
             Besök oss gärna i vår fysiska butik och ta del av oslagbara priser i vår fyndhörna!
             Häftapparatsgatan 7, Gemträsk
         </p>
-
-    </body>
+    </div>
 
 </asp:Content>
