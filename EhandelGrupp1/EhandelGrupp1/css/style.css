@@ -16,14 +16,19 @@ header a {
         color: #ffffff;
     }
 
+.navbar-brand {
+    padding: .3em;
+}
+
 #logo img {
-    height: 100px;
+    height: 40px;
     float: left;
 }
 
 #logo h1 {
     float: left;
-    margin: 1em 0 0 .5em;
+    margin: .2em 0 0 .2em;
+    font-size: 1.6em;
 }
 
 .BildDiv {
@@ -59,6 +64,18 @@ header a {
     }
 
 @media (min-width: 768px) {
+    #logo {
+        margin: 15px;
+    }
+
+    #logo img {
+        height: 100px;
+    }
+
+    #logo h1 {
+        margin: 1em 0 0 .5em;
+    }
+
     header {
         position: relative;
         background-color: #232625;
