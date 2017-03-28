@@ -654,12 +654,17 @@ namespace EhandelGrupp1
         return a.addressId;
     }
         //todo victor
-        public static object GetAllCategoryNameFromCategoryID(int catID)
+        public static int GetAllCategoryNameFromCategoryID(int catID)
         {
             using (var db = new EHandel())
             {
-                //var query =
+                var firstOrDefault = db.Category.FirstOrDefault(c => c.categoryId == catID);
+                if (firstOrDefault != null)
+                {
+                    var query = firstOrDefault.name;
+                }   
             }
+
         }
     }
 
