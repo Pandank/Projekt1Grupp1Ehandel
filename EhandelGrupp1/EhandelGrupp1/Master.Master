@@ -33,7 +33,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="topNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="category"><a href="category-overview.aspx">Sortiment</a></li>
+                            <li class="category">Sortiment</li>
                             <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
                             <li><a href="#">Kundtjänst</a></li>
                             <li><a href="#">Om oss</a></li>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Kassa</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="goToCheckoutButton">Kassa</button>
                     </div>
                 </div>
             </div>

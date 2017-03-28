@@ -16,6 +16,9 @@ header a {
         color: #ffffff;
     }
 
+    .row {
+        margin: 0;
+    }
 .navbar-brand {
     padding: .3em;
 }

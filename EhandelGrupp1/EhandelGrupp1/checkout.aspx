@@ -6,7 +6,7 @@
 
     <div class="container" id="checkoutPage">
         <h2>Kassa</h2>
-        <table class="table">
+        <table class="table" id="checkoutTable">
             <thead>
                 <tr>
                     <th>Produktnamn</th>
@@ -16,24 +16,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Multicopy, koperingspapper</td>
-                    <td>40 kr</td>
-                    <td>
-                        <input type="number" value="1" id="itemCounter" /></td>
-                    <td>jQuery pris ggr antal</td>
-                </tr>
-                <tr>
-                    <td>Hålslag</td>
-                    <td>50 kr</td>
-                    <td>
-                        <input type="number" value="1" id="itemCounter" /></td>
-                    <td>jQuery pris ggr antal</td>
-                </tr>
             </tbody>
         </table>
 
         <h3>Leverans- och fakturaadress</h3>
+        <div class="form-group">
+            <label for="firstname">Förnamn:</label>
+            <input type="text" class="form-control" id="customerfirstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Efternamn:</label>
+            <input type="text" class="form-control" id="customerlastname">
+        </div>
+        <div class="form-group">
+            <label for="email">E-post:</label>
+            <input type="email" class="form-control" id="customeremail">
+        </div>
         <div class="form-group">
             <label for="street">Gata:</label>
             <input type="text" class="form-control" id="customerstreet">
