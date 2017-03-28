@@ -10,6 +10,8 @@ namespace EhandelGrupp1
 {
     public static class DataManagement
     {
+        static public bool WithVAT { get; set; } = true;
+        static public decimal VAT { get; set; } = 1.25m;
 
         /// <summary>
         /// Returns order by order id
@@ -29,8 +31,7 @@ namespace EhandelGrupp1
                                 p.productId,
                                 p.name,
                                 obp.count,
-                                obp.price,
-
+                                price = WithVAT ? obp.price * VAT: obp.price
                             };
                 return ObjTooJson.ObjToJson(query.ToList());
             }
@@ -175,7 +176,8 @@ namespace EhandelGrupp1
                             p.productId,
                             p.name,
                             p.description,
-                            p.price,
+                            price = WithVAT ? p.price * VAT : p.price,
+                            //p.price,
                             p.stock,
                             p.date
                         };
@@ -202,7 +204,8 @@ namespace EhandelGrupp1
                              p.productId,
                              p.name,
                              p.description,
-                             p.price,
+                             price = WithVAT ? p.price * VAT : p.price,
+                             //p.price,
                              p.stock,
                              p.date,
                              p.isHidden
@@ -269,7 +272,8 @@ namespace EhandelGrupp1
                              p.productId,
                              p.name,
                              p.description,
-                             p.price,
+                             price = WithVAT ? p.price * VAT : p.price,
+                             //p.price,
                              p.stock,
                              p.date,
                              p.isHidden
@@ -309,7 +313,8 @@ namespace EhandelGrupp1
                             p.productId,
                             p.name,
                             p.description,
-                            p.price,
+                            price = WithVAT ? p.price * VAT : p.price,
+                            //p.price,
                             p.stock,
                             p.date
                         };
@@ -330,7 +335,8 @@ namespace EhandelGrupp1
                              p.productId,
                              p.name,
                              p.description,
-                             p.price,
+                             price = WithVAT ? p.price * VAT : p.price,
+                             //p.price,
                              p.stock,
                              p.date,
                              p.isHidden
@@ -364,7 +370,8 @@ namespace EhandelGrupp1
                              p.productId,
                              p.name,
                              p.description,
-                             p.price,
+                             price = WithVAT ? p.price * VAT : p.price,
+                             //p.price,
                              p.stock,
                              p.date,
                              p.isHidden
@@ -400,7 +407,8 @@ namespace EhandelGrupp1
                             p.productId,
                             p.name,
                             p.description,
-                            p.price,
+                            price = WithVAT ? p.price * VAT : p.price,
+                            //p.price,
                             p.stock,
                             p.date
                         };

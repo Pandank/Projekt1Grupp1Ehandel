@@ -13,6 +13,21 @@ namespace EhandelGrupp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool vat = false;
+            if(Session["vat"] != null)
+            {
+                if(Session["vat"].Equals("true"))
+                {
+                    vat = true;
+                }
+                else
+                {
+                    vat = false;
+                }
+            }
+
+            DataManagement.WithVAT = vat;
+
             if (!string.IsNullOrEmpty(Request["id"]))
             {
                 // visa produkt

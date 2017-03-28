@@ -93,6 +93,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="js\script.js" />
+    <Content Include="js\script2.js" />
     <Content Include="packages.config" />
     <Content Include="Master.Master" />
     <Content Include="index.aspx" />
@@ -114,6 +115,7 @@
     <Content Include="services\svc-order.aspx" />
     <Content Include="services\svc-profile.aspx" />
     <Content Include="services\svc-updatecustomer.aspx" />
+    <Content Include="services\svc-vat.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="orderconfirmation.aspx" />
@@ -249,6 +251,13 @@
     </Compile>
     <Compile Include="services\svc-updatecustomer.aspx.designer.cs">
       <DependentUpon>svc-updatecustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-vat.aspx.cs">
+      <DependentUpon>svc-vat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-vat.aspx.designer.cs">
+      <DependentUpon>svc-vat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="index.aspx.cs">
