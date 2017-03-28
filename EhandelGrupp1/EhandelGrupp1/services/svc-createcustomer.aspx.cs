@@ -36,16 +36,8 @@ namespace EhandelGrupp1.services
                     {
                         DataManagement.CreateAddress(street, zip, city, country, userID);
 
-                        LiteralCreateCustomer.Text = JsonConvert.SerializeObject("Ok");
+                        LiteralCreateCustomer.Text = JsonConvert.SerializeObject(userID);
                     }
-                    else
-                    {
-                        LiteralCreateCustomer.Text = JsonConvert.SerializeObject("Error");
-                    }
-                }
-                else
-                {
-                    LiteralCreateCustomer.Text = JsonConvert.SerializeObject("Error");
                 }
             }
         }
