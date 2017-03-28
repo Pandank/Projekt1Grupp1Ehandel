@@ -653,6 +653,14 @@ namespace EhandelGrupp1
         }
         return a.addressId;
     }
-}
+        //todo victor
+        public static object GetAllCategoryNameFromCategoryID(int catID)
+        {
+            using (var db = new EHandel())
+            {
+                //var query =
+            }
+        }
+    }
 
-}
+}   
