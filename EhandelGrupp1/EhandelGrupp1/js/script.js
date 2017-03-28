@@ -411,6 +411,14 @@
         this.price = price;
         this.sum = sum;
     }
+
+    /***********************************
+    KASSA
+    ***********************************/
+    $('#addAnotherAddress').click(function () {
+        $('#otherAddress').slideToggle();
+    });
+    
 });
 
 /* Hämta url-parameter */

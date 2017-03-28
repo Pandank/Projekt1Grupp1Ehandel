@@ -162,6 +162,11 @@ header a {
     }
 }
 
+#otherAddress {
+    display: none;
+    margin-top: 1em;
+}
+
 /* Varukorg */
 #itemCount {
     position: absolute;
