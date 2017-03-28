@@ -1,5 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="EhandelGrupp1.WebForm5" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <body>
+        <h1>Om oss</h1>
+        <p>
+            Kontorsprylar startade år 1995 med försäljning av kontorsmaterial via vår butik i Gemträsk i Bodens kommun. Vår ambition är att 
+            förenkla ditt kontorsliv med kontorsmaterial och service som både effektiviserar arbetsplatsen och håller nere kostnaderna. 
+            Vil tillhandahåller produkter till företag som vill ha fungerande, trevliga- och därmed presterande arbetsplatser.
+            Nya kundbeteenden och teknisk utveckling gör att den klassiska kontorsvaruhandeln på senare år genomgått en total förändring. Som ett sätt 
+            att möta dina behov lanserar vi under 2017 vår webbshop på <a href="http://www.kontorsprylar.se">Kontorsprylar AB</a>.
+        </p>
+        <p>
+            Besök oss gärna i vår fysiska butik och ta del av oslagbara priser i vår fyndhörna!
+            Häftapparatsgatan 7, Gemträsk
+        </p>
+
+    </body>
+
 </asp:Content>
