@@ -19,10 +19,18 @@ namespace EhandelGrupp1
                 var product = DataManagement.GetProductByIDo(int.Parse(Request["id"]));
 
                 if (product == null) return;
-
+                var image = DataManagement.GetImagesForProduct(product.productId);
                 string productInfo = "<div class='row' id='" + product.productId + "'>";
                 productInfo += "<h2 class='h2'>" + product.name + "</h2>";
-                productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                if (image.Count > 0)
+                {
+                    string path = image[0].url;
+                    productInfo += "<img class='img-responsive' src='" + path + "' alt='' />";
+                }
+                else
+                {
+                    productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                }
                 productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                 productInfo += "<input type='number' value='1' id='itemCounter' />";
                 productInfo += "<button type='button' class='btn btn-primary addToCartButton'>Köp</button>";
@@ -42,10 +50,19 @@ namespace EhandelGrupp1
                 productInfo += "<div class='row'";
                 foreach (var product in products)
                 {
+                    var image = DataManagement.GetImagesForProduct(product.productId);
                     productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
                     productInfo += "<div class='thumbnail'>";
                     productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
-                    productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    if (image.Count > 0)
+                    {
+                        string path = image[0].url;
+                        productInfo += "<img class='img-responsive' src='" + path + "' alt='' />";
+                    }
+                    else
+                    {
+                        productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    }
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
@@ -66,10 +83,19 @@ namespace EhandelGrupp1
                 productInfo += "<div class='row'";
                 foreach (var product in products)
                 {
+                    var image = DataManagement.GetImagesForProduct(product.productId);
                     productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
                     productInfo += "<div class='thumbnail'>";
                     productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
-                    productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    if (image.Count > 0)
+                    {
+                        string path = image[0].url;
+                        productInfo += "<img class='img-responsive' src='" + path + "' alt='' />";
+                    }
+                    else
+                    {
+                        productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    }
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
