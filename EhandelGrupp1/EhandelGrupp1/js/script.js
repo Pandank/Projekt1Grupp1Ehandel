@@ -147,7 +147,7 @@
     REGISTRERING
     ***********************************/
     /* Klick på "Registrera */
-    $('#registerButton').click(function () {
+    $('#register-user-button').click(function () {
         // ta bort felmeddelanden
         $('.error').remove();
 
@@ -218,8 +218,9 @@
         }
         // Om formuläret validerar
         if (isValid) {
+            console.log("Validerar")
             $.getJSON({
-                url: 'services/svc-registeruser.aspx',
+                url: 'services/svc-createcustomer.aspx',
                 data: {
                     firstname: firstname,
                     lastname: lastname,
@@ -230,37 +231,28 @@
                     city: city,
                     country: country
                 }
-            }).done(function (result) {
-                console.log(result)
-                /*if (result.length != 0) {
-                    // om användaren har bockat för "Kom ihåg mig" sätt localStorage
-                    if (rememberMe) {
-                        localStorage.setItem('userId', result[0].userId);
-                        localStorage.setItem('isAdmin', result[0].isAdmin);
-                    }
-                        // om användaren inte vill bli ihågkommen sätt sessionStorage
-                    else {
-                        sessionStorage.setItem('userId', result[0].userId);
-                        sessionStorage.setItem('isAdmin', result[0].isAdmin);
-                    }
+            }).done(function (userId) {
+                if (userId.length != 0) {
+                    sessionStorage.setItem('userId', userId);
+                    sessionStorage.setItem('isAdmin', userId);
                     // töm fälten
-                    $('#email').val('');
-                    $('#password').val('');
-                    // TODO avbocka
-                    // stäng modal-fönstret
-                    $('#loginModal').modal('hide');
-                    // om användaren är admin
-                    if (result[0].isAdmin == 1) {
-                        loginAdmin();
-                    }
-                        // om användaren inte är admin
-                    else {
-                        loginUser();
-                    }
+                    $('#registerfirstname').val('');
+                    $('#registerlastname').val('');
+                    $('#registeremail').val('');
+                    $('#registerpassword').val('');
+                    $('#verifyregisterpassword').val('');
+                    $('#registerstreet').val('');
+                    $('#registerzip').val('');
+                    $('#registercity').val('');
+                    $('#registercountry').val('');
+                    
+                    loginUser();
+
+                    window.location.href = "index.aspx";
                 }
                 else {
-                    $('<p class="error">Felaktig inloggning</p>').insertAfter('#loginButton');
-                }*/
+                    $('<p class="error">Tyvärr, något blev under registreringen. Försök gärna igen.</p>').insertAfter('#register-user-button');
+                }
             });
         }
     });
@@ -342,11 +334,11 @@
                 cartItem += '<span class="productSum">' + products[i].sum + '</span>';
                 cartItem += '</div>';
             }
-        }
-        cartItem += '<p>Totalsumma: </p>';
+            cartItem += '<p>Totalsumma: </p>';
 
-        // lägg till i varukorgen
-        $('.modal-body').append(cartItem);
+            // lägg till i varukorgen
+            $('.modal-body').append(cartItem);
+        }
     }
 
 

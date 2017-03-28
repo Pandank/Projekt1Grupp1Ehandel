@@ -6,8 +6,6 @@
 
     <div class="container">
         <h2>Orderöversikt</h2>
-        <p>Öka/minska antal för att ändra i varukorgen:</p>
-
         <table class="table">
             <thead>
                 <tr>
@@ -35,7 +33,7 @@
             </tbody>
         </table>
 
-        <p>Leverans- och fakturaadress</p>
+        <h3>Leverans- och fakturaadress</h3>
         <div class="form-group">
             <label for="street">Gata:</label>
             <input type="text" class="form-control" id="customerstreet">
