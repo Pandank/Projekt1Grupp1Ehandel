@@ -11,11 +11,9 @@
                 "price": $("#registerproductprice").val(),
                 "stock": $("#registerproductstock").val(),
                 "isHidden": 0,
-                "categoryID": $("#categorylist").val(),
+                "categoryID": $("#ContentPlaceHolder1_categoryList").val(),
 
-                "categoryID": categoryList.val(),
-
-                //"categoryList": todo
+                
             })
             .done(function (data) {
                 alert("Produkten tillagd");
