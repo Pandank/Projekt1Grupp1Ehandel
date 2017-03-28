@@ -38,12 +38,13 @@
                             <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
                             <li><a href="#">Kundtjänst</a></li>
                             <li><a href="AboutUs.aspx">Om oss</a></li>
+                            <li id="logout"><a href="#" id="logoutButton">Logga ut</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <span class="headerSpace">.</span>
-            <a id="login" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal">Logga in</a>
+            <a class="userLink" id="login" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal">Logga in</a>
             <a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="itemCount"></span></a>
         </header>
         <div class="floatContainer">
@@ -60,7 +61,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
                 <li><a href="category-overview.aspx"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
-                <li><a id="userLink" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="loginText" class="navIcon">Logga in</span></a></li>
+                <li><a class="userLink" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="loginText" class="navIcon">Logga in</span></a></li>
                 <li><a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span class="itemCount"></span></a></li>
             </ul>
         </nav>

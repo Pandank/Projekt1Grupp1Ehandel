@@ -295,20 +295,36 @@ a {
 }
 
 .thumbnail p {
-    font-weight: 700;
-    color: #B02600;
-    text-align: right;
-    margin-right: .5em;
-    font-size: 1.1em;
 }
 
 
-    .thumbnail a:hover {
-        text-decoration: none;
-        opacity: 0.1;
-    }
+.thumbnail a:hover {
+    text-decoration: none;
+    opacity: 0.1;
+}
 
-    .thumbnail img:hover {
-        opacity: 0.5;
-        filter: alpha(opacity=50); /* For IE8 and earlier */
-    }
+.thumbnail img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.priceBox {
+    font-weight: 700;
+    color: #B02600;
+    margin-right: .5em;
+    font-size: 1.1em;
+    text-align: right;
+}
+
+#productSite .priceBox {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    
+}
+
+#logout {
+    display: none;
+}

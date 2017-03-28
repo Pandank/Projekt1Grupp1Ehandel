@@ -36,17 +36,21 @@
         $('#logoutButton').hide();
         // ändra text i fotnavigationen i mobilvyn
         $('#loginText').text('Logga in');
+        // visa "Logga in"
+        $('#login').show();
+        // ta bort "logga ut"
+        $('#logout').hide();
     });
     /* Vid klick på "Logga in" / "Konto" i fotnavigationen i mobilvy */
-    $('#userLink').click(function () {
+    $('.userLink').click(function () {
         // om användaren är inloggad ska den skickas till kontosidan
         if (localStorage.getItem('userId') != null || sessionStorage.getItem('userId') != null) {
-            $('#userLink').prop('href', 'userprofile.aspx');
+            $('.userLink').prop('href', 'userprofile.aspx');
             window.location.href = 'userprofile.aspx';
         }
             // om användaren inte är inloggad ska inloggningsfönstret öppnas
         else {
-            $('#userLink').prop('href', '#loginModal');
+            $('.userLink').prop('href', '#loginModal');
         }
     });
 
@@ -123,8 +127,11 @@
     /* Visa funktioner för inloggade användare */
     function loginUser() {
         console.log('visa funktioner för inloggade')
+        $('#login').text('Konto');
+        $('#login').prop('href', 'userprofile.aspx');
+
         $('#loginText').text("Konto");
-        $('#topNavbar ul').append('<li><a href="#" id="logoutButton">Logga ut</a></li>');
+        $('#logout').show();
     }
 
     /* Visa funktioner för inloggade administratörer */
