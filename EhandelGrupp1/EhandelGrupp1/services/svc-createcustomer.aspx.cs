@@ -16,16 +16,16 @@ namespace EhandelGrupp1.services
             if (!string.IsNullOrEmpty(Request["createCustomer"]))
             {
                 // Kolla så all data finns
-                string email = !string.IsNullOrEmpty(Request["email"]) ? Request["email"] : "";
-                string firstName = !string.IsNullOrEmpty(Request["firstname"]) ? Request["firstname"] : "";
-                string lastName = !string.IsNullOrEmpty(Request["lastname"]) ? Request["lastname"] : "";
-                string isAdmin = !string.IsNullOrEmpty(Request["isAdmin"]) ? Request["isAdmin"] : "";
-                string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"] : "";
+                string email = !string.IsNullOrEmpty(Request["email"]) ? Request["email"].Trim() : "";
+                string firstName = !string.IsNullOrEmpty(Request["firstname"]) ? Request["firstname"].Trim() : "";
+                string lastName = !string.IsNullOrEmpty(Request["lastname"]) ? Request["lastname"].Trim() : "";
+                string isAdmin = !string.IsNullOrEmpty(Request["isAdmin"]) ? Request["isAdmin"].Trim() : "";
+                string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"].Trim() : "";
 
-                string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"] : "";
-                string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"] : "";
-                string city = !string.IsNullOrEmpty(Request["city"]) ? Request["city"] : "";
-                string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"] : "";
+                string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"].Trim() : "";
+                string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"].Trim() : "";
+                string city = !string.IsNullOrEmpty(Request["city"]) ? Request["city"].Trim() : "";
+                string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"].Trim() : "";
 
 
                 if (email.Length > 0 && firstName.Length > 0 && lastName.Length > 0 && isAdmin.Length > 0)

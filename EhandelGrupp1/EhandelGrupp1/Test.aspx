@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <%-- <script>
+    <script>
         function CreateCustomer()
         {
             alert("Test");
@@ -29,5 +29,5 @@
 
 
     <input type="button" id="createCustomer" onclick="CreateCustomer()" value="Click me" />
-</asp:Content>--%>
+</asp:Content>
 
