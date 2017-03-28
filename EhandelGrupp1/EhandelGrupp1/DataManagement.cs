@@ -118,9 +118,31 @@ namespace EhandelGrupp1
 
         return p.productId;
     }
+        /// <summary>
+        /// Creates a new CTP 
+        /// </summary>
+        /// <param name="categoryID">category id</param>
+        /// <param name="productID">product id</param>
+        public static void CreateCategoryToProduct(int categoryID, int productID)
+        {
+            CategoryToProduct ctp = new CategoryToProduct()
+            {
+                categoryId = categoryID,
+                productId = productID
+            };
 
-    //Create a new Category, returns Category ID //CS
-    public static int CreateCategory(string name)
+            using (var db = new EHandel())
+            {
+                db.CategoryToProduct.Add(ctp);
+                db.SaveChanges();
+            }
+        }
+
+
+
+
+        //Create a new Category, returns Category ID //CS
+        public static int CreateCategory(string name)
     {
         Category c = new Category
         {
