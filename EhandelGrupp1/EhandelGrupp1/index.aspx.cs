@@ -38,15 +38,21 @@ namespace EhandelGrupp1
 
                 if (products == null) return;
 
-                string productInfo = "<h2 class='h2'>KATEGORINAMN ska hämtas</h2>";
+                string productInfo = "<div class='row'><h2 class='h2'>KATEGORINAMN ska hämtas</h2></div>";
+                productInfo += "<div class='row'";
                 foreach (var product in products)
                 {
-                    productInfo += "<div class='row' id='" + product.productId + "'>";
-                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
+                    productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
+                    productInfo += "<div class='thumbnail'>";
+                    productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
                     productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
-                    productInfo += "</div>"; // end row
+                    productInfo += "</a>";
+                    productInfo += "</div>"; // end thumbnail
+                    productInfo += "</div>"; // end col-sm-3
                 }
+                productInfo += "</div>"; // end row
                 LiteralCategory.Text = productInfo;
             }
             else
@@ -56,15 +62,21 @@ namespace EhandelGrupp1
 
                 if (products == null) return;
 
-                string productInfo = "<h2 class='h2'>Nyheter</h2>";
+                string productInfo = "<div class='row'><h2 class='h2'>Nyheter</h2></div>";
+                productInfo += "<div class='row'";
                 foreach (var product in products)
                 {
-                    productInfo += "<div class='row' id='" + product.productId + "'>";
-                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
+                    productInfo += "<div class='col-sm-3' id='" + product.productId + "'>";
+                    productInfo += "<div class='thumbnail'>";
+                    productInfo += "<a href='index.aspx?id=" + product.productId + "'>";
                     productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
+                    productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
-                    productInfo += "</div>"; // end row
+                    productInfo += "</a>";
+                    productInfo += "</div>"; // end thumbnail
+                    productInfo += "</div>"; // end col-sm-3
                 }
+                productInfo += "</div>"; // end row
                 LiteralStart.Text += productInfo;
             }
         }
