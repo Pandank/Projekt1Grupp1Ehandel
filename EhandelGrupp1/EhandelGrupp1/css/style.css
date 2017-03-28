@@ -187,6 +187,10 @@ header a {
     margin-top: 1em;
 }
 
+img {
+    max-height: 500px;
+}
+
 /* Varukorg */
 #itemCount {
     position: absolute;
