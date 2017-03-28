@@ -218,6 +218,7 @@
         }
         // Om formuläret validerar
         if (isValid) {
+            console.log("Validerar")
             $.getJSON({
                 url: 'services/svc-createcustomer.aspx',
                 data: {

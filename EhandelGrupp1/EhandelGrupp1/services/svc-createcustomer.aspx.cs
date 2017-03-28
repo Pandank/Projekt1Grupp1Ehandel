@@ -13,32 +13,34 @@ namespace EhandelGrupp1.services
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Request["createCustomer"]))
+
+            // Kolla så all data finns
+            string email = !string.IsNullOrEmpty(Request["email"]) ? Request["email"].Trim() : "";
+            string firstName = !string.IsNullOrEmpty(Request["firstname"]) ? Request["firstname"].Trim() : "";
+            string lastName = !string.IsNullOrEmpty(Request["lastname"]) ? Request["lastname"].Trim() : "";
+            string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"].Trim() : "";
+
+            string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"].Trim() : "";
+            string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"].Trim() : "";
+            string city = !string.IsNullOrEmpty(Request["city"]) ? Request["city"].Trim() : "";
+            string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"].Trim() : "";
+            string isAdmin = "0";
+
+
+            int userID = DataManagement.CreateCustomer(email, firstName, lastName, isAdmin, passWord);
+
+            if (userID > 0)
             {
-                // Kolla så all data finns
-                string email = !string.IsNullOrEmpty(Request["email"]) ? Request["email"].Trim() : "";
-                string firstName = !string.IsNullOrEmpty(Request["firstname"]) ? Request["firstname"].Trim() : "";
-                string lastName = !string.IsNullOrEmpty(Request["lastname"]) ? Request["lastname"].Trim() : "";
-                string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"].Trim() : "";
+                DataManagement.CreateAddress(street, zip, city, country, userID);
 
-                string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"].Trim() : "";
-                string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"].Trim() : "";
-                string city = !string.IsNullOrEmpty(Request["city"]) ? Request["city"].Trim() : "";
-                string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"].Trim() : "";
-                string isAdmin = "0";
-
-                if (email.Length > 0 && firstName.Length > 0 && lastName.Length > 0 && isAdmin.Length > 0)
-                {
-                    int userID = DataManagement.CreateCustomer(email, firstName, lastName, isAdmin, passWord);
-
-                    if (userID > 0)
-                    {
-                        DataManagement.CreateAddress(street, zip, city, country, userID);
-
-                        LiteralCreateCustomer.Text = JsonConvert.SerializeObject(userID);
-                    }
-                }
+                LiteralCreateCustomer.Text = JsonConvert.SerializeObject(userID);
             }
+            else
+            {
+                LiteralCreateCustomer.Text = "Inget";
+            }
+
+
         }
     }
 }
