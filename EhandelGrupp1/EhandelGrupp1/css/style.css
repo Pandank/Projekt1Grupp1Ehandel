@@ -26,11 +26,13 @@ header a {
     margin: 1em 0 0 .5em;
 }
 
-.responsive {
-    max-height: 100%;
+.BildDiv {
+    height: 220px;
 }
 
-
+.img-responsive {
+    max-height: 100%;
+}
 
 #login, .headerSpace {
     display: none;
@@ -187,7 +189,7 @@ header a {
     margin-top: 1em;
 }
 
-img {
+#productSite img {
     max-height: 500px;
 }
 
