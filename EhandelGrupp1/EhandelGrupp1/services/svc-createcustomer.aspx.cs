@@ -19,14 +19,13 @@ namespace EhandelGrupp1.services
                 string email = !string.IsNullOrEmpty(Request["email"]) ? Request["email"].Trim() : "";
                 string firstName = !string.IsNullOrEmpty(Request["firstname"]) ? Request["firstname"].Trim() : "";
                 string lastName = !string.IsNullOrEmpty(Request["lastname"]) ? Request["lastname"].Trim() : "";
-                string isAdmin = !string.IsNullOrEmpty(Request["isAdmin"]) ? Request["isAdmin"].Trim() : "";
                 string passWord = !string.IsNullOrEmpty(Request["password"]) ? Request["password"].Trim() : "";
 
                 string street = !string.IsNullOrEmpty(Request["street"]) ? Request["street"].Trim() : "";
                 string zip = !string.IsNullOrEmpty(Request["zip"]) ? Request["zip"].Trim() : "";
                 string city = !string.IsNullOrEmpty(Request["city"]) ? Request["city"].Trim() : "";
                 string country = !string.IsNullOrEmpty(Request["country"]) ? Request["country"].Trim() : "";
-
+                string isAdmin = "0";
 
                 if (email.Length > 0 && firstName.Length > 0 && lastName.Length > 0 && isAdmin.Length > 0)
                 {
