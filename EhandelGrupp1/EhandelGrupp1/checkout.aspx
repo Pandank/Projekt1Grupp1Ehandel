@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">
-        <h2>Orderöversikt</h2>
+    <div class="container" id="checkoutPage">
+        <h2>Kassa</h2>
         <table class="table">
             <thead>
                 <tr>

@@ -415,6 +415,10 @@
     /***********************************
     KASSA
     ***********************************/
+    if ($('#checkoutPage').length > 0) {
+        console.log("Kassan")
+    }
+
     $('#addAnotherAddress').click(function () {
         $('#otherAddress').slideToggle();
     });

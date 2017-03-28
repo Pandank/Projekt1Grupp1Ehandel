@@ -16,6 +16,22 @@ header a {
         color: #ffffff;
     }
 
+#logo img {
+    height: 100px;
+    float: left;
+}
+
+#logo h1 {
+    float: left;
+    margin: 1em 0 0 .5em;
+}
+
+.responsive {
+    max-height: 100%;
+}
+
+
+
 #login, .headerSpace {
     display: none;
 }
@@ -65,6 +81,10 @@ header a {
         header .navbar-inverse {
             border: none;
         }
+
+    #topNavbar {
+        margin-top: 5em;
+    }
 
     .navbar-header {
         display: block;
