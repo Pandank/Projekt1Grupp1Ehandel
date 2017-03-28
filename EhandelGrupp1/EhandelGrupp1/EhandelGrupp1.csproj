@@ -109,6 +109,7 @@
     <Content Include="Test.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="orderconfirmation.aspx" />
+    <Content Include="administerproducts.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="orderconfirmation.aspx.designer.cs">
       <DependentUpon>orderconfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administerproducts.aspx.cs">
+      <DependentUpon>administerproducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administerproducts.aspx.designer.cs">
+      <DependentUpon>administerproducts.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

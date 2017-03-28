@@ -43,7 +43,7 @@
             <label for="country">Land:</label>
             <input type="text" class="form-control" id="registercountry">
         </div>        
-        <button type="button" class="btn btn-default" id="registerButton">Registrera</button>
+        <button type="button" class="btn btn-default" id="register-user-button">Registrera</button>
     </div>
 
 </asp:Content>
