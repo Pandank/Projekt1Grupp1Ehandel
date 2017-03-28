@@ -44,7 +44,7 @@
             </nav>
             <span class="headerSpace">.</span>
             <a id="login" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#loginModal">Logga in</a>
-            <a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span id="itemCount2"></span></a>
+            <a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="itemCount"></span></a>
         </header>
         <div class="floatContainer">
             <button id="vatButton" class="btn btn-link" type="button"><span id="vatText">Inkl. moms</span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
@@ -61,7 +61,7 @@
                 <li><a href="index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span class="navIcon">Hem</span></a></li>
                 <li><a href="category-overview.aspx"><span class="glyphicon glyphicon-th" aria-hidden="true"></span><span class="navIcon">Sortiment</span></a></li>
                 <li><a id="userLink" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="loginText" class="navIcon">Logga in</span></a></li>
-                <li><a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span id="itemCount"></span></a></li>
+                <li><a class="cartButton" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#cartModal"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="navIcon">Varukorg</span><span class="itemCount"></span></a></li>
             </ul>
         </nav>
         <footer class="footer">

@@ -214,7 +214,7 @@ header a {
 }
 
 /* Varukorg */
-#itemCount {
+.itemCount {
     position: absolute;
     display: none;
     top: 0;
@@ -225,6 +225,24 @@ header a {
     background: #B02600;
     color: white;
     text-align: center;
+}
+
+header .itemCount {
+    top: -10px;
+    left: 15px;
+}
+
+.cartButton {
+    position: relative;
+}
+
+header .cartButton {
+    display: inline-block;
+    margin-top: 2em;
+}
+
+.glyphicon {
+    font-size: 1.5em;
 }
 
 .floatContainer {

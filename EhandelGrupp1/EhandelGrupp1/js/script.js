@@ -1,8 +1,8 @@
 ﻿$(document).ready(function () {
     // om varor finns i varukorgen, skriv ut antal unika produkter
     if (sessionStorage.getItem('cartCounter')) {
-        $('#itemCount').css('display', 'block');
-        $('#itemCount').text(sessionStorage.getItem('cartCounter'));
+        $('.itemCount').css('display', 'block');
+        $('.itemCount').text(sessionStorage.getItem('cartCounter'));
     }
 
     // om användaren är inloggad visa funktioner för inloggade
@@ -288,6 +288,11 @@
                 $('#editcountry').val(result[0].country);
             }
         });
+        // hämta tidigare ordrar
+        $.getJSON('services/svc-order.aspx?userId=' + id)
+        .done(function (result) {
+            console.log(result)
+        });
     }
 
     /* Uppdatera profiluppgifter */
@@ -386,11 +391,12 @@
         var productName = $('#' + id + ' h2').text();
 
         // Öka varukorg-counter med 1
-        $('#itemCount').css('display', 'block');
-        var cartCounter = $('#itemCount').text();
+        $('.itemCount').css('display', 'block');
+        var cartCounter = $('header .itemCount').text();
+        console.log(cartCounter)
         cartCounter = cartCounter * 1;
         cartCounter++;
-        $('#itemCount').text(cartCounter);
+        $('.itemCount').text(cartCounter);
 
         var product = new Product(id, counter, productName, price, sum);
         // skapa array
