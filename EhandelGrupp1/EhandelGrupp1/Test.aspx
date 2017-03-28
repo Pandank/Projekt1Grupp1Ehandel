@@ -2,13 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <%-- <script>
+    <script>
         function CreateCustomer()
         {
             alert("Test");
 
             $.get("services/svc-createcustomer.aspx?createCustomer=1", { "email": $("#email").val(), "firstname": $("#firstname").val(), "lastname": $("#lastname").val(),
-                "isAdmin": $("#isAdmin").val(), "password": $("#password").val(), "street": $("#street").val(), "zip": $("#zip").val(), "city": $("#city").val(),
+                "isAdmin": ("0"), "password": $("#password").val(), "street": $("#street").val(), "zip": $("#zip").val(), "city": $("#city").val(),
                 "country": $("#country").val()})
             .done(function (data) {
                 alert(data);
@@ -29,5 +29,5 @@
 
 
     <input type="button" id="createCustomer" onclick="CreateCustomer()" value="Click me" />
-</asp:Content>--%>
+</asp:Content>
 
