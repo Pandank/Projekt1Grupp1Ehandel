@@ -147,7 +147,7 @@
     REGISTRERING
     ***********************************/
     /* Klick på "Registrera */
-    $('#registerButton').click(function () {
+    $('#register-user-button').click(function () {
         // ta bort felmeddelanden
         $('.error').remove();
 
@@ -219,7 +219,7 @@
         // Om formuläret validerar
         if (isValid) {
             $.getJSON({
-                url: 'services/svc-registeruser.aspx',
+                url: 'services/svc-createcustomer.aspx',
                 data: {
                     firstname: firstname,
                     lastname: lastname,
@@ -342,11 +342,11 @@
                 cartItem += '<span class="productSum">' + products[i].sum + '</span>';
                 cartItem += '</div>';
             }
-        }
-        cartItem += '<p>Totalsumma: </p>';
+            cartItem += '<p>Totalsumma: </p>';
 
-        // lägg till i varukorgen
-        $('.modal-body').append(cartItem);
+            // lägg till i varukorgen
+            $('.modal-body').append(cartItem);
+        }
     }
 
 

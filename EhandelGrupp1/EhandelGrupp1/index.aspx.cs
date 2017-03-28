@@ -47,8 +47,8 @@ namespace EhandelGrupp1
 
                 if (products == null) return;
 
-                string productInfo = "<div class='row'><h2 class='h2'>KATEGORINAMN ska hämtas</h2></div>";
-                productInfo += "<div class='row'";
+                string productInfo = "<h2 class='h2'>" + catName + "</h2>";
+                productInfo += "<div class='row'>";
                 foreach (var product in products)
                 {
                     var image = DataManagement.GetImagesForProduct(product.productId);
@@ -80,8 +80,8 @@ namespace EhandelGrupp1
 
                 if (products == null) return;
 
-                string productInfo = "<div class='row'><h2 class='h2'>Nyheter</h2></div>";
-                productInfo += "<div class='row'";
+                string productInfo = "<h2 class='h2'>Nyheter</h2>";
+                productInfo += "<div class='row'>";
                 foreach (var product in products)
                 {
                     var image = DataManagement.GetImagesForProduct(product.productId);
