@@ -43,6 +43,7 @@ namespace EhandelGrupp1
             {
                 // visa alla produkter i given kategori
                 var products = DataManagement.GetAllProductsFromCategoryO(int.Parse(Request["category"].ToString()));
+                var catName = DataManagement.GetAllCategoryNameFromCategoryID(int.Parse(Request["category"].ToString()));
 
                 if (products == null) return;
 
