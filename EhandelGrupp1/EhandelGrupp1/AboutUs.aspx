@@ -9,6 +9,8 @@
             Kontorsprylar startade år 1995 med försäljning av kontorsmaterial via vår butik i Gemträsk i Bodens kommun. Vår ambition är att 
             förenkla ditt kontorsliv med kontorsmaterial och service som både effektiviserar arbetsplatsen och håller nere kostnaderna. 
             Vil tillhandahåller produkter till företag som vill ha fungerande, trevliga- och därmed presterande arbetsplatser.
+        </p>
+        <p>
             Nya kundbeteenden och teknisk utveckling gör att den klassiska kontorsvaruhandeln på senare år genomgått en total förändring. Som ett sätt 
             att möta dina behov lanserar vi under 2017 vår webbshop på <a href="http://www.kontorsprylar.se">Kontorsprylar AB</a>.
         </p>
