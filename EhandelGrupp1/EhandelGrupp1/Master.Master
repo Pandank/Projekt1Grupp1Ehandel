@@ -34,8 +34,6 @@
                             <li class="category"><a href="#">Kategori 1</a></li>
                             <li><a href="#">Kundtjänst</a></li>
                             <li><a href="#">Om oss</a></li>
-                            <li class="admin">Administration</li>
-                            <li class="admin"><a href="#">Adminfunktioner</a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,7 +103,6 @@
                         <h4 class="modal-title">Varukorg</h4>
                     </div>
                     <div class="modal-body">
-                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>

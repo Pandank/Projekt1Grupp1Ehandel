@@ -204,6 +204,11 @@ KNAPPAR
 TEXT
 *******************************/
 
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
 a {
     color: #002D3D;
 }
