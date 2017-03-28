@@ -5,16 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
         function CreateProduct() {
-            alert("Test");
-
-            var name = $("#registerproductname").val();
-            var desc = $("#registerproductdescription").val();
-            var price = $("#registerproductprice").val();
-            var stock = $("#registerproductstock").val();
 
             $.get("services/svc-createproduct.aspx?createproduct=1", {
-                "name": name, "description":desc, "price": price,
-                "stock": stock, "isHidden": 0
+                "name": $("#registerproductname").val(), "description": $("#registerproductdescription").val(), "price": $("#registerproductprice").val(),
+                "stock": $("#registerproductstock").val(), "isHidden": 0
             })
             .done(function (data) {
                 alert(data);

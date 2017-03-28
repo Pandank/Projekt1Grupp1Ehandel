@@ -27,15 +27,11 @@ namespace EhandelGrupp1.services
                 {
                     stringprice = stringprice.Replace('.', ',');
                     decimal price = Convert.ToDecimal(stringprice);
-
                     int stock = Convert.ToInt32(stringstock);
-
                     byte isHidden = Convert.ToByte(stringisHidden);
-
                     int productId = DataManagement.CreateProduct(name, description, price, stock, date, isHidden);
 
                     LiteralCreateProduct.Text = JsonConvert.SerializeObject(productId);
-
                 }
             }
         }
