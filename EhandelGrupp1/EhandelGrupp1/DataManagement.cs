@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
+using System.Reflection.Emit;
 using System.Web;
 
 namespace EhandelGrupp1
@@ -421,17 +422,31 @@ namespace EhandelGrupp1
             return ObjTooJson.ObjToJson(query);
         }
     }
+        /// <summary>
+        /// Returns ALL Catagory NAMES
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetAllCategoryNamesO()
+        {
+            using (var db = new EHandel())
+            {
+                var query = from b in db.Category
+                            select b.name;
 
-    /// <summary>
-    /// Creates a new customer returns the user ID
-    /// </summary>
-    /// <param name="email">Email Of Customer</param>
-    /// <param name="firstname">Firstname Of Customer</param>
-    /// <param name="lastname">Lastname Of Customer</param>
-    /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
-    /// <param name="password">Password of Customer</param>
-    /// <returns></returns>
-    public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password) //CS
+                return query.ToList();
+            }
+        }
+
+        /// <summary>
+        /// Creates a new customer returns the user ID
+        /// </summary>
+        /// <param name="email">Email Of Customer</param>
+        /// <param name="firstname">Firstname Of Customer</param>
+        /// <param name="lastname">Lastname Of Customer</param>
+        /// <param name="isAdmin">if the user is admin 0 or 1 as a char</param>
+        /// <param name="password">Password of Customer</param>
+        /// <returns></returns>
+        public static int CreateCustomer(string email, string firstname, string lastname, string isAdmin, string password) //CS
     {
         Customer c = new Customer
         {
@@ -658,15 +673,22 @@ namespace EhandelGrupp1
         {
             using (var db = new EHandel())
             {
-                var firstOrDefault = db.Category.FirstOrDefault(c => c.categoryId == catID);
-                if (firstOrDefault != null)
-                {
-                    string query = firstOrDefault.name;
-                    return query;
-                }   
-                
+                var result = db.Category.FirstOrDefault(c => c.categoryId == catID);
+                if (result == null) return null;
+                string query = result.name;
+                return query;
             }
-            return null;
+        }
+
+        public static int GetCategoryIdFromNameO(string catName)
+        {
+            using (var db = new EHandel())
+            {
+                var result = db.Category.FirstOrDefault(c => c.name == catName);
+                if (result == null) return -1;
+                int query = result.categoryId;
+                return query;
+            }
         }
     }
 
