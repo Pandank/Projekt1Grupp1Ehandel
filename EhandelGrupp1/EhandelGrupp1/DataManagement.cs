@@ -192,10 +192,41 @@ namespace EhandelGrupp1
                         isHidden = x.isHidden
                     }).ToList();
 
-
                 return query;
             }
         }
+        /// <summary>
+        /// Return a LIST of the IMAGES for the selected PRODUCT
+        /// MAKE SURE TO NOT GO OUT OF BOUNDS
+        /// </summary>
+        /// <param name="productID">Product ID of product</param>
+        /// <returns></returns>
+        public static List<Image> GetImagesForProduct(int productID)
+        {
+            using (var db = new EHandel())
+            {
+                var query = (from i in db.Image
+                    where i.productId == productID
+                    select new
+                    {
+                        i.imageId,
+                        i.url,
+                        i.name,
+                        i.productId
+                    }).AsEnumerable()
+                    .Select(x => new Image()
+                    {
+                        imageId = x.imageId,
+                        url = x.url,
+                        name = x.name,
+                        productId = x.productId
+
+                    }).ToList();
+                return query;
+
+            }
+        }
+
 
         /// <summary>
         /// Get 5 Latest products added
