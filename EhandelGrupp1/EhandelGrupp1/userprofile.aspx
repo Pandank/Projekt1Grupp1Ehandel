@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container" id="profilePage">
+        <h2 class="h2">Dina kontouppgifter</h2>
 
          <%--från sql-table dbo customer--%>
         <div class="well well-sm">
@@ -36,7 +37,7 @@
                 <label for="country">Land:</label>
                 <input type="text" class="form-control" id="editcountry">
             </div>
-            <button type="button" class="btn btn-info btn-xs" id="updateUser">Uppdatera användare</button>
+            <button type="button" class="btn btn-info btn-xs" id="updateUser">Uppdatera</button>
         </div>
 
        
