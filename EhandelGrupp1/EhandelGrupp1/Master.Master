@@ -31,7 +31,6 @@
                     <div class="collapse navbar-collapse" id="topNavbar">
                         <ul class="nav navbar-nav">
                             <li class="category"><a href="category-overview.aspx">Sortiment</a></li>
-                            <li class="category"><a href="#">Kategori 1</a></li>
                             <li><a href="#">Kundtjänst</a></li>
                             <li><a href="#">Om oss</a></li>
                         </ul>
