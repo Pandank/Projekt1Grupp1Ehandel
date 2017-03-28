@@ -32,7 +32,7 @@ namespace EhandelGrupp1
                 {
                     productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                 }
-                productInfo += "</div style='height: 250px';>";
+                productInfo += "</div>";
                 productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                 productInfo += "<input type='number' value='1' id='itemCounter' />";
                 productInfo += "<button type='button' class='btn btn-primary addToCartButton'>Köp</button>";
@@ -67,7 +67,7 @@ namespace EhandelGrupp1
                     {
                         productInfo += "<img class='img-responsive' src='img/Papper.jpg' alt='' />";
                     }
-                    productInfo += "</div style='height: 100px';>";
+                    productInfo += "</div>";
                     productInfo += "<h3 class='h3'>" + product.name + "</h3>";
                     productInfo += "<p><span class='price'>" + $"{product.price:0.00}" + "</span> kr</p>";
                     productInfo += "</a>";
