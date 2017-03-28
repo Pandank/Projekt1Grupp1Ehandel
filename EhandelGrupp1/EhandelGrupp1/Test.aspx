@@ -8,7 +8,7 @@
             alert("Test");
 
             $.get("services/svc-createcustomer.aspx?createCustomer=1", { "email": $("#email").val(), "firstname": $("#firstname").val(), "lastname": $("#lastname").val(),
-                "isAdmin": $("#isAdmin").val(), "password": $("#password").val(), "street": $("#street").val(), "zip": $("#zip").val(), "city": $("#city").val(),
+                "isAdmin": ("0"), "password": $("#password").val(), "street": $("#street").val(), "zip": $("#zip").val(), "city": $("#city").val(),
                 "country": $("#country").val()})
             .done(function (data) {
                 alert(data);

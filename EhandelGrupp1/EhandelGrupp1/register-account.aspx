@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="container">
         <h2>Registrera kundkonto</h2>
         <div class="form-group" id="register-firstname">
@@ -43,7 +43,7 @@
             <label for="country">Land:</label>
             <input type="text" class="form-control" id="registercountry">
         </div>        
-        <button type="button" class="btn btn-default" id="registerButton">Registrera</button>
+        <button type="button" class="btn btn-default" id="register-user-button">Registrera</button>
     </div>
 
 </asp:Content>
