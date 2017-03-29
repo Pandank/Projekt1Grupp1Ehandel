@@ -225,6 +225,11 @@ header a {
         float: left;
         width: 100%;
     }
+
+    .navbar-nav>li>a {
+        padding-top: .7em;
+        padding-bottom: .7em;
+    }
 }
 
 #otherAddress {

@@ -36,6 +36,7 @@
                         <ul class="nav navbar-nav">
                             <li class="category">Sortiment</li>
                             <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
+                            <li>Övrigt</li>
                             <li><a href="AboutUs.aspx">Om oss</a></li>
                             <li id="logout"><a href="#" id="logoutButton">Logga ut</a></li>
                         </ul>
