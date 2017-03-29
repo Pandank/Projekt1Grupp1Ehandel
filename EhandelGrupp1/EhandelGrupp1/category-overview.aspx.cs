@@ -19,7 +19,7 @@ namespace EhandelGrupp1
 
         private void BuildCategoryMenu()
         {
-            string categorys = null;
+            string categorys = "<ul class='categoryList'>";
             var catNames = DataManagement.GetAllCategoryNamesO();
             foreach (var catName in catNames)
             {
@@ -27,6 +27,7 @@ namespace EhandelGrupp1
                 var path = @"index.aspx?category=" + catID;
                 categorys += @"<li class='"+"categoryMobileMenu"+"'><a href='" + path + "'>" + catName + "</a></li>";
             }
+            categorys += "</ul>";
             LiteralMobileCategoryList.Text = categorys;
         }
 

@@ -71,7 +71,7 @@
         </div>
 
     </div>
-    <!-- Shopping cart modal -->
+    <!-- Order modal -->
         <div class="modal fade" id="orderModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->

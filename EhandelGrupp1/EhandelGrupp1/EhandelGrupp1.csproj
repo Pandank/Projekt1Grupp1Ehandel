@@ -113,6 +113,7 @@
     <Content Include="services\svc-getuseraddress.aspx" />
     <Content Include="services\svc-login.aspx" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="services\svc-order-details.aspx" />
     <Content Include="services\svc-order.aspx" />
     <Content Include="services\svc-profile.aspx" />
     <Content Include="services\svc-updatecustomer.aspx" />
@@ -231,6 +232,13 @@
     </Compile>
     <Compile Include="services\svc-login.aspx.designer.cs">
       <DependentUpon>svc-login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services\svc-order-details.aspx.cs">
+      <DependentUpon>svc-order-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services\svc-order-details.aspx.designer.cs">
+      <DependentUpon>svc-order-details.aspx</DependentUpon>
     </Compile>
     <Compile Include="services\svc-order.aspx.cs">
       <DependentUpon>svc-order.aspx</DependentUpon>
