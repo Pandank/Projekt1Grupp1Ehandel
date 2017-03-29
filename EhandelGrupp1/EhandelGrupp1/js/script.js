@@ -145,10 +145,12 @@
     }
 
     /* Inkl/exkl moms */
+
     $('#vatButton').click(function () {
-        console.log("Session: " + sessionStorage.getItem("userId"))
-        console.log("Local: " + localStorage.getItem("userId"))
+        var vat = "false";
+
         if ($('#vatText').text() == 'Inkl. moms') {
+            vat = "true";
             $('#vatText').text('Exkl. moms');
             // visa priser med moms
         }
@@ -156,6 +158,11 @@
             $('#vatText').text('Inkl. moms');
             // visa priser utan moms
         }
+
+        $.get("services/svc-vat.aspx?vat=" + vat).
+        done(function () {
+            console.log("VAT: " + vat);
+        });
     });
 
     /***********************************
