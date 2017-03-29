@@ -238,7 +238,7 @@ header a {
     .container {
         float: left;
         width: 90%;
-        margin: 0 5%;
+        margin: 2% 5% 5%;
     }
 
     .navbar-nav > li > a {
@@ -250,6 +250,10 @@ header a {
         float: right;
         margin-right: 3%;
     }
+}
+
+.productDescription {
+    margin-top: 1em;
 }
 
 #otherAddress {

@@ -26,7 +26,7 @@
 
 
     <div class="container">
-        <h2>Lägg upp en produkt</h2>
+        <h2 class="h2">Lägg upp en produkt</h2>
         <div class="form-group" id="register-productname">
             <label for="productname">Produktnamn:</label>
             <input type="text" class="form-control" id="registerproductname">
@@ -56,33 +56,5 @@
 
         <button type="button" class="btn btn-default" onclick="CreateProduct()" id="register-product-button">Lägg upp produkt</button>
         
-        <%--OBS! Behövs en kod som tar denna input - genererar ett nytt produktid och sparar i sql--%>
-
-
-<%--        <%--från sql-table dbo orders--%>
-
-
-        <div class="well well-sm">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Ordernr</th>
-                        <th>Datum</th>
-                        <th>Status</th>
-                        <th>Detaljer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>orderID db</td>
-                        <td>date db</td>
-                        <td>status</td>
-                        <td>länk modal med items i order</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>--%>
-
-
     </div>
 </asp:Content>
