@@ -61,7 +61,7 @@
         <%--OBS! Behövs en kod som tar denna input - genererar ett nytt produktid och sparar i sql--%>
 
 
-        <%--från sql-table dbo orders--%>
+<%--        <%--från sql-table dbo orders--%>
 
 
         <div class="well well-sm">
@@ -83,7 +83,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>--%>
 
 
     </div>
