@@ -31,10 +31,10 @@ header a {
     font-weight: 700;
 }
 
-#topNavbar li a {
-    color: #ffffff;
-    font-weight: normal;
-}
+    #topNavbar li a {
+        color: #ffffff;
+        font-weight: normal;
+    }
 
 #logo img {
     height: 40px;
@@ -110,23 +110,23 @@ header a {
 
         header nav {
             float: left;
-            width: 35%;
-            max-width: 380px;
+            width: 380px;
         }
 
         header .navbar-inverse {
             border: none;
             position: fixed;
+            width: 280px;
         }
 
-        #main {
-            margin-left: 30%;
-        }
+    #main {
+        margin-left: 280px;
+    }
 
-        header .cartButton {
-            display: inline-block;
-            margin-top: 1.5em;
-        }
+    header .cartButton {
+        display: inline-block;
+        margin-top: 1.5em;
+    }
 
     #topNavbar {
         margin-top: 5em;
@@ -160,6 +160,16 @@ header a {
     header nav {
         float: left;
         width: 30%;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .navbar-inverse {
+        width: 380px;
+    }
+
+    #main {
+        margin-left: 380px;
     }
 }
 
@@ -220,16 +230,18 @@ header a {
     header {
         overflow: hidden;
     }
+
     .navbar-fixed-bottom {
         display: none;
     }
 
     .container {
         float: left;
-        width: 100%;
+        width: 90%;
+        margin: 0 5%;
     }
 
-    .navbar-nav>li>a {
+    .navbar-nav > li > a {
         padding-top: .7em;
         padding-bottom: .7em;
     }
@@ -266,7 +278,7 @@ header a {
     background: #B02600;
     color: white;
     text-align: center;
-    font-size:.8em;
+    font-size: .8em;
 }
 
 header .itemCount {
@@ -293,7 +305,6 @@ header .itemCount {
 }
 
 footer {
-    
 }
 
 
@@ -385,7 +396,6 @@ a {
 }
 
 @media (min-width: 768px) {
-    
 }
 
 #logout {
@@ -395,5 +405,4 @@ a {
 .totalSum {
     font-weight: 700;
     margin-top: .5em;
-
 }
