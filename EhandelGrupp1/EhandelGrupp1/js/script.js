@@ -420,7 +420,7 @@ $(document).ready(function () {
                 cartItem += '</div>';
                 totalsum += (products[i].sum * 1);
             }
-            cartItem += '<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>';
+            cartItem += '<p class="totalSum">Totalsumma: ' + totalsum.toFixed() + ' kr</p>';
 
             // lägg till i varukorgen
             $('#cartModal .modal-body').append(cartItem);
@@ -527,7 +527,7 @@ $(document).ready(function () {
                 cartItem += '</tr>';
                 totalsum += (products[i].sum * 1);
             }
-            cartItem += '<tr class="totalSum"><td></td><td></td><td>Totalsumma:</td><td>' + totalsum + ' kr</td></tr>';
+            cartItem += '<tr class="totalSum"><td></td><td></td><td>Totalsumma:</td><td>' + totalsum.toFixed() + ' kr</td></tr>';
             // lägg till i kassan
             $('#checkoutTable tbody').append(cartItem);
         }
