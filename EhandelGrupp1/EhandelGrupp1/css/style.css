@@ -41,6 +41,10 @@ header a {
     float: left;
 }
 
+.navbar-nav {
+    margin: 1em 0;
+}
+
 #logo h1 {
     float: left;
     margin: .2em 0 0 .2em;
@@ -106,6 +110,7 @@ header a {
 
         header .navbar-nav {
             width: 100%;
+            margin: 7.5px -15px;
         }
 
         header nav {
@@ -299,7 +304,7 @@ header .itemCount {
 }
 
 .glyphicon {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .floatContainer {
@@ -315,6 +320,22 @@ header .itemCount {
 footer {
 }
 
+.categoryList {
+    list-style: none;
+    font-weight: 700;
+    padding: 0;
+    margin-top: 1em;
+}
+
+.categoryList li {
+    padding: .5em 5%;
+    border-bottom: 1px solid #B02600;
+    margin: 0 5%;
+}
+
+.categoryList li:first-child {
+    border-top: 1px solid #B02600;
+}
 
 
 

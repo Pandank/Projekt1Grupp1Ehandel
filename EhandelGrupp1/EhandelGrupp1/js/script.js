@@ -152,7 +152,7 @@ $(document).ready(function () {
         // adminmeny-val
         var adminMenu = '<li class="admin">Administration</li>';
         adminMenu += '<li class="admin"><a href="administerproducts.aspx">Lägg till produkt</a></li>';
-        adminMenu += '<li class="admin"><a href="#">Beställningar</a></li>';
+        adminMenu += '<li class="admin"><a href="orders.aspx">Beställningar</a></li>';
         $('#topNavbar .nav').append(adminMenu);
         console.log('visa funktioner för administratörer')
     }
@@ -328,16 +328,18 @@ $(document).ready(function () {
         // hämta tidigare ordrar
         $.getJSON('services/svc-order.aspx?userId=' + id)
         .done(function (result) {
-            console.log(result)
 
             var orderItems = "";
 
             for (var i = 0; i < result.length; i++) {
+                var date = result[i].date.substring(0, 16);
+                date = date.replace('T', ' ');
+
                 orderItems += '<tr id="order_' + result[i].orderId + '">';
                 orderItems += '<td>' + result[i].orderId + '</td>';
-                orderItems += '<td>' + result[i].date + '</td>';
+                orderItems += '<td>' + date + '</td>';
                 orderItems += '<td>' + result[i].status + '</td>';
-                orderItems += '<td><a id="' + result[i].orderId + '" href="#">Läs mer</a></td>';
+                orderItems += '<td><a class="orderLink" id="' + result[i].orderId + '" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#orderModal">Läs mer</a></td>';
                 orderItems += '</tr>';
             }
             // lägg till i kassan
@@ -355,6 +357,34 @@ $(document).ready(function () {
     $('#updatePassword').click(function () {
         console.log("Uppdatera lösenord")
         // TODO validera lösenordsfälten
+    });
+
+    $('#orderTable').on('click', '.orderLink', function () {
+        var id = $(this).prop('id');
+
+        $.getJSON('services/svc-order-details.aspx?orderId=' + id)
+        .done(function(result){
+            console.log(result)
+
+            var orderItem = "";
+            var totalsum = 0;
+            var productSum = 0;
+
+            for (var i = 0; i < result.length; i++) {
+                productSum = (result[i].price * 1) * (result[i].count * 1);
+                orderItem += '<div id="orderProduct_' + id + '">';
+                orderItem += '<input class="productCounter" type="number" value="' + result[i].count + '" />';
+                orderItem += '<span class="productNameInCart">' + result[i].name + '</span>';
+                orderItem += '<span class="productPrice">' + result[i].price + ' kr</span>';
+                orderItem += '<span class="productSum">' + productSum + ' kr</span>';
+                orderItem += '</div>';
+                totalsum += (result[i].price * 1) * (result[i].count * 1);
+            }
+            orderItem += '<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>';
+
+            // lägg till i order-modalen
+            $('#orderModal .modal-body').append(orderItem);
+        });
     });
 
 
@@ -390,10 +420,10 @@ $(document).ready(function () {
                 cartItem += '</div>';
                 totalsum += (products[i].sum * 1);
             }
-            cartItem += '<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>';
+            cartItem += '<p class="totalSum">Totalsumma: ' + totalsum.toFixed() + ' kr</p>';
 
             // lägg till i varukorgen
-            $('.modal-body').append(cartItem);
+            $('#cartModal .modal-body').append(cartItem);
         }
     }
 
@@ -497,7 +527,7 @@ $(document).ready(function () {
                 cartItem += '</tr>';
                 totalsum += (products[i].sum * 1);
             }
-            cartItem += '<tr class="totalSum"><td></td><td></td><td>Totalsumma:</td><td>' + totalsum + ' kr</td></tr>';
+            cartItem += '<tr class="totalSum"><td></td><td></td><td>Totalsumma:</td><td>' + totalsum.toFixed() + ' kr</td></tr>';
             // lägg till i kassan
             $('#checkoutTable tbody').append(cartItem);
         }
