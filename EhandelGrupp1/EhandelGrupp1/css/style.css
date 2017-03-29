@@ -376,7 +376,7 @@ KNAPPAR
 .btn-primary {
     background-color: #B02600;
     border: 1px solid #B02600;
-    width: 150px;
+    width: 160px;
 }
 
 .btn-primary:hover {
@@ -401,7 +401,7 @@ KNAPPAR
     background-color: #002D3D;
     border-color: #002D3D;
     color: #ffffff;
-    width: 150px;
+    width: 160px;
 }
 
 .btn-default:hover {
