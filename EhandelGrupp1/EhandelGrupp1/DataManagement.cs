@@ -288,7 +288,7 @@ namespace EhandelGrupp1
                     stock = x.stock,
                     date = x.date,
                     isHidden = x.isHidden
-                }).Take(5).ToList();
+                }).Take(8).ToList();
 
             return query;
 
