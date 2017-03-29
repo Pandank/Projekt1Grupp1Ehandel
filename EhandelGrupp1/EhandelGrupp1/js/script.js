@@ -337,7 +337,7 @@ $(document).ready(function () {
                 orderItems += '<td>' + result[i].orderId + '</td>';
                 orderItems += '<td>' + result[i].date + '</td>';
                 orderItems += '<td>' + result[i].status + '</td>';
-                orderItems += '<td><a id="' + result[i].orderId + '" href="#">Läs mer</a></td>';
+                orderItems += '<td><a class="orderLink" id="' + result[i].orderId + '" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#orderModal">Läs mer</a></td>';
                 orderItems += '</tr>';
             }
             // lägg till i kassan
@@ -355,6 +355,11 @@ $(document).ready(function () {
     $('#updatePassword').click(function () {
         console.log("Uppdatera lösenord")
         // TODO validera lösenordsfälten
+    });
+
+    $('#orderTable').on('click', '.orderLink', function () {
+        var id = $(this).prop('id');
+        
     });
 
 
