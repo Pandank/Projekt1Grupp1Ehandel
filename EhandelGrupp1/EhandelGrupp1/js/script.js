@@ -25,6 +25,15 @@
         }
     }
 
+    if (sessionStorage.getItem('vatJS')) {
+        if (sessionStorage.getItem('vatJS') == 'true') {
+            $('#vatText').text('Inkl. moms');
+        }
+        else {
+            $('#vatText').text('Exkl. moms');
+        }
+    }
+
     /***********************************
      LOGGA UT
      ***********************************/
@@ -149,19 +158,21 @@
     $('#vatButton').click(function () {
         var vat = "false";
 
-        if ($('#vatText').text() == 'Inkl. moms') {
+        if ($('#vatText').text() == 'Exkl. moms') {
             vat = "true";
-            $('#vatText').text('Exkl. moms');
+            $('#vatText').text('Inkl. moms');
             // visa priser med moms
         }
         else {
-            $('#vatText').text('Inkl. moms');
+            $('#vatText').text('Exkl. moms');
             // visa priser utan moms
         }
+        sessionStorage.setItem('vatJS', vat);
 
         $.get("services/svc-vat.aspx?vat=" + vat).
         done(function () {
             console.log("VAT: " + vat);
+            location.reload();
         });
     });
 

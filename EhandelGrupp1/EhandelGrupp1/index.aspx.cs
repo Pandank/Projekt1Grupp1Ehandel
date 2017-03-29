@@ -13,7 +13,7 @@ namespace EhandelGrupp1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool vat = false;
+            bool vat = true;
             if(Session["vat"] != null)
             {
                 if(Session["vat"].Equals("true"))
