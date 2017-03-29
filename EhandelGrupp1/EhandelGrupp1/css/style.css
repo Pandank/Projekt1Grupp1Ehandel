@@ -246,6 +246,10 @@ header a {
         padding-bottom: .7em;
     }
 
+    .navbar-nav > li > a:hover {
+        text-decoration: underline;
+    }
+
     #loginAndCart {
         float: right;
         margin-right: 3%;
@@ -258,7 +262,7 @@ header a {
 
 #otherAddress {
     display: none;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 #productSite img {
@@ -338,6 +342,10 @@ input[type="number"] {
     padding: .2em;
 }
 
+.modal-body p {
+    margin-top: 1em;
+}
+
 
 
 /*******************************
@@ -350,9 +358,36 @@ KNAPPAR
     width: 150px;
 }
 
+.btn-primary:hover {
+    background-color: #009DD6;
+}
+
 #productSite .btn-primary {
     margin-left: 2%;
 }
+
+#checkoutPage .btn-primary, #loginButton {
+    background-color: #002D3D;
+    border-color: #002D3D;
+}
+
+#checkoutPage .btn-primary:hover, #loginButton:hover {
+    background-color: #009DD6;
+    border-color: #009DD6;
+}
+
+.btn-default {
+    background-color: #002D3D;
+    border-color: #002D3D;
+    color: #ffffff;
+    width: 150px;
+}
+
+.btn-default:hover {
+    background-color: #009DD6;
+    border-color: #009DD6;
+}
+
 
 /*******************************
 TEXT

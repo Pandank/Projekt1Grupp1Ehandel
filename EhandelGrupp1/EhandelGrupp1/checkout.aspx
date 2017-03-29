@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-default">Köp</button>
+        <button type="submit" class="btn btn-primary">Genomför köp</button>
 
     </div>
 

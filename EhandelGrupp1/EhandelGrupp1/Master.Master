@@ -105,7 +105,7 @@
                         <p><a href="register-account.aspx">Registrera konto</a></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Stäng</button>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Stäng</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal" id="goToCheckoutButton">Kassa</button>
                     </div>
                 </div>

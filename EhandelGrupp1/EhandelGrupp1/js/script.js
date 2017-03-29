@@ -46,6 +46,8 @@ $(document).ready(function () {
         $('#logoutButton').hide();
         // ändra text i fotnavigationen i mobilvyn
         $('#loginText').text('Logga in');
+        // ändra text i headern
+        $('#login').text('Logga in');
         // visa "Logga in"
         $('#login').show();
         // ta bort "logga ut"
@@ -495,9 +497,9 @@ $(document).ready(function () {
                 cartItem += '</tr>';
                 totalsum += (products[i].sum * 1);
             }
+            cartItem += '<tr class="totalSum"><td></td><td></td><td>Totalsumma:</td><td>' + totalsum + ' kr</td></tr>';
             // lägg till i kassan
             $('#checkoutTable tbody').append(cartItem);
-            $('<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>').insertAfter('#checkoutTable');
         }
 
         // kolla om användaren är inloggad

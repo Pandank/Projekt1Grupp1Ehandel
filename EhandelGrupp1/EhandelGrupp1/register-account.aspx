@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div class="container">
-        <h2>Registrera kundkonto</h2>
+        <h2 class="h2">Registrera kundkonto</h2>
         <div class="form-group" id="register-firstname">
             <label for="firstname">Förnamn:</label>
             <input type="text" class="form-control" id="registerfirstname">
