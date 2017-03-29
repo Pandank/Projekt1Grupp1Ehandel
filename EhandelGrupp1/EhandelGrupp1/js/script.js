@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿/// <reference path="C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Projekt\1-ehandel\EhandelGrupp1\EhandelGrupp1\administerproducts.aspx" />
+$(document).ready(function () {
     // om varor finns i varukorgen, skriv ut antal unika produkter
     if (sessionStorage.getItem('cartCounter')) {
         
@@ -148,7 +149,7 @@
         loginUser();
         // adminmeny-val
         var adminMenu = '<li class="admin">Administration</li>';
-        adminMenu += '<li class="admin"><a href="#">Lägg till produkt</a></li>';
+        adminMenu += '<li class="admin"><a href="administerproducts.aspx">Lägg till produkt</a></li>';
         adminMenu += '<li class="admin"><a href="#">Beställningar</a></li>';
         $('#topNavbar .nav').append(adminMenu);
         console.log('visa funktioner för administratörer')

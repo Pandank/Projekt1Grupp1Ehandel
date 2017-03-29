@@ -125,7 +125,7 @@ header a {
 
         header .cartButton {
             display: inline-block;
-            margin-top: 2em;
+            margin-top: 1.5em;
         }
 
     #topNavbar {
@@ -217,6 +217,9 @@ header a {
 }
 
 @media (min-width: 768px) {
+    header {
+        overflow: hidden;
+    }
     .navbar-fixed-bottom {
         display: none;
     }
@@ -229,6 +232,11 @@ header a {
     .navbar-nav>li>a {
         padding-top: .7em;
         padding-bottom: .7em;
+    }
+
+    #loginAndCart {
+        float: right;
+        margin-right: 3%;
     }
 }
 
@@ -280,6 +288,7 @@ header .itemCount {
 /* Moms-knapp */
 #vatButton {
     float: right;
+    margin-right: 1.5em;
 }
 
 footer {
