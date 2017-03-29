@@ -1,9 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="orders.aspx.cs" Inherits="EhandelGrupp1.orders" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        $(document).ready(
+            function () {
+                $.get("services/svc-allorders.aspx").done(function (data) {
+                    data = JSON.parse(data);
+
+                    console.log(data);
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        $("#allOrderBody").append("<tr><td>" + data[i].orderId + "</td><td>" + data[i].date + "</td><td>" + data[i].status + "</td><td>länk modal med items i order</td></tr>");
+                    }
+                });
+
+            });
+
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">            
+    <div class="container">
         <div class="well well-sm">
             <table class="table">
                 <thead>
@@ -14,13 +33,7 @@
                         <th>Detaljer</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>orderID db</td>
-                        <td>date db</td>
-                        <td>status</td>
-                        <td>länk modal med items i order</td>
-                    </tr>
+                <tbody id="allOrderBody">
                 </tbody>
             </table>
         </div>
