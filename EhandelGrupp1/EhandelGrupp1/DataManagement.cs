@@ -1,6 +1,7 @@
 ﻿using EhandelGrupp1.EF;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Sockets;
 using System.Reflection.Emit;
@@ -428,6 +429,8 @@ namespace EhandelGrupp1
         using (var db = new EHandel())
         {
             Product prod = db.Product.FirstOrDefault(p => p.productId == productID);
+            Debug.Assert(prod != null, "prod != null");
+            prod.price = WithVAT ? prod.price * VAT : prod.price;
 
             return prod;
         }
