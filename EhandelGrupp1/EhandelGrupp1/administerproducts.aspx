@@ -51,9 +51,7 @@
         <div class="form-group">
             <label>Produktkategori:</label><br />
             <asp:DropDownList ID="categoryList" runat="server"></asp:DropDownList>
-            <select name="categoryList">
-                <asp:Literal ID="LiteralProductCategorys" runat="server"></asp:Literal>
-            </select>
+            
         </div>
 
         <button type="button" class="btn btn-default" onclick="CreateProduct()" id="register-product-button">Lägg upp produkt</button>
