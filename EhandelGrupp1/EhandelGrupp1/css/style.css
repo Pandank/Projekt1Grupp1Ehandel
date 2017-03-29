@@ -26,6 +26,16 @@ header a {
     padding: .3em;
 }
 
+#topNavbar li {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#topNavbar li a {
+    color: #ffffff;
+    font-weight: normal;
+}
+
 #logo img {
     height: 40px;
     float: left;
@@ -106,11 +116,16 @@ header a {
 
         header .navbar-inverse {
             border: none;
+            position: fixed;
+        }
+
+        #main {
+            margin-left: 30%;
         }
 
         header .cartButton {
             display: inline-block;
-            margin-top: 2em;
+            margin-top: 1.5em;
         }
 
     #topNavbar {
@@ -202,14 +217,26 @@ header a {
 }
 
 @media (min-width: 768px) {
+    header {
+        overflow: hidden;
+    }
     .navbar-fixed-bottom {
         display: none;
     }
 
     .container {
         float: left;
-        width: 68%;
-        padding: 3%;
+        width: 100%;
+    }
+
+    .navbar-nav>li>a {
+        padding-top: .7em;
+        padding-bottom: .7em;
+    }
+
+    #loginAndCart {
+        float: right;
+        margin-right: 3%;
     }
 }
 
@@ -239,6 +266,7 @@ header a {
     background: #B02600;
     color: white;
     text-align: center;
+    font-size:.8em;
 }
 
 header .itemCount {
@@ -261,6 +289,7 @@ header .itemCount {
 /* Moms-knapp */
 #vatButton {
     float: right;
+    margin-right: 1.5em;
 }
 
 footer {
@@ -270,11 +299,28 @@ footer {
 
 
 
+
+
 /*******************************
 MODAL
 *******************************/
 .modal-body span {
-    margin-left: 5%;
+    margin-left: 7%;
+    width: 15%;
+    display: inline-block;
+}
+
+.modal-body .productNameInCart {
+    width: 30%;
+}
+
+.modal-body div {
+    margin-bottom: .5em;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: .2em;
 }
 
 
@@ -285,7 +331,12 @@ KNAPPAR
 
 .btn-primary {
     background-color: #B02600;
-    border: none;
+    border: 1px solid #B02600;
+    width: 150px;
+}
+
+#productSite .btn-primary {
+    margin-left: 2%;
 }
 
 /*******************************
@@ -339,4 +390,10 @@ a {
 
 #logout {
     display: none;
+}
+
+.totalSum {
+    font-weight: 700;
+    margin-top: .5em;
+
 }
