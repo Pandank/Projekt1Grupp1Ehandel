@@ -10,8 +10,10 @@
                     console.log(data);
 
                     for (var i = 0; i < data.length; i++) {
+                        var date = data[i].date.substring(0, 16);
+                        date = date.replace('T', ' ');
 
-                        $("#allOrderBody").append("<tr><td>" + data[i].orderId + "</td><td>" + data[i].date + "</td><td>" + data[i].status + "</td><td>länk modal med items i order</td></tr>");
+                        $("#allOrderBody").append("<tr><td>" + data[i].orderId + "</td><td>" + date + "</td><td>" + data[i].status + "</td><td><a href='#'>Läs mer</a></td></tr>");
                     }
                 });
 
