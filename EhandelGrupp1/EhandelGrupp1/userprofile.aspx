@@ -55,7 +55,7 @@
 
         <%--från sql-table dbo orders--%>
         <div class="well well-sm">
-            <table class="table">
+            <table class="table" id="orderTable">
                 <thead>
                     <tr>
                         <th>Ordernr</th>
@@ -65,13 +65,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>orderID db</td>
-                        <td>date db</td>
-                        <td>status</td>
-                        <td>länk modal med items i order</td>
-                    </tr>
-                    <tr>
+
                 </tbody>
             </table>
         </div>

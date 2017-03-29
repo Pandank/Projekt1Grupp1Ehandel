@@ -1,8 +1,4 @@
-﻿.container{
-    background-color: white;
-}
-
-/*https://color.adobe.com/sv/KAB-color-theme-9372738/*/
+﻿/*https://color.adobe.com/sv/KAB-color-theme-9372738/*/
 
 input[type="number"]{
     width: 20%;
@@ -13,6 +9,7 @@ input[type="number"]{
 .h2{
     margin-bottom: 1em;
     font-weight: 700;
+    font-family: 'Crete Round', serif;
 }
 
 .h3{

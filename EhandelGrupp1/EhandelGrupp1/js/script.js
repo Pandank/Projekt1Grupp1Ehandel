@@ -307,6 +307,18 @@
         $.getJSON('services/svc-order.aspx?userId=' + id)
         .done(function (result) {
             console.log(result)
+
+            var orderItems = "";
+
+            for (var i = 0; i < result.length; i++) {
+                orderItems += '<tr id="order_' + result[i].orderId + '">';
+                orderItems += '<td>' + result[i].date + '</td>';
+                orderItems += '<td>' + result[i].status + '</td>';
+                orderItems += '<td><a id="' + result[i].orderId + '" href="#">Läs mer</a></td>';
+                orderItems += '</tr>';
+            }
+            // lägg till i kassan
+            $('#orderTable tbody').append(orderItems);
         });
     }
 
@@ -321,6 +333,7 @@
         console.log("Uppdatera lösenord")
         // TODO validera lösenordsfälten
     });
+
 
 
 
@@ -340,11 +353,10 @@
         if (sessionStorage.getItem('products')) {
             var products = [];
             productsInCart = sessionStorage.getItem('products');
-            products = JSON.parse(sessionStorage.getItem('products'));
-
-            console.log(products)
+            products = JSON.parse(productsInCart);
 
             var cartItem = "";
+            var totalsum = 0;
 
             for (var i = 0; i < products.length; i++) {
                 cartItem += '<div id="cartProduct_' + products[i].id + '">';
@@ -353,8 +365,9 @@
                 cartItem += '<span class="productPrice">' + products[i].price + '</span>';
                 cartItem += '<span class="productSum">' + products[i].sum + '</span>';
                 cartItem += '</div>';
+                totalsum += (sum * 1);
             }
-            cartItem += '<p>Totalsumma: </p>';
+            cartItem += '<p>Totalsumma: ' + totalsum + '</p>';
 
             // lägg till i varukorgen
             $('.modal-body').append(cartItem);
@@ -448,8 +461,6 @@
             var products = [];
             productsInCart = sessionStorage.getItem('products');
             products = JSON.parse(sessionStorage.getItem('products'));
-
-            console.log(products)
 
             var cartItem = "";
 
