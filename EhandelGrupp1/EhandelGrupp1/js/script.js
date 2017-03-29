@@ -382,7 +382,7 @@ $(document).ready(function () {
             for (var i = 0; i < products.length; i++) {
                 cartItem += '<div id="cartProduct_' + products[i].id + '">';
                 cartItem += '<input class="productCounter" type="number" value="' + products[i].counter + '" />';
-                cartItem += '<span>' + products[i].name + '</span>';
+                cartItem += '<span class="productNameInCart">' + products[i].name + '</span>';
                 cartItem += '<span class="productPrice">' + products[i].price + ' kr</span>';
                 cartItem += '<span class="productSum">' + products[i].sum + ' kr</span>';
                 cartItem += '</div>';

@@ -266,6 +266,7 @@ header a {
     background: #B02600;
     color: white;
     text-align: center;
+    font-size:.8em;
 }
 
 header .itemCount {
@@ -305,6 +306,12 @@ MODAL
 *******************************/
 .modal-body span {
     margin-left: 7%;
+    width: 15%;
+    display: inline-block;
+}
+
+.modal-body .productNameInCart {
+    width: 30%;
 }
 
 .modal-body div {
@@ -324,7 +331,12 @@ KNAPPAR
 
 .btn-primary {
     background-color: #B02600;
-    border: none;
+    border: 1px solid #B02600;
+    width: 150px;
+}
+
+#productSite .btn-primary {
+    margin-left: 2%;
 }
 
 /*******************************
