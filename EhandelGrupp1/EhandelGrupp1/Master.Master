@@ -36,7 +36,6 @@
                         <ul class="nav navbar-nav">
                             <li class="category">Sortiment</li>
                             <asp:Literal ID="LiteralCategorys" runat="server"></asp:Literal>
-                            <li><a href="#">Kundtjänst</a></li>
                             <li><a href="AboutUs.aspx">Om oss</a></li>
                             <li id="logout"><a href="#" id="logoutButton">Logga ut</a></li>
                         </ul>
@@ -51,7 +50,7 @@
             <button id="vatButton" class="btn btn-link" type="button"><span id="vatText">Inkl. moms</span> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
         </div>
 
-        <div>
+        <div id="main">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

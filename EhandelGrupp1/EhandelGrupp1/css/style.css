@@ -26,6 +26,16 @@ header a {
     padding: .3em;
 }
 
+#topNavbar li {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#topNavbar li a {
+    color: #ffffff;
+    font-weight: normal;
+}
+
 #logo img {
     height: 40px;
     float: left;
@@ -106,6 +116,11 @@ header a {
 
         header .navbar-inverse {
             border: none;
+            position: fixed;
+        }
+
+        #main {
+            margin-left: 40%;
         }
 
         header .cartButton {
@@ -270,11 +285,22 @@ footer {
 
 
 
+
+
 /*******************************
 MODAL
 *******************************/
 .modal-body span {
-    margin-left: 5%;
+    margin-left: 7%;
+}
+
+.modal-body div {
+    margin-bottom: .5em;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: .2em;
 }
 
 
@@ -339,4 +365,10 @@ a {
 
 #logout {
     display: none;
+}
+
+.totalSum {
+    font-weight: 700;
+    margin-top: .5em;
+
 }

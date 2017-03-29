@@ -148,7 +148,8 @@
         loginUser();
         // adminmeny-val
         var adminMenu = '<li class="admin">Administration</li>';
-        adminMenu += '<li class="admin"><a href="#">Adminfunktioner</a></li>';
+        adminMenu += '<li class="admin"><a href="#">Lägg till produkt</a></li>';
+        adminMenu += '<li class="admin"><a href="#">Beställningar</a></li>';
         $('#topNavbar .nav').append(adminMenu);
         console.log('visa funktioner för administratörer')
     }
@@ -330,6 +331,7 @@
 
             for (var i = 0; i < result.length; i++) {
                 orderItems += '<tr id="order_' + result[i].orderId + '">';
+                orderItems += '<td>' + result[i].orderId + '</td>';
                 orderItems += '<td>' + result[i].date + '</td>';
                 orderItems += '<td>' + result[i].status + '</td>';
                 orderItems += '<td><a id="' + result[i].orderId + '" href="#">Läs mer</a></td>';
@@ -380,12 +382,12 @@
                 cartItem += '<div id="cartProduct_' + products[i].id + '">';
                 cartItem += '<input class="productCounter" type="number" value="' + products[i].counter + '" />';
                 cartItem += '<span>' + products[i].name + '</span>';
-                cartItem += '<span class="productPrice">' + products[i].price + '</span>';
-                cartItem += '<span class="productSum">' + products[i].sum + '</span>';
+                cartItem += '<span class="productPrice">' + products[i].price + ' kr</span>';
+                cartItem += '<span class="productSum">' + products[i].sum + ' kr</span>';
                 cartItem += '</div>';
-                totalsum += (sum * 1);
+                totalsum += (products[i].sum * 1);
             }
-            cartItem += '<p>Totalsumma: ' + totalsum + '</p>';
+            cartItem += '<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>';
 
             // lägg till i varukorgen
             $('.modal-body').append(cartItem);
@@ -481,18 +483,20 @@
             products = JSON.parse(sessionStorage.getItem('products'));
 
             var cartItem = "";
+            var totalsum = 0;
 
             for (var i = 0; i < products.length; i++) {
                 cartItem += '<tr id="cartProduct_' + products[i].id + '">';
-                cartItem += '<td>' + products[i].price + '</td>';
                 cartItem += '<td>' + products[i].name + '</td>';
+                cartItem += '<td>' + products[i].price + '</td>';
                 cartItem += '<td><input type="number" value="' + products[i].counter + '" /></td>';
                 cartItem += '<td>' + products[i].sum + '</td>';
                 cartItem += '</tr>';
+                totalsum += (products[i].sum * 1);
             }
             // lägg till i kassan
             $('#checkoutTable tbody').append(cartItem);
-            $('<p>Totalsumma: </p>').insertAfter('#checkoutTable');
+            $('<p class="totalSum">Totalsumma: ' + totalsum + ' kr</p>').insertAfter('#checkoutTable');
         }
 
         // kolla om användaren är inloggad
