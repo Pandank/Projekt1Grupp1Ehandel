@@ -93,7 +93,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="js\script.js" />
-    <Content Include="js\script2.js" />
     <Content Include="packages.config" />
     <Content Include="Master.Master" />
     <Content Include="index.aspx" />
