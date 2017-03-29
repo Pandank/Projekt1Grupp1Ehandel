@@ -86,6 +86,7 @@
     <Content Include="css\MagnusStyle.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\KAB Gemträsk.jpg" />
     <Content Include="img\logo_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

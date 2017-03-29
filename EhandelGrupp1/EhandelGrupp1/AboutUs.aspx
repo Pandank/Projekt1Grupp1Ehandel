@@ -18,6 +18,10 @@
             Besök oss gärna i vår fysiska butik och ta del av oslagbara priser i vår fyndhörna!
             Häftapparatsgatan 7, Gemträsk
         </p>
+
+       <center>
+        <img class="img-responsive" src="img/KAB%20Gemträsk.jpg" max-width= "200px"/>
+       </center>
     </div>
 
 </asp:Content>
